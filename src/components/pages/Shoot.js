@@ -9,7 +9,12 @@ const Shoot = () => {
   return (  
     <BookPageFrame>
       <main>
-        {id}
+        <section>
+          
+        </section>
+        <section>
+
+        </section>
       </main>
     </BookPageFrame>
   );

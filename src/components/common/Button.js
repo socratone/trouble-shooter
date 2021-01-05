@@ -10,7 +10,7 @@ const Button = styled.button`
   font-weight: 700;
   font-size: 14px;
 
-  margin-right: ${props => props.right};
+  margin: ${props => props.margin};
 
   ${props => props.primary && css`
     background: linear-gradient(166deg, #08c 20%, #5349ff 80%);

@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import convertCategoryName from '../../helper/convertCategoryName';
 import NormalPageFrame from '../common/NormalPageFrame';
 import TroublesItem from '../Troubles/TroublesItem';
 import Button from '../common/Button';
+import TextInput from '../common/TextInput';
 import ArrowIcon from '../icon/ArrowIcon';
 import Dropdown from '../common/Dropdown';
 import styles from './Troubles.module.scss';
@@ -12,14 +13,32 @@ import { troublesItems } from '../../fakeData';
 const Troubles = () => {
   const [category, setCategory] = useState('all');
   const [clickCategory, setClickCategory] = useState(false);
+  const [searchValue, setSearchValue] = useState('');
+  const [query, setQuery] = useState('');
+  const [items, setItems] = useState([]);
 
-  const getFilteredItems = () => {
-    const filteredItems = troublesItems.filter(item => {
+  useEffect(() => {
+    setItems(troublesItems);
+  }, []);
+
+  const filterItemsByCategory = items => {
+    return items.filter(item => {
       if (category === 'all') return true;
       if (item.category === category) return true;
     });
+  };
 
-    return filteredItems.map(item => <TroublesItem key={item.id} item={item} />)
+  const filterItemsByQuery = items => {
+    return items.filter(item => {
+      if (item.title.toLowerCase().indexOf(query) >= 0) return true;
+      if (item.description.toLowerCase().indexOf(query) >= 0) return true;
+    });
+  };
+
+  const getFilteredItems = items => {
+    let filteredItems = filterItemsByCategory(items);
+    if (query !== '') filteredItems = filterItemsByQuery(filteredItems);
+    return filteredItems;
   };
 
   const toggleCategory = () => {
@@ -29,12 +48,20 @@ const Troubles = () => {
 
   const handleCategoryBlur = () => {
     setTimeout(() => setClickCategory(false), 200);
-  }
+  };
 
   const selectCategory = category => {
     setCategory(category);
     setClickCategory(false);
-  }
+  };
+
+  const handleSearchInputChange = e => {
+    setSearchValue(e.target.value);
+  };
+
+  const handleSearchButtonClick = () => {
+    setQuery(searchValue.toLowerCase());
+  };
 
   return (
     <NormalPageFrame>
@@ -51,9 +78,21 @@ const Troubles = () => {
               <li onClick={() => selectCategory('s3')}>S3</li>
             </Dropdown>}
           </div>
+          <div className={styles.searchWrap}>
+            <TextInput 
+              type="text" 
+              width="200px" 
+              margin="0 10px" 
+              value={searchValue} 
+              onChange={handleSearchInputChange}
+            />
+            <Button onClick={handleSearchButtonClick}>찾기</Button>
+          </div>
         </header>
         <section className={styles.grid}>
-          {getFilteredItems()}
+          {getFilteredItems(items).map(item => 
+            <TroublesItem key={item.id} item={item} />
+          )}
         </section>
       </main>
     </NormalPageFrame>  
