@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const HEADER_HEIGHT = '60px'
+const HEADER_HEIGHT = '50px'
 const HEADER_HEIGHT_MOBILE = '50px'
 
 const HeaderBumper = styled.section`
