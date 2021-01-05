@@ -1,0 +1,20 @@
+.wrap {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 240px;
+}
+
+.margin {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.nav {
+  padding: 22px 20px;
+  background-color: white;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0), 0 6px 6px rgba(0, 0, 0, 0.05);
+}

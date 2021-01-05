@@ -1,0 +1,19 @@
+@import '../common/layout.scss';
+
+.wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+
+  &:hover {
+    .dropdown {
+      display: flex;
+    }
+  }
+}
+
+.item {
+  font-size: 16px;
+  color: #707070;
+}

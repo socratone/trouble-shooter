@@ -1,0 +1,11 @@
+.button {
+  display: none;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  .button {
+    display: block;
+  }
+}
