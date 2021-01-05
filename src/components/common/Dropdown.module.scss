@@ -1,0 +1,13 @@
+.dropdown {
+  position: absolute;
+  flex-direction: column;
+  border-radius: 4px;
+  border: gainsboro solid 1px;
+  background-color: white;
+  z-index: 10;
+
+  li {
+    cursor: pointer;
+    margin: 10px;
+  }
+}
