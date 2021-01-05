@@ -5,12 +5,8 @@
   display: flex;
   align-items: center;
   height: 100%;
-
-  &:hover {
-    .dropdown {
-      display: flex;
-    }
-  }
+  margin-left: 30px;
+  cursor: pointer;
 }
 
 .item {

@@ -12,15 +12,19 @@ const Nav = () => {
   return (  
     <header className={styles.wrap}>
       <nav className={styles.nav}>
-        <NavItem to="/">
-          <LogoIcon size="28" color="white" />
-        </NavItem>
-        <NavItem to="/beginner">
-          Beginner
-        </NavItem>
-        <NavItem to="/troubles">
-          Troubles
-        </NavItem>
+        <div className={styles.logoWrap}>
+          <NavItem to="/" margin={0}>
+            <LogoIcon size="28" color="white" />
+          </NavItem>
+        </div>
+        <div className={styles.itemWrap}>
+          <NavItem to="/beginner">
+            Beginner
+          </NavItem>
+          <NavItem to="/troubles">
+            Troubles
+          </NavItem>
+        </div>
       </nav>
       <MenuButton />
       {isMenu && <RightNav />}
