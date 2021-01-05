@@ -9,8 +9,6 @@
   display: flex;
   justify-content: center;
   background: #20232a;
-  border-bottom: 1px solid gainsboro;
-  box-sizing: border-box;
 
   @media (max-width: 800px) {
     height: $header-height-mobile;
