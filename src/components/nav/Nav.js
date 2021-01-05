@@ -1,4 +1,5 @@
 import React from 'react';
+import LogoIcon from '../icon/LogoIcon';
 import NavItem from './NavItem';
 import MenuButton from './MenuButton';
 import RightNav from './RightNav';
@@ -12,7 +13,7 @@ const Nav = () => {
     <header className={styles.wrap}>
       <nav className={styles.nav}>
         <NavItem to="/">
-          Home
+          <LogoIcon size="28" color="white" />
         </NavItem>
       </nav>
       <MenuButton />
