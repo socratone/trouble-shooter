@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './PageFrame.module.scss';
+import styles from './NormalPageFrame.module.scss';
 
 const PageFrame = ({ children }) => {
   return (  
