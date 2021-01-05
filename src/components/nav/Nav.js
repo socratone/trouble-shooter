@@ -12,19 +12,19 @@ const Nav = () => {
   return (  
     <header className={styles.wrap}>
       <nav className={styles.nav}>
-        <div className={styles.logoWrap}>
+        <ul className={styles.logoWrap}>
           <NavItem to="/" margin={0}>
             <LogoIcon size="28" color="white" />
           </NavItem>
-        </div>
-        <div className={styles.itemWrap}>
+        </ul>
+        <ul className={styles.itemWrap}>
           <NavItem to="/beginner">
             Beginner
           </NavItem>
           <NavItem to="/troubles">
             Troubles
           </NavItem>
-        </div>
+        </ul>
       </nav>
       <MenuButton />
       {isMenu && <RightNav />}

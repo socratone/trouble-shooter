@@ -14,11 +14,11 @@ const RightNavItem = ({ to, children }) => {
   };
 
   return (  
-    <div className={styles.wrap}>
-      <a className={styles.item} onClick={handleItemClick}>
+    <li className={styles.wrap}>
+      <p className={styles.item} onClick={handleItemClick}>
         {children}
-      </a>
-    </div>
+      </p>
+    </li>
   );
 }
  

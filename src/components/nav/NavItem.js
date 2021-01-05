@@ -9,11 +9,11 @@ const NavItem = ({ to, margin, children }) => {
   };
 
   return (  
-    <div className={styles.wrap} style={{ margin }} onClick={handleClick}>
-      <a className={styles.item}>
+    <li className={styles.wrap} style={{ margin }} onClick={handleClick}>
+      <p className={styles.item} href="#" >
         {children}
-      </a>   
-    </div>
+      </p>   
+    </li>
   );
 }
  
