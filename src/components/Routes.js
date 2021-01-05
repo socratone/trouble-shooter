@@ -6,6 +6,8 @@ import {
 } from "react-router-dom";
 import Nav from './nav/Nav';
 import Home from './pages/Home';
+import Beginner from './pages/Beginner';
+import Troubles from './pages/Troubles';
 import HeaderBumper from './common/HeaderBumper';
 import styles from './Routes.module.scss';
 
@@ -16,6 +18,12 @@ const Routes = () => {
       <div className={styles.mainWrap}>
         <HeaderBumper />
         <Switch>
+          <Route path="/beginner">
+            <Beginner />
+          </Route>
+          <Route path="/troubles">
+            <Troubles />
+          </Route>
           <Route path="/">
             <Home />
           </Route>

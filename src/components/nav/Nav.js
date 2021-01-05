@@ -15,6 +15,12 @@ const Nav = () => {
         <NavItem to="/">
           <LogoIcon size="28" color="white" />
         </NavItem>
+        <NavItem to="/beginner">
+          Beginner
+        </NavItem>
+        <NavItem to="/troubles">
+          Troubles
+        </NavItem>
       </nav>
       <MenuButton />
       {isMenu && <RightNav />}
