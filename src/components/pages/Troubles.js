@@ -1,8 +1,8 @@
 import React from 'react';
 import NormalPageFrame from '../common/NormalPageFrame';
 import TroublesItem from '../Troubles/TroublesItem';
-import styles from './Troubles.module.scss';
 import { troublesItems } from '../../fakeData';
+import styles from './Troubles.module.scss';
 
 const Troubles = () => {
   return (

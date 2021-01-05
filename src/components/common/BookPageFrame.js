@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from './NormalPageFrame.module.scss';
+import styles from './BookPageFrame.module.scss';
 
-const NormalPageFrame = ({ children }) => {
+const BookPageFrame = ({ children }) => {
   return (  
     <div className={styles.frameWrap}>
       <div className={styles.frame}>
@@ -11,4 +11,4 @@ const NormalPageFrame = ({ children }) => {
   );
 }
  
-export default NormalPageFrame;
+export default BookPageFrame;

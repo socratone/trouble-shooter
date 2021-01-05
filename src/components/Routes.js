@@ -8,6 +8,7 @@ import Nav from './nav/Nav';
 import Home from './pages/Home';
 import Beginner from './pages/Beginner';
 import Troubles from './pages/Troubles';
+import Shoot from './pages/Shoot';
 import HeaderBumper from './common/HeaderBumper';
 import styles from './Routes.module.scss';
 
@@ -23,6 +24,9 @@ const Routes = () => {
           </Route>
           <Route path="/troubles">
             <Troubles />
+          </Route>
+          <Route path="/shoot/:id">
+            <Shoot />
           </Route>
           <Route path="/">
             <Home />

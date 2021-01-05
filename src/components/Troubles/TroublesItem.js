@@ -1,9 +1,15 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import styles from './TroublesItem.module.scss';
 
 const TroublesItem = ({ item }) => {
+  const history = useHistory();
+  const handleClick = () => {
+    history.push('/shoot/' + item.id);
+  }
+
   return (
-    <article className={styles.item}>
+    <article className={styles.item} onClick={handleClick}>
       <div className={styles.imageArea}>
         <div className={styles.imageWrap}>
           <div 
