@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import convertCategoryName from '../../helper/convertCategoryName';
 import NormalPageFrame from '../common/NormalPageFrame';
 import TroublesItem from '../Troubles/TroublesItem';
@@ -8,18 +9,12 @@ import ArrowIcon from '../icon/ArrowIcon';
 import Dropdown from '../common/Dropdown';
 import styles from './Troubles.module.scss';
 
-import { troublesItems } from '../../fakeData';
-
 const Troubles = () => {
   const [category, setCategory] = useState('all');
   const [clickCategory, setClickCategory] = useState(false);
   const [searchValue, setSearchValue] = useState('');
   const [query, setQuery] = useState('');
-  const [items, setItems] = useState([]);
-
-  useEffect(() => {
-    setItems(troublesItems);
-  }, []);
+  const items = useSelector(state => state.entities.troublesItems);
 
   const filterItemsByCategory = items => {
     return items.filter(item => {
