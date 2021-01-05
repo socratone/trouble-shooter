@@ -1,11 +1,14 @@
 import React from 'react';
+import PageFrame from '../common/PageFrame';
 import styles from './Home.module.scss';
 
 const Home = () => {
-  return (  
-    <main>
-      hello world
-    </main>
+  return (
+    <PageFrame>
+      <main>
+        hello world
+      </main>
+    </PageFrame>  
   );
 }
  
