@@ -1,0 +1,42 @@
+.shoot {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  overflow: hidden;
+}
+
+.leftSection {
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.title {
+  font-size: 20px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.goalTitle {
+  font-size: 16px;
+  line-height: 2;
+  // margin-bottom: 20px;
+}
+
+.goal {
+  margin-bottom: 20px;
+  line-height: 2;
+}
+
+.rightSection {
+  padding: 20px 20px 20px 0;
+  overflow-y: auto;
+}
+
+.previewTitle {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.fullCodeTitle {
+  margin: 10px 0;
+  line-height: 1.5;
+}

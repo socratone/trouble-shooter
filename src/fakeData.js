@@ -5,6 +5,92 @@ const troublesItems = [
     title: '다른 곳을 클릭 했을 때 드랍다운 메뉴를 사라지게 하는 방법',
     description: '버튼을 클릭 했을 때 드랍다운 메뉴가 나타나게 하는 것까지는 했다고 치자. 여기서 메뉴를 클릭하지 않고 다른 곳을 클릭 했을 때 드랍다운 메뉴가 사라지는 방법에 대해 다루겠다. 알고 보면 별 것 아닌데 모르면 어렵게 구현해야 한다.',
     category: 'html',
+    shoot: {
+      goal: 'blur 이벤트를 이용해서 다른 곳을 클릭할 때 드랍다운 메뉴를 사라지게 만들 수 있다.',
+      fullCodes: [
+        {
+          type: 'html',
+          value: `<div class="button-wrap">
+<button class="button">클릭</button>
+<div class="dropdown">
+  <p class="dropdown-item">서울</p>
+  <p class="dropdown-item">대전</p>
+  <p class="dropdown-item">대구</p>
+  <p class="dropdown-item">부산</p>
+</div>
+</div>`
+        },
+        {
+          type: 'js',
+          value: `const button = document.querySelector('.button');
+
+button.addEventListener('click', () => {
+  const dropDown = document.querySelector('.dropdown');
+  dropDown.style.display = 'block';
+});
+
+button.addEventListener('blur', () => {
+  const dropDown = document.querySelector('.dropdown');
+  dropDown.style.display = '';
+});`
+        },
+        {
+          type: 'css',
+          value: `body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  height: 100vh;
+}
+
+.button-wrap {
+  position: relative;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  font-size: 1rem;
+  cursor: pointer;
+  outline: none;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 30px;
+  width: 80px;
+  border: 1px solid #d0d0d0;
+  border-radius: 3px;
+}
+
+.dropdown-item {
+  margin: 10px;
+}`
+        },
+      ],
+      items: [{
+        type: 'title',
+        value: '미리 알아야 할 것들'
+      },
+      {
+        type: 'text',
+        value: '1980 년대에 남부 이탈리아의 젊은 고전가 그룹이 한 늙은 교사 주위에 모여 고전 언어의 교훈을 혁신해야 할 필요성에 대해 논의하기 시작했습니다. 전 세계의 학교와 대학에서 온 젊은이들이 라틴어와 그리스어를 공부하기 위해 수년을 보냈습니다. 우리 시대에는 거의 누구도 완전히 마스터 할 수없는 두 가지 언어입니다. 그 기간 동안 열린 토론에서 역사의 과정과 라틴어를 가르치는 기술을 분석 할 필요가 생겼습니다. 인본주의 자들은이 언어를 어떻게 배웠습니까?'
+      },
+      {
+        type: 'code',
+        value: '<p>자바스크립트</p>'
+      },
+      {
+        type: 'image',
+        value: 'https://picsum.photos/600/400',
+        width: '400px'
+      }]
+    }
   },
   {
     id: 2,
