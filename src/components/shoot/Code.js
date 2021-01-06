@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import findReservedWord from '../../helper/findReservedWord';
 import findTagWord from '../../helper/findTagWord';
 import findMethodWord from '../../helper/findMethodWord';
@@ -6,6 +6,7 @@ import findKeyWord from '../../helper/findKeyWord';
 import findQueryWord from '../../helper/findQueryWord';
 import isStructureChar from '../../helper/isStructureChar';
 import isMarkupChar from '../../helper/isMarkupChar';
+import Dropdown from '../common/Dropdown';
 import styled from 'styled-components';
 import styles from './Code.module.scss';
 
@@ -31,10 +32,6 @@ const Emerald = styled.span`
 
 const Green = styled.span`
   color: rgb(141, 200, 145);
-`;
-
-const Button = styled.button`
-  // background: red;
 `;
 
 const adoptJSColor = text => {
@@ -220,7 +217,9 @@ const adoptHTMLColor = text => {
   return texts;
 }
 
-const Code = ({ type, children }) => {
+const Code = ({ type, itemId, children }) => { // TODO: itemId를 이용한 코드 수정 기능
+  const [dropdown, setDropdown] = useState('');
+
   const setPre = () => {
     if (type === 'html')
       return <pre className={styles.code}>{adoptHTMLColor(children)}</pre>
@@ -236,13 +235,52 @@ const Code = ({ type, children }) => {
     if (type === 'css') return <p className={styles.cssTitle}>CSS</p>
   };
 
+  const removeCode = () => {
+    console.log('clicked')
+  };
+
+  const handleButtonClick = color => {
+    if (dropdown !== '') setDropdown('');
+    else setDropdown(color);
+  };
+
+  const handleButtonBlur = color => {
+    setTimeout(() => {
+      if (dropdown === color) setDropdown('');
+    }, 200);
+  }
+
   return (
     <div className={styles.codeWrap}>
       <header className={styles.header}>
         <div className={styles.buttonWrap}>
-          <button className={styles.redButton} />
-          <button className={styles.orangeButton} />
-          <button className={styles.greenButton} />
+          <button 
+            className={styles.redButton} 
+            onClick={() => handleButtonClick('red')} 
+            onBlur={() => handleButtonBlur('red')} 
+          >
+            {dropdown === 'red' && <Dropdown top="27px" left="-18.5px" width="130px">
+              <li onClick={removeCode}>전체 코드 삭제</li>
+            </Dropdown>}
+          </button>
+          <button 
+            className={styles.orangeButton} 
+            onClick={() => handleButtonClick('orange')} 
+            onBlur={() => handleButtonBlur('orange')}
+          >
+            {dropdown === 'orange' && <Dropdown top="27px" left="-18.5px" width="100px">
+              <li onClick={removeCode}>코드 저장</li>
+            </Dropdown>}
+          </button>
+          <button 
+            className={styles.greenButton} 
+            onClick={() => handleButtonClick('blue')} 
+            onBlur={() => handleButtonBlur('blue')} 
+          >
+            {dropdown === 'blue' && <Dropdown top="27px" left="-18.5px" width="100px">
+              <li onClick={removeCode}>코드 복사</li>
+            </Dropdown>}
+          </button>
         </div>
         {setTitle()}
       </header>

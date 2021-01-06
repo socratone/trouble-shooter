@@ -1,16 +1,17 @@
 import React from 'react';
 import styles from './Dropdown.module.scss';
 
-const Dropdown = ({ top, right, width, children }) => {
+const Dropdown = ({ top, left, width, children }) => {
   return (  
     <ul 
       className={styles.dropdown}
       style={{ 
         top,
-        right: right ? 0 : undefined,
+        left,
         width
       }}
     >
+      <div className={styles.after} />
       {children}
     </ul>
   );

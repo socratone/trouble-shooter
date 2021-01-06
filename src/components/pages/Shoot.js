@@ -48,7 +48,7 @@ const Shoot = () => {
         <Preview />
         <Title>Full Code</Title>
         {item && item.shoot.fullCodes.map((code, i) => 
-          <Code key={i} type={code.type}>{code.value}</Code>
+          <Code key={i} type={code.type} itemId={id}>{code.value}</Code>
         )}
       </section>
     </main>
