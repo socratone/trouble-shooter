@@ -1,18 +1,21 @@
 import React from 'react';
-import convertTextToJSX from '../../helper/convertTextToJSX';
 import styled from 'styled-components';
 
-const Wrap = styled.div`
+const Pre = styled.pre`
   padding: 16px 20px;
   background-color: #282c34; 
   color: white;
   border-radius: 10px;
   margin: 10px 0;
+  overflow: auto;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace;
+  font-size: 14px;
+  line-height: 20px;
 `;
 
 const Code = ({ children }) => {
   return (  
-    <Wrap>{convertTextToJSX(children)}</Wrap>
+    <Pre>{children}</Pre>
   );
 }
  
