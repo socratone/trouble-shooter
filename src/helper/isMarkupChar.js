@@ -1,4 +1,4 @@
-const validateMarkup = char => {
+const isMarkupChar = char => {
   if (
     char === '<' || 
     char === '>' || 
@@ -7,4 +7,4 @@ const validateMarkup = char => {
   return false;
 };
 
-export default validateMarkup;
+export default isMarkupChar;

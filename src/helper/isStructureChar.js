@@ -1,4 +1,4 @@
-const validateOperator = char => {
+const isStructureChar = char => {
   if (
     char === '(' || 
     char === ')' || 
@@ -9,4 +9,4 @@ const validateOperator = char => {
   return false;
 };
 
-export default validateOperator;
+export default isStructureChar;

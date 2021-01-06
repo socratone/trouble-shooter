@@ -4,8 +4,8 @@ import findTagWord from '../../helper/findTagWord';
 import findMethodWord from '../../helper/findMethodWord';
 import findKeyWord from '../../helper/findKeyWord';
 import findQueryWord from '../../helper/findQueryWord';
-import validateOperator from '../../helper/validateOperator';
-import validateMarkup from '../../helper/validateMarkup';
+import isStructureChar from '../../helper/isStructureChar';
+import isMarkupChar from '../../helper/isMarkupChar';
 import styled from 'styled-components';
 
 const Pre = styled.pre`
@@ -100,7 +100,7 @@ const adoptJSColor = text => {
       }
     }
 
-    if (validateOperator(text[i])) {
+    if (isStructureChar(text[i])) {
       const normalText = tempText.slice(0, -1);
       texts.push(normalText);
       texts.push(<Emerald key={i}>{text[i]}</Emerald>)
@@ -184,7 +184,7 @@ const adoptHTMLColor = text => {
     else if (text[i] === '>') isInTag = false;
 
     // <, /, >
-    if (validateMarkup(text[i])) { 
+    if (isMarkupChar(text[i])) { 
       const normalText = tempText.slice(0, -1);
       texts.push(normalText);
       texts.push(<Emerald key={i}>{text[i]}</Emerald>)
