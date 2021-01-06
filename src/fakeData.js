@@ -36,7 +36,7 @@ const troublesItems = [
           value: '<button>에 blur 이벤트를 걸어주고 이벤트 호출시 드랍다운 메뉴의 display를 none으로 바꾸면 <button>의 선택이 해제될 때 드랍다운 메뉴가 사라지게 됩니다.'
         },
         {
-          type: 'code',
+          type: 'js',
           value: `button.addEventListener('blur', () => {
   const dropDown = document.querySelector('.dropdown');
   dropDown.style.display = 'none';

@@ -30,8 +30,8 @@ const Shoot = () => {
             return <Text key={i}>{item.value}</Text>
           else if (item.type === 'list') 
             return <List key={i}>{item.value}</List>
-          else if (item.type === 'code')
-            return <Code key={i}>{item.value}</Code>
+          else if (item.type === 'js' || item.type === 'html' || item.type === 'css')
+            return <Code key={i} type={item.type}>{item.value}</Code>
           else if (item.type === 'image') 
             return <Image 
               key={i} 
@@ -45,7 +45,7 @@ const Shoot = () => {
         <Preview />
         <Title>Full Code</Title>
         {item && item.shoot.fullCodes.map((code, i) => 
-          <Code key={i}>{code.value}</Code>
+          <Code key={i} type={code.type}>{code.value}</Code>
         )}
       </section>
     </main>

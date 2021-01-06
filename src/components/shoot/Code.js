@@ -1,6 +1,6 @@
 import React from 'react';
 import findReservedWord from '../../helper/findReservedWord';
-import validateAlphabet from '../../helper/validateAlphabet';
+import findMethodWord from '../../helper/findMethodWord';
 import validateOperator from '../../helper/validateOperator';
 import styled from 'styled-components';
 
@@ -32,22 +32,7 @@ const Green = styled.span`
   color: rgb(141, 200, 145);
 `;
 
-// 앞에 공백이나 .이 나오기 전까지 문자가 나와야 한다.
-const findMethodWord = text => {
-  let methodWord = '';
-  let i = text.length - 1;
-
-  while (i >= 0) {
-    if (!validateAlphabet(text[i])) break;
-    methodWord = text[i] + methodWord;
-    i--;
-  }
-
-  if (text[i] === '.' || text[i] === ' ') return methodWord;
-  return ''
-}
-
-const adoptColor = text => {
+const adoptJSColor = text => {
   let texts = [];
   let tempText = '';
   let hasQuote = false;
@@ -91,6 +76,7 @@ const adoptColor = text => {
     // 메소드 확인
     // 뒤에 (가 나와야 한다.
     if (text[i + 1] === '(') {
+      // 앞에 공백이나 .이 나오기 전까지 문자가 나와야 한다.
       const methodWord = findMethodWord(tempText);
 
       if (methodWord.length > 0) {
@@ -116,10 +102,11 @@ const adoptColor = text => {
   return texts;
 }
 
-const Code = ({ children }) => {
-  return (  
-    <Pre>{adoptColor(children)}</Pre>
-  );
+const Code = ({ type, children }) => {
+  if (type === 'js') return <Pre>{adoptJSColor(children)}</Pre>;
+  if (type === 'html') return <Pre>{adoptJSColor(children)}</Pre>;
+  if (type === 'css') return <Pre>{adoptJSColor(children)}</Pre>;
+  return null;
 }
  
 export default Code;
