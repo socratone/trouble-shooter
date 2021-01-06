@@ -6,7 +6,7 @@
 
 .leftSection {
   padding: 20px;
-  overflow-y: auto;
+  overflow-y: scroll;
 }
 
 .title {
@@ -16,6 +16,22 @@
 }
 
 .rightSection {
-  padding: 20px 20px 20px 0;
+  padding: 20px;
   overflow-y: auto;
+}
+
+// 스크롤바
+
+.leftSection::-webkit-scrollbar, 
+.rightSection::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+.leftSection::-webkit-scrollbar-thumb,
+.rightSection::-webkit-scrollbar-thumb {
+  background: #32325029;
+
+  &:hover {
+    background: #ceced5;
+  }
 }
