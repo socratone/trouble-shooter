@@ -32,7 +32,7 @@ const Shoot = () => {
           else if (item.type === 'list') 
             return <List key={i}>{item.value}</List>
           else if (item.type === 'link') 
-            return <Link key={i}>{item.value}</Link>
+            return <Link key={i} url={item.url}>{item.value}</Link>
           else if (item.type === 'js' || item.type === 'html' || item.type === 'css')
             return <Code key={i} type={item.type}>{item.value}</Code>
           else if (item.type === 'image') 

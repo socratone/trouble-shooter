@@ -2,19 +2,27 @@ import React from 'react';
 import LinkArrowIcon from '../icon/LinkArrowIcon';
 import styles from './Link.module.scss';
 
-const Link = ({ children }) => {
+const Link = ({ url, children }) => {
   return (  
     <li className={styles.li}>
       <div className={styles.arrowWrap}>
         <div className={styles.arrow}><LinkArrowIcon size={13}/></div>
       </div>
-      <a 
-        className={styles.text} 
-        href={children}
+      {children && <a 
+        className={styles.title}
+        href={url}
         target="_blank"
         rel="noreferrer"
       >
-        {children}
+        {children + ' '}
+      </a>}
+      <a 
+        className={styles.link} 
+        href={url}
+        target="_blank"
+        rel="noreferrer"
+      >
+        {url}
       </a>
     </li>
   );

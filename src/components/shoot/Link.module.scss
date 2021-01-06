@@ -17,7 +17,12 @@
   line-height: 0.9;
 }
 
-.text {
+.title {
+  line-height: 1.5;
+  margin-right: 6px;
+}
+
+.link {
   line-height: 1.5;
   color: rgb(9, 109, 209);
   cursor: pointer;
