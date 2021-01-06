@@ -128,7 +128,7 @@ const adoptCSSColor = text => {
       if (keyWord.length > 0) {
         const normalText = tempText.slice(0, -keyWord.length);
         texts.push(normalText);
-        texts.push(<Red key={i}>{keyWord}</Red>);
+        texts.push(<Orange key={i}>{keyWord}</Orange>);
         tempText = '';
       }
       continue;
@@ -202,7 +202,7 @@ const adoptHTMLColor = text => {
       if (tagWord.length > 0) {
         const normalText = tempText.slice(0, -tagWord.length);
         texts.push(normalText);
-        texts.push(<Orange key={i}>{tagWord}</Orange>);
+        texts.push(<Red key={i}>{tagWord}</Red>);
         tempText = '';
         continue;
       }
