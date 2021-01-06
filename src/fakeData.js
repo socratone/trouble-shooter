@@ -42,13 +42,6 @@ const troublesItems = [
   dropDown.style.display = 'none';
 });`
         },
-        {
-          type: 'code',
-          value: `button.addEventListener('blur', () => {
-  const dropDown = document.querySelector('.dropdown');
-  dropDown.style.display = 'none';
-});`
-        }
       ],
       fullCodes: [
         {
