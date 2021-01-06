@@ -164,7 +164,7 @@ const adoptHTMLColor = text => {
     // 쌍따옴표 확인
     // close '
     if (hasDoubleQuote) {
-      if (text[i] === '\"') {
+      if (text[i] === '"') {
         texts.push(<Green key={i}>{tempText}</Green>);
         tempText = '';
         hasDoubleQuote = false;
@@ -173,9 +173,9 @@ const adoptHTMLColor = text => {
     } 
 
     // open '
-    if (text[i] === '\"') {
+    if (text[i] === '"') {
       texts.push(tempText.substring(0, tempText.length - 1));
-      tempText = '\"';
+      tempText = '"';
       hasDoubleQuote = true;
       continue;
     }
