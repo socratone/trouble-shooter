@@ -6,18 +6,17 @@ const troublesItems = [
     description: '버튼을 클릭 했을 때 드랍다운 메뉴가 나타나게 하는 것까지는 했다고 치자. 여기서 메뉴를 클릭하지 않고 다른 곳을 클릭 했을 때 드랍다운 메뉴가 사라지는 방법에 대해 다루겠다. 알고 보면 별 것 아닌데 모르면 어렵게 구현해야 한다.',
     category: 'html',
     shoot: {
-      goals: ['blur 이벤트를 이용해서 다른 곳을 클릭할 때 드랍다운 메뉴를 사라지게 만들 수 있다.'],
       fullCodes: [
         {
           type: 'html',
           value: `<div class="button-wrap">
-<button class="button">클릭</button>
-<div class="dropdown">
-  <p class="dropdown-item">서울</p>
-  <p class="dropdown-item">대전</p>
-  <p class="dropdown-item">대구</p>
-  <p class="dropdown-item">부산</p>
-</div>
+  <button class="button">클릭</button>
+  <div class="dropdown">
+    <p class="dropdown-item">서울</p>
+    <p class="dropdown-item">대전</p>
+    <p class="dropdown-item">대구</p>
+    <p class="dropdown-item">부산</p>
+  </div>
 </div>`
         },
         {
@@ -75,7 +74,19 @@ button.addEventListener('blur', () => {
       ],
       items: [{
         type: 'title',
+        value: '목표'
+      },
+      {
+        type: 'list',
+        value: 'blur 이벤트를 이용해서 다른 곳을 클릭할 때 드랍다운 메뉴를 사라지게 할 수 있다.' 
+      },
+      {
+        type: 'title',
         value: '미리 알아야 할 것들'
+      },
+      {
+        type: 'list',
+        value: '드랍다운 메뉴를 만드는 방법'
       },
       {
         type: 'text',

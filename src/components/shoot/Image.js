@@ -9,7 +9,7 @@ const Wrap = styled.div`
 const Img = styled.img`
   display: block;
 
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     width: 100% !important;
   }
 `;

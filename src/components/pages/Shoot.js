@@ -23,17 +23,13 @@ const Shoot = () => {
     <main className={styles.shoot}>
       <section className={styles.leftSection}>
         <h3 className={styles.title}>{item && item.title}</h3>
-        <Title>목표</Title>
-        <ul className={styles.goalListArea}>
-          {item && item.shoot.goals.map((goal, i) => 
-            <List key={i}>{goal}</List>
-          )}
-        </ul>
         {item && item.shoot.items.map((item, i) => {
           if (item.type === 'title') 
             return <Title key={i}>{item.value}</Title>
           else if (item.type === 'text') 
             return <Text key={i}>{item.value}</Text>
+          else if (item.type === 'list') 
+            return <List key={i}>{item.value}</List>
           else if (item.type === 'code')
             return <Code key={i}>{item.value}</Code>
           else if (item.type === 'image') 
