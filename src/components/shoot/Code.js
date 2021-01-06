@@ -7,18 +7,7 @@ import findQueryWord from '../../helper/findQueryWord';
 import isStructureChar from '../../helper/isStructureChar';
 import isMarkupChar from '../../helper/isMarkupChar';
 import styled from 'styled-components';
-
-const Pre = styled.pre`
-  padding: 16px 20px;
-  background-color: #282c34; 
-  color: white;
-  border-radius: 10px;
-  margin: 10px 0;
-  overflow: auto;
-  font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace;
-  font-size: 14px;
-  line-height: 20px;
-`;
+import styles from './Code.module.scss';
 
 const Purple = styled.span`
   color: rgb(197, 165, 197);
@@ -42,6 +31,10 @@ const Emerald = styled.span`
 
 const Green = styled.span`
   color: rgb(141, 200, 145);
+`;
+
+const Button = styled.button`
+  // background: red;
 `;
 
 const adoptJSColor = text => {
@@ -228,10 +221,34 @@ const adoptHTMLColor = text => {
 }
 
 const Code = ({ type, children }) => {
-  if (type === 'js') return <Pre>{adoptJSColor(children)}</Pre>;
-  if (type === 'html') return <Pre>{adoptHTMLColor(children)}</Pre>;
-  if (type === 'css') return <Pre>{adoptCSSColor(children)}</Pre>;
-  return null;
+  const setPre = () => {
+    if (type === 'html')
+      return <pre className={styles.code}>{adoptHTMLColor(children)}</pre>
+    else if (type === 'js')
+      return <pre className={styles.code}>{adoptJSColor(children)}</pre>
+    else if (type === 'css')
+      return <pre className={styles.code}>{adoptCSSColor(children)}</pre>
+  };
+
+  const setTitle = () => {
+    if (type === 'html') return <p className={styles.htmlTitle}>Html</p>
+    if (type === 'js') return <p className={styles.jsTitle}>JS</p>
+    if (type === 'css') return <p className={styles.cssTitle}>CSS</p>
+  };
+
+  return (
+    <div className={styles.codeWrap}>
+      <header className={styles.header}>
+        <div className={styles.buttonWrap}>
+          <button className={styles.redButton} />
+          <button className={styles.orangeButton} />
+          <button className={styles.greenButton} />
+        </div>
+        {setTitle()}
+      </header>
+      {setPre()}
+    </div>
+  );
 }
  
 export default Code;

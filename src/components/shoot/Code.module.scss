@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
+
+.codeWrap {
+  background-color: #282c34; 
+  border-radius: 10px;
+  margin: 10px 0;
+
+  &:hover {
+    .header {
+      display: flex;
+    }
+
+    .code {
+      padding: 0 20px 16px 20px;
+    }
+  }
+}
+
+.header {
+  display: none; 
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+}
+
+.buttonWrap {
+  padding-left: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 65px;
+}
+
+.redButton {
+  background-color: #fd5f56;
+  width: 14px;
+  height: 14px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.orangeButton {
+  background-color: #fdbe2d;
+  width: 14px;
+  height: 14px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.greenButton {
+  background-color: #26c940;
+  width: 14px;
+  height: 14px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.htmlTitle {
+  display: flex;
+  align-items: center;
+  padding-right: 20px;
+  color: #fd5f56;
+  font-size: 20px;
+  font-weight: 900;
+  font-family: 'Italianno', cursive;
+}
+
+.jsTitle {
+  display: flex;
+  align-items: center;
+  padding-right: 20px;
+  color: #fdbe2d;
+  font-size: 20px;
+  font-weight: 900;
+  font-family: 'Italianno', cursive;
+}
+
+.cssTitle {
+  display: flex;
+  align-items: center;
+  padding-right: 20px;
+  color: #2a94ff;;
+  font-size: 20px;
+  font-weight: 900;
+  font-family: 'Italianno', cursive;
+}
+
+.code {
+  margin: 0;
+  padding: 16px 20px;
+  color: white;
+  overflow: auto;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace;
+  font-size: 14px;
+  line-height: 20px;
+}
