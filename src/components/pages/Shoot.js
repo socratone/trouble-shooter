@@ -6,6 +6,7 @@ import Text from '../shoot/Text';
 import Image from '../shoot/Image';
 import Preview from '../shoot/Preview';
 import Code from '../shoot/Code';
+import List from '../shoot/List';
 import styles from './Shoot.module.scss';
 
 const Shoot = () => {
@@ -23,9 +24,11 @@ const Shoot = () => {
       <section className={styles.leftSection}>
         <h3 className={styles.title}>{item && item.title}</h3>
         <Title>목표</Title>
-        <div className={styles.goal}>
-          <p>• {item && item.shoot.goal}</p>
-        </div>
+        <ul className={styles.goalListArea}>
+          {item && item.shoot.goals.map((goal, i) => 
+            <List key={i}>{goal}</List>
+          )}
+        </ul>
         {item && item.shoot.items.map((item, i) => {
           if (item.type === 'title') 
             return <Title key={i}>{item.value}</Title>
