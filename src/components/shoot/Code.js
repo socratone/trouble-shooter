@@ -1,6 +1,8 @@
 import React from 'react';
 import findReservedWord from '../../helper/findReservedWord';
 import findMethodWord from '../../helper/findMethodWord';
+import findKeyWord from '../../helper/findKeyWord';
+import findQueryWord from '../../helper/findQueryWord';
 import validateOperator from '../../helper/validateOperator';
 import styled from 'styled-components';
 
@@ -18,6 +20,10 @@ const Pre = styled.pre`
 
 const Purple = styled.span`
   color: rgb(197, 165, 197);
+`;
+
+const Red = styled.span`
+  color: rgb(252, 146, 158);
 `;
 
 const Blue = styled.span`
@@ -100,12 +106,51 @@ const adoptJSColor = text => {
   if (tempText.length > 0) texts.push(tempText); // 마지막에
 
   return texts;
-}
+};
+
+const adoptCSSColor = text => {
+  let texts = [];
+  let tempText = '';
+
+  for (let i = 0; i < text.length; i++) {
+    tempText += text[i];
+
+    // :이 나오면 앞쪽 스트링 전부
+    if (text[i + 1] === ':') {
+      const keyWord = findKeyWord(tempText);
+
+      if (keyWord.length > 0) {
+        const normalText = tempText.slice(0, -keyWord.length);
+        texts.push(normalText);
+        texts.push(<Red key={i}>{keyWord}</Red>);
+        tempText = '';
+      }
+      continue;
+    }
+
+    // {가 나오면 앞쪽 스트링 전부
+    if (text[i + 1] === '{') {
+      const queryWord = findQueryWord(tempText);
+      console.log('queryWord:', queryWord)
+      if (queryWord.length > 0) {
+        const normalText = tempText.slice(0, -queryWord.length);
+        texts.push(normalText);
+        texts.push(<Green key={i}>{queryWord}</Green>);
+        tempText = '';
+      }
+      continue;
+    }
+  }
+
+  if (tempText.length > 0) texts.push(tempText); // 마지막에
+
+  return texts;
+};
 
 const Code = ({ type, children }) => {
   if (type === 'js') return <Pre>{adoptJSColor(children)}</Pre>;
   if (type === 'html') return <Pre>{adoptJSColor(children)}</Pre>;
-  if (type === 'css') return <Pre>{adoptJSColor(children)}</Pre>;
+  if (type === 'css') return <Pre>{adoptCSSColor(children)}</Pre>;
   return null;
 }
  
