@@ -131,7 +131,6 @@ const adoptCSSColor = text => {
     // {가 나오면 앞쪽 스트링 전부
     if (text[i + 1] === '{') {
       const queryWord = findQueryWord(tempText);
-      console.log('queryWord:', queryWord)
       if (queryWord.length > 0) {
         const normalText = tempText.slice(0, -queryWord.length);
         texts.push(normalText);
