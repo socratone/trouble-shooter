@@ -6,6 +6,43 @@ const troublesItems = [
     description: '버튼을 클릭 했을 때 드랍다운 메뉴가 나타나게 하는 것까지는 했다고 치자. 여기서 메뉴를 클릭하지 않고 다른 곳을 클릭 했을 때 드랍다운 메뉴가 사라지는 방법에 대해 다루겠다. 알고 보면 별 것 아닌데 모르면 어렵게 구현해야 한다.',
     category: 'html',
     shoot: {
+      items: [
+        {
+          type: 'title',
+          value: '목표'
+        },
+        {
+          type: 'list',
+          value: 'blur 이벤트를 이용해서 다른 곳을 클릭할 때 드랍다운 메뉴를 사라지게 할 수 있다.' 
+        },
+        {
+          type: 'title',
+          value: '선행 지식'
+        },
+        {
+          type: 'list',
+          value: '드랍다운 메뉴를 만드는 방법'
+        },
+        {
+          type: 'title',
+          value: 'Shooting'
+        },
+        {
+          type: 'text',
+          value: '버튼을 눌렀을 때 드랍다운 메뉴가 나타나도록 구현했다고 가정합시다. 아직은 다른 곳을 클릭하더라도 드랍다운 메뉴가 사라지지 않습니다. 다른 곳을 클릭했을 때 사라지게 하는 가장 간단한 방법은 blur 이벤트를 이용하는 것입니다. blur 이벤트는 <input>류의 엘리먼트만 적용 가능합니다. <button>도 blur 이벤트를 사용할 수 있습니다.'
+        },
+        {
+          type: 'text',
+          value: '<button>에 blur 이벤트를 걸어주고 이벤트 호출시 드랍다운 메뉴의 display를 none으로 바꾸면 <button>의 선택이 해제될 때 드랍다운 메뉴가 사라지게 됩니다.'
+        },
+        {
+          type: 'code',
+          value: `button.addEventListener('blur', () => {
+  const dropDown = document.querySelector('.dropdown');
+  dropDown.style.display = 'none';
+});`
+        }
+      ],
       fullCodes: [
         {
           type: 'html',
@@ -71,36 +108,7 @@ button.addEventListener('blur', () => {
   margin: 10px;
 }`
         },
-      ],
-      items: [{
-        type: 'title',
-        value: '목표'
-      },
-      {
-        type: 'list',
-        value: 'blur 이벤트를 이용해서 다른 곳을 클릭할 때 드랍다운 메뉴를 사라지게 할 수 있다.' 
-      },
-      {
-        type: 'title',
-        value: '미리 알아야 할 것들'
-      },
-      {
-        type: 'list',
-        value: '드랍다운 메뉴를 만드는 방법'
-      },
-      {
-        type: 'text',
-        value: '1980 년대에 남부 이탈리아의 젊은 고전가 그룹이 한 늙은 교사 주위에 모여 고전 언어의 교훈을 혁신해야 할 필요성에 대해 논의하기 시작했습니다. 전 세계의 학교와 대학에서 온 젊은이들이 라틴어와 그리스어를 공부하기 위해 수년을 보냈습니다. 우리 시대에는 거의 누구도 완전히 마스터 할 수없는 두 가지 언어입니다. 그 기간 동안 열린 토론에서 역사의 과정과 라틴어를 가르치는 기술을 분석 할 필요가 생겼습니다. 인본주의 자들은이 언어를 어떻게 배웠습니까?'
-      },
-      {
-        type: 'code',
-        value: '<p>자바스크립트</p>'
-      },
-      {
-        type: 'image',
-        value: 'https://picsum.photos/600/400',
-        width: '400px'
-      }]
+      ]
     }
   },
   {
