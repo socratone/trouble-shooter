@@ -206,6 +206,19 @@ const adoptHTMLColor = text => {
         tempText = '';
         continue;
       }
+
+      // 빈칸이 나오거나 =가 나오면 앞쪽 스트링 전부
+      if (text[i + 1] === ' ' || text[i + 1] === '=') {
+        const keyWord = findKeyWord(tempText);
+
+        if (keyWord.length > 0) {
+          const normalText = tempText.slice(0, -keyWord.length);
+          texts.push(normalText);
+          texts.push(<Purple key={i}>{keyWord}</Purple>);
+          tempText = '';
+        }
+        continue;
+      }
     }
   }
 
