@@ -8,7 +8,9 @@ const MenuIcon = ({ size, color }) => (
     viewBox="0 0 24 24"
     fill={color}
   >
-    <path d="M24 19h-24v-1h24v1zm0-6h-24v-1h24v1zm0-6h-24v-1h24v1z"/>
+    <path 
+      d="M24 19h-24v-1h24v1zm0-6h-24v-1h24v1zm0-6h-24v-1h24v1z"
+    />
   </svg>
 );
 
