@@ -1,9 +1,11 @@
 import React from 'react';
 import findReservedWord from '../../helper/findReservedWord';
+import findTagWord from '../../helper/findTagWord';
 import findMethodWord from '../../helper/findMethodWord';
 import findKeyWord from '../../helper/findKeyWord';
 import findQueryWord from '../../helper/findQueryWord';
 import validateOperator from '../../helper/validateOperator';
+import validateMarkup from '../../helper/validateMarkup';
 import styled from 'styled-components';
 
 const Pre = styled.pre`
@@ -24,6 +26,10 @@ const Purple = styled.span`
 
 const Red = styled.span`
   color: rgb(252, 146, 158);
+`;
+
+const Orange = styled.span`
+  color: rgb(250, 200, 99);
 `;
 
 const Blue = styled.span`
@@ -146,9 +152,71 @@ const adoptCSSColor = text => {
   return texts;
 };
 
+const adoptHTMLColor = text => {
+  let texts = [];
+  let tempText = '';
+  let hasDoubleQuote = false;
+  let isInTag = false;
+
+  for (let i = 0; i < text.length; i++) {
+    tempText += text[i];
+
+    // 쌍따옴표 확인
+    // close '
+    if (hasDoubleQuote) {
+      if (text[i] === '\"') {
+        texts.push(<Green key={i}>{tempText}</Green>);
+        tempText = '';
+        hasDoubleQuote = false;
+      } 
+      continue;
+    } 
+
+    // open '
+    if (text[i] === '\"') {
+      texts.push(tempText.substring(0, tempText.length - 1));
+      tempText = '\"';
+      hasDoubleQuote = true;
+      continue;
+    }
+
+    if (text[i] === '<') isInTag = true;
+    else if (text[i] === '>') isInTag = false;
+
+    // <, /, >
+    if (validateMarkup(text[i])) { 
+      const normalText = tempText.slice(0, -1);
+      texts.push(normalText);
+      texts.push(<Emerald key={i}>{text[i]}</Emerald>)
+      tempText = '';
+      continue;
+    }
+    
+    // tag 기호 안에 있을 때만
+    if (isInTag) {
+      const tagWord = findTagWord({ 
+        text: tempText, 
+        nextChar: text[i + 1]
+      });
+
+      if (tagWord.length > 0) {
+        const normalText = tempText.slice(0, -tagWord.length);
+        texts.push(normalText);
+        texts.push(<Orange key={i}>{tagWord}</Orange>);
+        tempText = '';
+        continue;
+      }
+    }
+  }
+
+  if (tempText.length > 0) texts.push(tempText); // 마지막에
+
+  return texts;
+}
+
 const Code = ({ type, children }) => {
   if (type === 'js') return <Pre>{adoptJSColor(children)}</Pre>;
-  if (type === 'html') return <Pre>{adoptJSColor(children)}</Pre>;
+  if (type === 'html') return <Pre>{adoptHTMLColor(children)}</Pre>;
   if (type === 'css') return <Pre>{adoptCSSColor(children)}</Pre>;
   return null;
 }
