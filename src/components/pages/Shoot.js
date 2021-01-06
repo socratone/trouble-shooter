@@ -7,6 +7,7 @@ import Image from '../shoot/Image';
 import Preview from '../shoot/Preview';
 import Code from '../shoot/Code';
 import List from '../shoot/List';
+import Link from '../shoot/Link';
 import styles from './Shoot.module.scss';
 
 const Shoot = () => {
@@ -30,6 +31,8 @@ const Shoot = () => {
             return <Text key={i}>{item.value}</Text>
           else if (item.type === 'list') 
             return <List key={i}>{item.value}</List>
+          else if (item.type === 'link') 
+            return <Link key={i}>{item.value}</Link>
           else if (item.type === 'js' || item.type === 'html' || item.type === 'css')
             return <Code key={i} type={item.type}>{item.value}</Code>
           else if (item.type === 'image') 

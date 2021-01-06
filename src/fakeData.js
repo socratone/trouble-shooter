@@ -42,6 +42,14 @@ const troublesItems = [
   dropDown.style.display = 'none';
 });`
         },
+        {
+          type: 'title',
+          value: '참고'
+        },
+        {
+          type: 'link',
+          value: 'https://youtu.be/X0bf0hfE3qA'
+        },
       ],
       fullCodes: [
         {
