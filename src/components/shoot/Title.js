@@ -1,9 +1,10 @@
 import styled, { css } from 'styled-components';
 
 const Title = styled.h3`
-  font-size: 20px;
   margin: 2rem 0 1rem 0;
-  line-height: 1.5;
+  font-weight: 600;
+  font-size: 1.25em;
+  line-height: 1.3;
   
   ${props => props.main && css`
     font-size: 2.25rem;

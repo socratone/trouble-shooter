@@ -15,15 +15,10 @@
   line-height: 1.5;
 }
 
-.goalTitle {
-  font-size: 16px;
-  line-height: 2;
-  // margin-bottom: 20px;
-}
-
 .goal {
   margin-bottom: 20px;
-  line-height: 2;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 .rightSection {
@@ -33,10 +28,14 @@
 
 .previewTitle {
   margin-bottom: 10px;
-  line-height: 1.5;
+  font-weight: 600;
+  font-size: 1.25em;
+  line-height: 1.3;
 }
 
 .fullCodeTitle {
   margin: 10px 0;
-  line-height: 1.5;
+  font-weight: 600;
+  font-size: 1.25em;
+  line-height: 1.3;
 }

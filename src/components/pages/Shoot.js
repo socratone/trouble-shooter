@@ -22,9 +22,9 @@ const Shoot = () => {
     <main className={styles.shoot}>
       <section className={styles.leftSection}>
         <h3 className={styles.title}>{item && item.title}</h3>
-        <h3 className={styles.goalTitle}>목표</h3>
+        <Title>목표</Title>
         <div className={styles.goal}>
-          <p>{item && item.shoot.goal}</p>
+          <p>• {item && item.shoot.goal}</p>
         </div>
         {item && item.shoot.items.map((item, i) => {
           if (item.type === 'title') 
