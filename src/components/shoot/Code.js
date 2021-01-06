@@ -1,6 +1,7 @@
 import React from 'react';
 import findReservedWord from '../../helper/findReservedWord';
 import validateAlphabet from '../../helper/validateAlphabet';
+import validateOperator from '../../helper/validateOperator';
 import styled from 'styled-components';
 
 const Pre = styled.pre`
@@ -21,6 +22,10 @@ const Purple = styled.span`
 
 const Blue = styled.span`
   color: rgb(121, 182, 242);
+`;
+
+const Emerald = styled.span`
+  color: rgb(136, 198, 190);
 `;
 
 const Green = styled.span`
@@ -96,9 +101,17 @@ const adoptColor = text => {
         continue;
       }
     }
+
+    if (validateOperator(text[i])) {
+      const normalText = tempText.slice(0, -1);
+      texts.push(normalText);
+      texts.push(<Emerald key={i}>{text[i]}</Emerald>)
+      tempText = '';
+      continue;
+    }
   }
 
-  if (tempText.length > 0) texts.push(tempText);
+  if (tempText.length > 0) texts.push(tempText); // 마지막에
 
   return texts;
 }
