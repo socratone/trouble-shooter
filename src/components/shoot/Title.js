@@ -6,10 +6,8 @@ const Title = styled.h3`
   font-size: 1.25em;
   line-height: 1.3;
   
-  ${props => props.main && css`
-    font-size: 2.25rem;
-    font-weight: 700;
-    margin: 0 0 3rem 0;
+  ${props => props.head && css`
+    margin: 0 0 1rem 0;
   `}
     
     ${props => props.sub && css`

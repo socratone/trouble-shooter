@@ -45,9 +45,9 @@ const Shoot = () => {
         })}
       </section>
       <section className={styles.rightSection}>
-        <h3 className={styles.previewTitle}>Preview</h3>
+        <Title head>Preview</Title>
         <Preview />
-        <h3 className={styles.fullCodeTitle}>Full Code</h3>
+        <Title>Full Code</Title>
         {item && item.shoot.fullCodes.map((code, i) => 
           <Code key={i}>{code.value}</Code>
         )}
