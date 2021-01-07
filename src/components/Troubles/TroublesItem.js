@@ -16,7 +16,7 @@ const TroublesItem = ({ item }) => {
             <div className={styles.imageCover} />
             <div 
               className={styles.image} 
-              style={{ backgroundImage: `url('${item.image}')` }} 
+              style={{ backgroundImage: `url('${item.thumbnail}')` }} 
             />
           </div>
         </div>
