@@ -17,7 +17,7 @@ const Nav = () => {
             <LogoIcon size="30" color="#fdc073" />
           </NavItem>
           <NavItem to="/" margin="0 10px" line={false}>
-            TROUBLE SHOOTER
+            <p style={{ color: '#fdc073'}}>TROUBLE SHOOTER</p>
           </NavItem>
         </ul>
         <ul className={styles.itemWrap}>
