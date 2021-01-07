@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 import Title from '../shoot/Title';
 import Text from '../shoot/Text';
 import Image from '../shoot/Image';
@@ -11,17 +10,18 @@ import Link from '../shoot/Link';
 import ResizeIcon from '../icon/ResizeIcon';
 import styles from './Shoot.module.scss';
 
+import { troublesItems } from '../../fakeData';
+
 const Shoot = () => {
   const [item, setItem] = useState(null);
   const { id } = useParams();
-  const items = useSelector(state => state.entities.troublesItems);
   const [leftWidthRate, setLeftWidthRate] = useState(60); // %
   const [isMouseDown, setMouseDown] = useState(false);
 
   useEffect(() => {
-    const [item] = items.filter(item => item.id === Number(id));
+    const [item] = troublesItems.filter(item => item.id === Number(id));
     setItem(item);
-  }, [items]);
+  }, []);
 
   const handleResizerMouseDown = () => {
     setMouseDown(true);
