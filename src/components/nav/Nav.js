@@ -1,6 +1,7 @@
 import React from 'react';
-import LogoIcon from '../icon/LogoIcon';
+
 import NavItem from './NavItem';
+import Logo from './Logo';
 import MenuButton from './MenuButton';
 import RightNav from './RightNav';
 import styles from './Nav.module.scss';
@@ -12,14 +13,9 @@ const Nav = () => {
   return (  
     <header className={styles.wrap}>
       <nav className={styles.nav}>
-        <ul className={styles.homeWrap}>
-          <NavItem to="/" margin="0" line={false}>
-            <LogoIcon size="30" color="#fdc073" />
-          </NavItem>
-          <NavItem to="/" margin="0 10px" line={false}>
-            <p style={{ color: '#fdc073'}}>TROUBLE SHOOTER</p>
-          </NavItem>
-        </ul>
+        <div className={styles.homeWrap}>
+          <Logo />
+        </div>
         <ul className={styles.itemWrap}>
           <NavItem to="/beginner">
             Beginner

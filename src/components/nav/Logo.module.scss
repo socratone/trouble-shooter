@@ -1,0 +1,22 @@
+.wrap {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover {
+    .logo {
+      transform: rotate(30deg);
+    }
+  }
+}
+
+.logo {
+  margin-right: 10px;
+  height: 30px;
+  transform: rotate(0deg);
+  transition: transform 0.4s;
+
+  &:hover {
+    transform: rotate(30deg);
+  }
+}
