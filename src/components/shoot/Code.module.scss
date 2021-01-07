@@ -8,7 +8,8 @@
 
   &:hover {
     .header {
-      display: flex;
+      height: 40px;
+      transform: translateY(0px);
     }
 
     .code {
@@ -18,10 +19,12 @@
 }
 
 .header {
-  display: none; 
+  display: flex; 
   justify-content: space-between;
   align-items: center;
-  height: 40px;
+  height: 0px;
+  transform: translateY(-40px);
+  transition: height 0.2s, transform 0.2s;
 }
 
 .buttonWrap {
@@ -91,6 +94,7 @@
 .code {
   margin: 0;
   padding: 16px 20px;
+  transition: padding 0.2s;
   color: white;
   overflow: auto;
   font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace;
