@@ -8,7 +8,7 @@ const BottomLine = styled.div`
   bottom: 0;
   width: 100%;
   height: ${props => props.height};
-  background: #fd9460;
+  background: #fdc073;
 `;
 
 const NavItem = ({ to, margin, line = true, children }) => {
@@ -27,7 +27,7 @@ const NavItem = ({ to, margin, line = true, children }) => {
 
   const setFontColor = () => {
     if (location.pathname.includes(to) && line) {
-      return { color: '#fd9460' };
+      return { color: '#fdc073' };
     } else {
       return { color: '' }
     }
