@@ -7,6 +7,12 @@
   border-radius: 3px;
   border: 1px solid #00000020;
   box-sizing: border-box;
+
+  &:hover {
+    .image {
+      transform: scale(1.1);
+    }
+  }
 }
 
 .imageArea {
@@ -17,6 +23,7 @@
   position: relative; /* absolute는 부모가 relative일 때 부모를 따라간다. */
   width: 100%;
   padding-bottom: 56.25%; /* 비율 */
+  overflow: hidden;
 }
 
 .imageCover {
@@ -33,6 +40,7 @@
   height: 100%;
   background-size: cover;
   background-position: center center;
+  transition: transform 0.5s;
 }
 
 .textArea {
@@ -42,3 +50,14 @@
 .title {
   font-size: 15px;
 }
+
+// position: absolute;
+//   top: -9999px;
+//   left: 100%;
+//   margin: 0;
+//   /* box-shadow: 0 2px 35px rgba(0,0,0,0.1); */
+//   z-index: 1000;
+//   visibility: hidden;
+//   opacity: 0;
+//   transition: transform .2s ease-out;
+//   transform: translate3d(0, -10px, 0);
