@@ -4,6 +4,7 @@
   background-color: #282c34; 
   border-radius: 10px;
   margin: 10px 0;
+  overflow: hidden;
 
   &:hover {
     .header {
@@ -95,4 +96,19 @@
   font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace;
   font-size: 14px;
   line-height: 20px;
+}
+
+// 스크롤바
+
+.code::-webkit-scrollbar {
+  height: 0.5rem;
+  background: #353b45;
+}
+
+.code::-webkit-scrollbar-thumb {
+  background: #4b5462;
+
+  &:hover {
+    background: #657185;
+  }
 }
