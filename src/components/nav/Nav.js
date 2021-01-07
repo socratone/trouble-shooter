@@ -12,9 +12,12 @@ const Nav = () => {
   return (  
     <header className={styles.wrap}>
       <nav className={styles.nav}>
-        <ul className={styles.logoWrap}>
-          <NavItem to="/" margin={0}>
-            <LogoIcon size="28" color="white" />
+        <ul className={styles.homeWrap}>
+          <NavItem to="/" margin="0">
+            <LogoIcon size="30" color="white" />
+          </NavItem>
+          <NavItem to="/" margin="0 10px">
+            TROUBLE SHOOTER
           </NavItem>
         </ul>
         <ul className={styles.itemWrap}>
