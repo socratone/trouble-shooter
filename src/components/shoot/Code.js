@@ -259,8 +259,8 @@ const Code = ({ type, itemId, children }) => { // TODO: itemId를 이용한 코�
             onClick={() => handleButtonClick('red')} 
             onBlur={() => handleButtonBlur('red')} 
           >
-            {dropdown === 'red' && <Dropdown top="27px" left="-18.5px" width="130px">
-              <li onClick={removeCode}>전체 코드 삭제</li>
+            {dropdown === 'red' && <Dropdown top="27px" left="-18.5px">
+              <li onClick={removeCode}>Preview에 적용</li>
             </Dropdown>}
           </button>
           <button 
@@ -268,8 +268,8 @@ const Code = ({ type, itemId, children }) => { // TODO: itemId를 이용한 코�
             onClick={() => handleButtonClick('orange')} 
             onBlur={() => handleButtonBlur('orange')}
           >
-            {dropdown === 'orange' && <Dropdown top="27px" left="-18.5px" width="100px">
-              <li onClick={removeCode}>코드 저장</li>
+            {dropdown === 'orange' && <Dropdown top="27px" left="-18.5px">
+              <li onClick={removeCode}>파일로 저장</li>
             </Dropdown>}
           </button>
           <button 
@@ -277,8 +277,8 @@ const Code = ({ type, itemId, children }) => { // TODO: itemId를 이용한 코�
             onClick={() => handleButtonClick('blue')} 
             onBlur={() => handleButtonBlur('blue')} 
           >
-            {dropdown === 'blue' && <Dropdown top="27px" left="-18.5px" width="100px">
-              <li onClick={removeCode}>코드 복사</li>
+            {dropdown === 'blue' && <Dropdown top="27px" left="-18.5px">
+              <li onClick={removeCode}>클립보드에 복사</li>
             </Dropdown>}
           </button>
         </div>

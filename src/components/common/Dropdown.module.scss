@@ -2,7 +2,6 @@ $background-color: #ecececea;
 
 .dropdown {
   position: absolute;
-  flex-direction: column;
   border-radius: 5px;
   background-color: $background-color;
   z-index: 10;
@@ -13,6 +12,7 @@ $background-color: #ecececea;
     margin: 10px 20px;
     font-size: 15px;
     text-align: start;
+    white-space: nowrap;
   }
 }
 
