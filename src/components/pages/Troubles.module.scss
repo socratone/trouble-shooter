@@ -1,14 +1,18 @@
 .header {
-  margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .categoryWrap {
   position: relative;
+  margin-right: 10px;
+  margin-bottom: 20px;
 }
 
 .searchWrap {
+  display: flex;
+  margin-bottom: 20px;
 }
 
 .grid {
