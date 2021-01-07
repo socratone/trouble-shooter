@@ -9,24 +9,21 @@ const TroublesItem = ({ item }) => {
   }
 
   return (
-    <article className={styles.item} onClick={handleClick}>
-      <div className={styles.imageArea}>
-        <div className={styles.imageWrap}>
-          <div 
-            className={styles.image} 
-            style={{ backgroundImage: `url('${item.image}')` }} 
-          />
+    <div>
+      <article className={styles.item} onClick={handleClick}>
+        <div className={styles.imageArea}>
+          <div className={styles.imageWrap}>
+            <div 
+              className={styles.image} 
+              style={{ backgroundImage: `url('${item.image}')` }} 
+            />
+          </div>
         </div>
-      </div>
-      <div className={styles.textArea}>
-        <div className={styles.titleWrap}>
-          <h4 className={styles.title}>{item.title}</h4>
+        <div className={styles.textArea}>
+          <p className={styles.title}>{item.title}</p>
         </div>
-        <div className={styles.descriptionWrap}>
-          <p className={styles.description}>{item.description}</p>
-        </div>
-      </div>
-    </article>
+      </article>
+    </div>
   );
 }
  

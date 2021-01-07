@@ -1,20 +1,22 @@
 .item {
   display: flex;
+  flex-direction: column;
   cursor: pointer;
-  height: 100px;
   overflow: hidden;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, .05);
+  border-radius: 3px;
+  border: 1px solid #00000020;
+  box-sizing: border-box;
 }
 
 .imageArea {
-  width: 100px;
-  height: 100px;
-  flex-shrink: 0;
+
 }
 
 .imageWrap {
   position: relative; /* absolute는 부모가 relative일 때 부모를 따라간다. */
   width: 100%;
-  padding-bottom: 100%; /* 비율 */
+  padding-bottom: 56.25%; /* 비율 */
 }
 
 .image {
@@ -26,15 +28,9 @@
 }
 
 .textArea {
-  width: 100%;
-  padding-left: 20px;
-  box-sizing: border-box;
+  padding: 10px;
 }
 
-.titleWrap {
-  margin-bottom: 10px;
-}
-
-.description {
-  line-height: 1.5;
+.title {
+  font-size: 15px;
 }
