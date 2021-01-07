@@ -4,11 +4,12 @@ import styles from './Home.module.scss';
 
 const Home = () => {
   return (
-    <NormalPageFrame>
-      <main>
-        hello world
+    // <NormalPageFrame>
+      <main className={styles.home}>
+        <header className={styles.header}></header>
+        <section></section>
       </main>
-    </NormalPageFrame>  
+    // </NormalPageFrame>  
   );
 }
  
