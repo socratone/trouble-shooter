@@ -1,18 +1,44 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
+import styled from 'styled-components';
 import styles from './NavItem.module.scss';
 
-const NavItem = ({ to, margin, children }) => {
+const BottomLine = styled.div`
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: ${props => props.height};
+  background: #fd9460;
+`;
+
+const NavItem = ({ to, margin, line = true, children }) => {
   const history = useHistory();
+  const location = useLocation();
+
   const handleClick = () => {
     history.push(to);
   };
 
+  const showBottomLine = () => {
+    if (location.pathname.includes(to) && line) {
+      return <BottomLine height="3px" />
+    }
+  }
+
+  const setFontColor = () => {
+    if (location.pathname.includes(to) && line) {
+      return { color: '#fd9460' };
+    } else {
+      return { color: '' }
+    }
+  }
+
   return (  
     <li className={styles.wrap} style={{ margin }} onClick={handleClick}>
-      <p className={styles.item} href="#" >
+      <p className={styles.item} style={setFontColor()} href="#" >
         {children}
-      </p>   
+      </p>
+      {showBottomLine()}
     </li>
   );
 }

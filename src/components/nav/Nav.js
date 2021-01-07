@@ -13,10 +13,10 @@ const Nav = () => {
     <header className={styles.wrap}>
       <nav className={styles.nav}>
         <ul className={styles.homeWrap}>
-          <NavItem to="/" margin="0">
+          <NavItem to="/" margin="0" line={false}>
             <LogoIcon size="30" color="white" />
           </NavItem>
-          <NavItem to="/" margin="0 10px">
+          <NavItem to="/" margin="0 10px" line={false}>
             TROUBLE SHOOTER
           </NavItem>
         </ul>
