@@ -14,7 +14,7 @@ const Nav = () => {
       <nav className={styles.nav}>
         <ul className={styles.homeWrap}>
           <NavItem to="/" margin="0" line={false}>
-            <LogoIcon size="30" color="white" />
+            <LogoIcon size="30" color="#fdc073" />
           </NavItem>
           <NavItem to="/" margin="0 10px" line={false}>
             TROUBLE SHOOTER
