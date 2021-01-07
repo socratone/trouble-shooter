@@ -1,14 +1,15 @@
 import styled, { css } from 'styled-components';
 
 const Button = styled.button`
+  background: #f5f5f5;
+  color: #373636;
   display: inline-block;
   cursor: pointer;
-  color: black;
-  background: #f5f5f5;
-  border-radius: 3px;
-  padding: 1rem 1.5rem;
-  font-weight: 700;
+  height: 40px;
+  border-radius: 20px;
+  padding: 0 20px;
   font-size: 14px;
+  font-weight: 700;
 
   margin: ${props => props.margin};
 

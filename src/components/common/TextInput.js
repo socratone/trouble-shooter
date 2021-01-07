@@ -5,7 +5,8 @@ const TextInput = styled.input`
   background: white;
   border-radius: 3px;
   border: gainsboro solid 1px;
-  padding: 1rem;
+  height: 40px;
+  padding: 10px;
   font-size: 14px;
   outline: none;
   box-sizing: border-box;

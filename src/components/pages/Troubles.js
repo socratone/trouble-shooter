@@ -66,7 +66,7 @@ const Troubles = () => {
             <Button onClick={toggleCategory} onBlur={handleCategoryBlur}>
               {convertCategoryName(category)} <ArrowIcon size="10" />
             </Button>
-            {clickCategory && <Dropdown top="60px">
+            {clickCategory && <Dropdown top="52px">
               <li onClick={() => selectCategory('all')}>전체</li>
               <li onClick={() => selectCategory('js')}>JavaScript</li>
               <li onClick={() => selectCategory('css')}>CSS</li>
