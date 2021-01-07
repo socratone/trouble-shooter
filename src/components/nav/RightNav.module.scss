@@ -7,14 +7,29 @@
   height: 100vh;
   display: grid;
   grid-template-columns: 1fr 240px;
+
+  animation: fadein 0.2s;
+  animation-fill-mode: forwards;
 }
 
 .margin {
-  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .nav {
   padding: 22px 20px;
   background-color: white;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0), 0 6px 6px rgba(0, 0, 0, 0.05);
+
+  animation: slide 0.2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadein {
+  from {background-color: #00000000;}
+  to {background-color: #0000001a;}
+}
+
+@keyframes slide {
+  from {transform: translateX(240px);}
+  to {transform: translateX(0px);}
 }
