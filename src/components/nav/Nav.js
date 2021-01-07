@@ -1,5 +1,4 @@
 import React from 'react';
-
 import NavItem from './NavItem';
 import Logo from './Logo';
 import MenuButton from './MenuButton';
