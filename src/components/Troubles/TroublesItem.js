@@ -13,6 +13,7 @@ const TroublesItem = ({ item }) => {
       <article className={styles.item} onClick={handleClick}>
         <div className={styles.imageArea}>
           <div className={styles.imageWrap}>
+            <div className={styles.imageCover} />
             <div 
               className={styles.image} 
               style={{ backgroundImage: `url('${item.image}')` }} 
