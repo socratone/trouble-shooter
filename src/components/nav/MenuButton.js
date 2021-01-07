@@ -13,7 +13,7 @@ const MenuButton = () => {
 
   return (  
     <button onClick={handleClick} className={styles.button}>
-      <MenuIcon size="20" color="white" />
+      <MenuIcon size="18" color="white" />
     </button>
   );
 }
