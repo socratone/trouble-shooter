@@ -65,14 +65,10 @@ const Shoot = () => {
               align={item.align} />
         })}
       </section>
-      <div className={styles.divider}
+      <div className={styles.resizer}
         onMouseDown={handleResizerMouseDown}
       >
-        <div className={styles.resizerWrap}>
-          <div className={styles.resizer}>
-            <ResizeIcon size="50" color="#ceced5" />
-          </div>
-        </div>
+        <ResizeIcon width="10px" height="50px" color="#ceced5" />
       </div>
       <section 
         className={styles.rightSection} 

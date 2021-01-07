@@ -1,16 +1,30 @@
 import React from 'react';
+import styled from 'styled-components';
 
-const ResizeIcon = ({ size, color }) => (  
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    width={size} 
-    height={size} 
-    viewBox="0 0 24 24"
-  >
-    <path style={{ fill: color }} d="M11.7,24V0h0.7v24H11.7z"/>
-    <path style={{ fill: color }} d="M13.7,24V0h0.7v24H13.7z"/>
-    <path style={{ fill: color }} d="M9.7,24V0h0.7v24H9.7z"/>
-  </svg>
+const LineWrap = styled.div`
+  display: flex;
+  width: ${props => props.width};
+  height: ${props => props.height};
+`;
+
+const Line = styled.div`
+  width: 20%;
+  background: 'back';
+  background: ${props => props.color};
+`;
+
+const Margin = styled.div`
+  width: 20%;
+`;
+
+const ResizeIcon = ({ width, height, color }) => (  
+  <LineWrap width={width} height={height}>
+    <Line color={color} />
+    <Margin />
+    <Line color={color} />
+    <Margin />
+    <Line color={color} />
+  </LineWrap>
 );
 
 export default ResizeIcon;
