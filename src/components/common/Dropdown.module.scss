@@ -21,12 +21,11 @@ $arrow-height: 10px;
 .after {
   top: -($arrow-height);
   left: 16px;
-  z-index: 11;
+  z-index: 10;
   position: absolute;
   width: 0;
   height: 0;
   border-left: $arrow-height solid transparent;
   border-right: $arrow-height solid transparent;
-
   border-bottom: $arrow-height solid $background-color;
 }
