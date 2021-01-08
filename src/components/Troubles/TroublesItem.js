@@ -28,7 +28,7 @@ const TroublesItem = ({ item }) => {
           </div>
         </div>
         <div className={styles.textArea}>
-          <Stack item={item} margin="0 10px 0 0" />
+          <Stack item={item} margin="0 8px 0 0" />
           <p className={styles.title}>{item.title}</p>
         </div>
       </article>
