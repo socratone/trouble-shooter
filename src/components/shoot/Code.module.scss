@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
 
 .codeWrap {
-  background: linear-gradient(0deg,#414141 0,#373636);
+  background: #414141;
   border-radius: 10px;
   margin: 10px 0;
   overflow: hidden;
@@ -100,6 +100,7 @@
   font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace;
   font-size: 14px;
   line-height: 20px;
+  outline: none;
 }
 
 // 스크롤바
