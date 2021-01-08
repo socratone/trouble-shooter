@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { setPreviewCode } from '../../store/reducers/previewCode';
 import Title from '../shoot/Title';
 import Text from '../shoot/Text';
 import Image from '../shoot/Image';
 import Preview from '../shoot/Preview';
 import Code from '../shoot/Code';
+import PreviewCode from '../shoot/PreviewCode';
 import List from '../shoot/List';
 import Link from '../shoot/Link';
 import ResizeIcon from '../icon/ResizeIcon';
@@ -15,14 +18,20 @@ import { troublesItems } from '../../fakeData';
 const Shoot = () => {
   const { id } = useParams();
   const [data, setData] = useState(null);
-  const [previewCode, setPreviewCode] = useState(null); // { html, css, js } 
   const [leftWidthRate, setLeftWidthRate] = useState(60); // %
   const [isMouseDown, setMouseDown] = useState(false);
+  const previewCode = useSelector(state => state.entities.previewCode);
+  const dispatch = useDispatch();
 
   useEffect(() => {
+    // TODO: get api
     const [data] = troublesItems.filter(item => item.id === Number(id));
     setData(data);
-    setPreviewCode(data.shoot.previewCode);
+    dispatch(setPreviewCode({
+      html: data.shoot.previewCode.html,
+      css: data.shoot.previewCode.css,
+      js: data.shoot.previewCode.js
+    }));
   }, []);
 
   const handleResizerMouseDown = () => {
@@ -55,12 +64,6 @@ const Shoot = () => {
       return <Image key={key} src={item.value} width={item.width} align={item.align} />
   };
 
-  const showFullCodes = () => ([
-    <Code key="html" type="html" fullCode>{previewCode.html}</Code>,
-    <Code key="css" type="css" fullCode>{previewCode.css}</Code>,
-    <Code key="js" type="js" fullCode>{previewCode.js}</Code>,
-  ]);
-
   return (  
     <main 
       className={styles.shoot} 
@@ -83,7 +86,9 @@ const Shoot = () => {
         <Title head>Preview</Title>
         <Preview code={previewCode} />
         <Title>Full Codes</Title>
-        {previewCode && showFullCodes()}
+        {previewCode.html && <PreviewCode key="html" type="html" />}
+        {previewCode.css && <PreviewCode key="css" type="css" />}
+        {previewCode.js && <PreviewCode key="js" type="js" />}
       </section>
     </main>
   );

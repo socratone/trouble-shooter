@@ -4,7 +4,6 @@ import styles from './Preview.module.scss';
 const Preview = ({ code }) => {
   // TODO: validateCode
   const setCode = () => {
-    if (!code || !code.html || !code.css || !code.js) return null;
     return `
       <!DOCTYPE html>
       <html lang="ko">
@@ -21,6 +20,8 @@ const Preview = ({ code }) => {
       </html>
     `;
   };
+
+  if (!code || !code.html || !code.css || !code.js) return null 
 
   return (  
     <div className={styles.wrap}>
