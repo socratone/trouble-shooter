@@ -21,6 +21,7 @@ const Troubles = () => {
 
   const dispatch = useDispatch();
   useEffect(() => {
+    // TODO: get api
     dispatch(setTroublesItems(troublesItems));
   }, []);
 
