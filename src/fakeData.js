@@ -143,7 +143,7 @@ button.addEventListener('blur', () => {
   },
   {
     id: 5,
-    thumbnail: 'https://4matt.com.br/wp-content/uploads/2020/04/Amazon-S3.jpg',
+    thumbnail: 'https://i.ytimg.com/vi/AP4JWtzIAt0/maxresdefault.jpg',
     title: '웹 앱에서 AWS S3에 파일 올리는 방법',
     description: 'AWS의 콘솔에서 S3에 파일을 직접 올리는 방법도 있지만 앱에서 사용자가 파일을 올릴 수 있게 하려면 web에서 javascript 코드를 이용해 파일을 올리는 방법을 알아야 한다.',
     category: 's3'

@@ -20,7 +20,6 @@ const TroublesItem = ({ item }) => {
       <article className={styles.item} onClick={handleClick}>
         <div className={styles.imageArea}>
           <div className={styles.imageWrap}>
-            <Stack item={item} />
             <div className={styles.imageCover} />
             <div 
               className={styles.image} 
@@ -29,6 +28,7 @@ const TroublesItem = ({ item }) => {
           </div>
         </div>
         <div className={styles.textArea}>
+          <Stack item={item} margin="0 10px 0 0" />
           <p className={styles.title}>{item.title}</p>
         </div>
       </article>
