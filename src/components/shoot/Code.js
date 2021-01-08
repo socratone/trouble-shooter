@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import Dropdown from '../common/Dropdown';
-import styles from './Code.module.scss';
 import adoptJSColor from '../../helper/adoptJSColor';
 import adoptCSSColor from '../../helper/adoptCSSColor';
 import adoptHTMLColor from '../../helper/adoptHTMLColor';
+import styles from './Code.module.scss';
 
 const Code = ({ type, fullCode, children }) => {
   const [dropdown, setDropdown] = useState('');
