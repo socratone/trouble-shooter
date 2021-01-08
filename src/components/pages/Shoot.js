@@ -14,15 +14,15 @@ import { troublesItems } from '../../fakeData';
 
 const Shoot = () => {
   const { id } = useParams();
-  const [item, setItem] = useState(null);
+  const [data, setData] = useState(null);
   const [previewCode, setPreviewCode] = useState(null); // { html, css, js } 
   const [leftWidthRate, setLeftWidthRate] = useState(60); // %
   const [isMouseDown, setMouseDown] = useState(false);
 
   useEffect(() => {
-    const [item] = troublesItems.filter(item => item.id === Number(id));
-    setItem(item);
-    setPreviewCode(item.shoot.previewCode);
+    const [data] = troublesItems.filter(item => item.id === Number(id));
+    setData(data);
+    setPreviewCode(data.shoot.previewCode);
   }, []);
 
   const handleResizerMouseDown = () => {
@@ -68,8 +68,8 @@ const Shoot = () => {
       onMouseMove={(e) => handleMouseMove(e)}
     >
       <section className={styles.leftSection} style={{ width: `${leftWidthRate}%`}}>
-        <h3 className={styles.title}>{item && item.title}</h3>
-        {item && item.shoot.items.map((item, i) => setShootItem(item, i))}
+        <h3 className={styles.title}>{data && data.title}</h3>
+        {data && data.shoot.items.map((item, i) => setShootItem(item, i))}
       </section>
       <div className={styles.resizer}
         onMouseDown={handleResizerMouseDown}
@@ -83,7 +83,7 @@ const Shoot = () => {
         <Title head>Preview</Title>
         <Preview code={previewCode} />
         <Title>Full Codes</Title>
-        {item && showFullCodes()}
+        {previewCode && showFullCodes()}
       </section>
     </main>
   );
