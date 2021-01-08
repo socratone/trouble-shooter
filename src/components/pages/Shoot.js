@@ -13,14 +13,16 @@ import styles from './Shoot.module.scss';
 import { troublesItems } from '../../fakeData';
 
 const Shoot = () => {
-  const [item, setItem] = useState(null);
   const { id } = useParams();
+  const [item, setItem] = useState(null);
+  const [previewCode, setPreviewCode] = useState(null); // { html, css, js } 
   const [leftWidthRate, setLeftWidthRate] = useState(60); // %
   const [isMouseDown, setMouseDown] = useState(false);
 
   useEffect(() => {
     const [item] = troublesItems.filter(item => item.id === Number(id));
     setItem(item);
+    setPreviewCode(item.shoot.previewCode);
   }, []);
 
   const handleResizerMouseDown = () => {
@@ -53,6 +55,12 @@ const Shoot = () => {
       return <Image key={key} src={item.value} width={item.width} align={item.align} />
   };
 
+  const showFullCodes = () => ([
+    <Code key="html" type="html">{previewCode.html}</Code>,
+    <Code key="css" type="css">{previewCode.css}</Code>,
+    <Code key="js" type="js">{previewCode.js}</Code>,
+  ]);
+
   return (  
     <main 
       className={styles.shoot} 
@@ -73,11 +81,9 @@ const Shoot = () => {
         style={{ width: `${100 - leftWidthRate}%`}}
       >
         <Title head>Preview</Title>
-        <Preview />
-        <Title>Full Code</Title>
-        {item && item.shoot.fullCodes.map((code, i) => 
-          <Code key={i} type={code.type} itemId={id}>{code.value}</Code>
-        )}
+        <Preview code={previewCode} />
+        <Title>Full Codes</Title>
+        {item && showFullCodes()}
       </section>
     </main>
   );

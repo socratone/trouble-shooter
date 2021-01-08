@@ -217,7 +217,7 @@ const adoptHTMLColor = text => {
   return texts;
 }
 
-const Code = ({ type, itemId, children }) => { // TODO: itemId를 이용한 코드 수정 기능
+const Code = ({ type, children }) => {
   const [dropdown, setDropdown] = useState('');
 
   const setPre = () => {

@@ -52,10 +52,8 @@ const troublesItems = [
           url: 'https://youtu.be/X0bf0hfE3qA'
         },
       ],
-      fullCodes: [
-        {
-          type: 'html',
-          value: `<div class="button-wrap">
+      previewCode: {
+        html: `<div class="button-wrap">
   <button class="button">클릭</button>
   <div class="dropdown">
     <p class="dropdown-item">서울</p>
@@ -63,11 +61,8 @@ const troublesItems = [
     <p class="dropdown-item">대구</p>
     <p class="dropdown-item">부산</p>
   </div>
-</div>`
-        },
-        {
-          type: 'js',
-          value: `const button = document.querySelector('.button');
+</div>`,
+        js: `const button = document.querySelector('.button');
 
 button.addEventListener('click', () => {
   const dropDown = document.querySelector('.dropdown');
@@ -77,11 +72,8 @@ button.addEventListener('click', () => {
 button.addEventListener('blur', () => {
   const dropDown = document.querySelector('.dropdown');
   dropDown.style.display = '';
-});`
-        },
-        {
-          type: 'css',
-          value: `body {
+});`,
+        css: `body {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -116,8 +108,7 @@ button.addEventListener('blur', () => {
 .dropdown-item {
   margin: 10px;
 }`
-        },
-      ]
+      }
     }
   },
   {
