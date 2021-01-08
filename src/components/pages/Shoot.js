@@ -38,6 +38,21 @@ const Shoot = () => {
     setLeftWidthRate(rate.toFixed(2))
   };
 
+  const setShootItem = (item, key) => {
+    if (item.type === 'title') 
+      return <Title key={key}>{item.value}</Title>
+    else if (item.type === 'text') 
+      return <Text key={key}>{item.value}</Text>
+    else if (item.type === 'list') 
+      return <List key={key}>{item.value}</List>
+    else if (item.type === 'link') 
+      return <Link key={key} url={item.url}>{item.value}</Link>
+    else if (item.type === 'js' || item.type === 'html' || item.type === 'css')
+      return <Code key={key} type={item.type}>{item.value}</Code>
+    else if (item.type === 'image') 
+      return <Image key={key} src={item.value} width={item.width} align={item.align} />
+  };
+
   return (  
     <main 
       className={styles.shoot} 
@@ -46,24 +61,7 @@ const Shoot = () => {
     >
       <section className={styles.leftSection} style={{ width: `${leftWidthRate}%`}}>
         <h3 className={styles.title}>{item && item.title}</h3>
-        {item && item.shoot.items.map((item, i) => {
-          if (item.type === 'title') 
-            return <Title key={i}>{item.value}</Title>
-          else if (item.type === 'text') 
-            return <Text key={i}>{item.value}</Text>
-          else if (item.type === 'list') 
-            return <List key={i}>{item.value}</List>
-          else if (item.type === 'link') 
-            return <Link key={i} url={item.url}>{item.value}</Link>
-          else if (item.type === 'js' || item.type === 'html' || item.type === 'css')
-            return <Code key={i} type={item.type}>{item.value}</Code>
-          else if (item.type === 'image') 
-            return <Image 
-              key={i} 
-              src={item.value} 
-              width={item.width} 
-              align={item.align} />
-        })}
+        {item && item.shoot.items.map((item, i) => setShootItem(item, i))}
       </section>
       <div className={styles.resizer}
         onMouseDown={handleResizerMouseDown}
