@@ -30,8 +30,6 @@
 .buttonWrap {
   padding-left: 20px;
   display: flex;
-  justify-content: space-between;
-  width: 65px;
 }
 
 .redButton {
@@ -41,6 +39,7 @@
   height: 14px;
   border-radius: 7px;
   cursor: pointer;
+  margin-right: 10px;
 }
 
 .orangeButton {
@@ -50,6 +49,7 @@
   height: 14px;
   border-radius: 7px;
   cursor: pointer;
+  margin-right: 10px;
 }
 
 .greenButton {

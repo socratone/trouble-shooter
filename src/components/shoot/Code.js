@@ -217,7 +217,7 @@ const adoptHTMLColor = text => {
   return texts;
 }
 
-const Code = ({ type, children }) => {
+const Code = ({ type, fullCode, children }) => {
   const [dropdown, setDropdown] = useState('');
 
   const setPre = () => {
@@ -260,7 +260,7 @@ const Code = ({ type, children }) => {
             onBlur={() => handleButtonBlur('red')} 
           >
             {dropdown === 'red' && <Dropdown top="27px" left="-18.5px">
-              <li onClick={removeCode}>Preview에 적용</li>
+              <li onClick={removeCode}>클립보드에 복사</li>
             </Dropdown>}
           </button>
           <button 
@@ -272,15 +272,15 @@ const Code = ({ type, children }) => {
               <li onClick={removeCode}>파일로 저장</li>
             </Dropdown>}
           </button>
-          <button 
+          {fullCode && <button 
             className={styles.greenButton} 
             onClick={() => handleButtonClick('blue')} 
             onBlur={() => handleButtonBlur('blue')} 
           >
             {dropdown === 'blue' && <Dropdown top="27px" left="-18.5px">
-              <li onClick={removeCode}>클립보드에 복사</li>
+              <li onClick={removeCode}>Preview에 적용</li>
             </Dropdown>}
-          </button>
+          </button>}
         </div>
         {setTitle()}
       </header>

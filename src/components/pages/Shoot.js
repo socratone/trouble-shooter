@@ -56,9 +56,9 @@ const Shoot = () => {
   };
 
   const showFullCodes = () => ([
-    <Code key="html" type="html">{previewCode.html}</Code>,
-    <Code key="css" type="css">{previewCode.css}</Code>,
-    <Code key="js" type="js">{previewCode.js}</Code>,
+    <Code key="html" type="html" fullCode>{previewCode.html}</Code>,
+    <Code key="css" type="css" fullCode>{previewCode.css}</Code>,
+    <Code key="js" type="js" fullCode>{previewCode.js}</Code>,
   ]);
 
   return (  
