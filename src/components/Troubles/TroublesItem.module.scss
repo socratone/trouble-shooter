@@ -3,18 +3,16 @@
   flex-direction: column;
   cursor: pointer;
   overflow: hidden;
-  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, .05);
   border-radius: 3px;
   border: 1px solid #00000020;
   box-sizing: border-box;
-  transition: box-shadow 0.5s;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, .05);
+  transition: box-shadow 0.3s, transform 0.3s;
+  border-radius: 10px;
   
   &:hover {
     box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.15);
-
-    .image {
-      transform: scale(1.05);
-    }
+    transform: scale(1.2);
   }
 }
 
@@ -43,12 +41,12 @@
   height: 100%;
   background-size: cover;
   background-position: center center;
-  transition: transform 0.5s;
 }
 
 .textArea {
   padding: 10px;
   display: flex;
+  background-color: white;
 }
 
 .title {
