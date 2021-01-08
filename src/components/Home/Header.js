@@ -24,7 +24,7 @@ const Header = () => {
           자바스크립트로 세상의 모든 문제를 해결하자!
         </p>
         <p className={styles.text} style={{ marginBottom: '10px' }}>
-          다양한 문제 해결 방법들을 Simple하게 정리했습니다..
+          다양한 문제 해결 방법들을 Simple하게 정리했습니다.
         </p>
         <p className={styles.text}>
           빠른 시간에 원하는 코드를 찾아 쓸 수 있게 합니다.
