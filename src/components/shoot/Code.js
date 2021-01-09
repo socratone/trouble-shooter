@@ -10,11 +10,11 @@ const Code = ({ type, fullCode, children }) => {
 
   const setPre = () => {
     if (type === 'html')
-      return <pre className={styles.code} contentEditable>{adoptHTMLColor(children)}</pre>
+      return <pre className={styles.code}>{adoptHTMLColor(children)}</pre>
     else if (type === 'js')
-      return <pre className={styles.code} contentEditable>{adoptJSColor(children)}</pre>
+      return <pre className={styles.code}>{adoptJSColor(children)}</pre>
     else if (type === 'css')
-      return <pre className={styles.code} contentEditable>{adoptCSSColor(children)}</pre>
+      return <pre className={styles.code}>{adoptCSSColor(children)}</pre>
   };
 
   const setTitle = () => {
