@@ -28,7 +28,7 @@ const Pre = ({ type, setCurrentCode }) => {
       className={styles.code} 
       onKeyUp={handleKeyUp} 
       contentEditable
-      suppressContentEditableWarning={true}
+      suppressContentEditableWarning
     >
       {type === 'html' && adoptHTMLColor(initialCode)}
       {type === 'css' && adoptCSSColor(initialCode)}
