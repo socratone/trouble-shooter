@@ -40,9 +40,9 @@
 
 .leftSection::-webkit-scrollbar-thumb,
 .rightSection::-webkit-scrollbar-thumb {
-  background: #32325029;
+  background: var(--scrollbar-color);
 
   &:hover {
-    background: #ceced5;
+    background: var(--scrollbar-hover-color);
   }
 }

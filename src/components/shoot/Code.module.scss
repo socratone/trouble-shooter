@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
 
 .codeWrap {
-  background: #414141;
+  background: var(--code-background-color);
   border-radius: 10px;
   margin: 10px 0;
   overflow: hidden;
@@ -34,7 +34,7 @@
 
 .redButton {
   position: relative;
-  background-color: #fd5f56;
+  background-color: var(--button-red-color);
   width: 14px;
   height: 14px;
   border-radius: 7px;
@@ -44,7 +44,7 @@
 
 .orangeButton {
   position: relative;
-  background-color: #fdbe2d;
+  background-color: var(--button-orange-color);
   width: 14px;
   height: 14px;
   border-radius: 7px;
@@ -54,7 +54,7 @@
 
 .greenButton {
   position: relative;
-  background-color: #26c940;
+  background-color: var(--button-green-color);
   width: 14px;
   height: 14px;
   border-radius: 7px;
@@ -65,7 +65,7 @@
   display: flex;
   align-items: center;
   padding-right: 20px;
-  color: #fd5f56;
+  color: var(--button-red-color);
   font-size: 20px;
   font-weight: 900;
   font-family: 'Italianno', cursive;
@@ -75,7 +75,7 @@
   display: flex;
   align-items: center;
   padding-right: 20px;
-  color: #fdbe2d;
+  color: var(--button-orange-color);
   font-size: 20px;
   font-weight: 900;
   font-family: 'Italianno', cursive;
@@ -85,7 +85,7 @@
   display: flex;
   align-items: center;
   padding-right: 20px;
-  color: #2a94ff;;
+  color: var(--button-blue-color);
   font-size: 20px;
   font-weight: 900;
   font-family: 'Italianno', cursive;
@@ -95,7 +95,7 @@
   margin: 0;
   padding: 16px 20px;
   transition: padding 0.2s;
-  color: white;
+  color: var(--code-font-color);
   overflow: auto;
   font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace;
   font-size: 14px;
@@ -107,13 +107,13 @@
 
 .code::-webkit-scrollbar {
   height: 0.5rem;
-  background: #353b45;
+  background: transparent;
 }
 
 .code::-webkit-scrollbar-thumb {
-  background: #4b5462;
+  background: var(--code-scrollbar-color);
 
   &:hover {
-    background: #657185;
+    background: var(--code-scrollbar-hover-color);
   }
 }
