@@ -13,8 +13,10 @@
   --green-button-color: #26c940;
   --green-button-border-color: #11ad3b;
   --blue-button-color: #2a94ff;
-  --code-font-color: white;
+  --code-header-color: #4b4b4b;
+  --code-header-font-color: #a1a1a1;
   --code-background-color: #414141;
+  --code-font-color: white;
   --code-scrollbar-color: #5e5c5c;
   --code-scrollbar-hover-color: #777474;
 }
