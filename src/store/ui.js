@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 import nav from './reducers/nav';
-// import pages from './pages';
+import preview from './reducers/preview';
 
 export default combineReducers({
   nav,
-  // pages
+  preview
 });

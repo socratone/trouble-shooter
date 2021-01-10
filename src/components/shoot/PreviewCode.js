@@ -1,13 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setPreviewCode } from '../../store/reducers/previewCode';
+import { setIndicator } from '../../store/reducers/preview';
 import adoptJSColor from '../../helper/adoptJSColor';
 import adoptCSSColor from '../../helper/adoptCSSColor';
 import adoptHTMLColor from '../../helper/adoptHTMLColor';
 import CopyIcon from '../icon/CopyIcon';
 import styles from './Code.module.scss';
 
-const SAVE_INTERVAL = 2000;
+const SAVE_INTERVAL = 1000;
 let codeTimer;
 let clipboardTimer;
 
@@ -78,10 +79,12 @@ const PreviewCode = ({ type }) => {
   };
 
   const handleCodeKeyUp = code => {
+    dispatch(setIndicator({ isIndicator: true }));
     setCurrentCode(code);
     clearTimeout(codeTimer);
     codeTimer = setTimeout(() => {
       applyCodeToPreview(code);
+      dispatch(setIndicator({ isIndicator: false }));
     }, SAVE_INTERVAL);
   };
 

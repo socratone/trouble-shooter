@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setIndicator } from '../../store/reducers/preview';
+import SynchroIndicator from '../common/SynchroIndicator';
 import styles from './Preview.module.scss';
 
 const Preview = ({ code }) => {
-  // TODO: validateCode
+  const isIndicator = useSelector(state => state.ui.preview.isIndicator);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    return () => dispatch(setIndicator({ isIndicator: false }));
+  }, [])
+
   const setCode = () => {
     return `
       <!DOCTYPE html>
@@ -25,6 +34,7 @@ const Preview = ({ code }) => {
 
   return (  
     <div className={styles.wrap}>
+      {isIndicator && <SynchroIndicator size="30" />}
       <iframe className={styles.iframe} srcDoc={setCode()} />
     </div>
   );
