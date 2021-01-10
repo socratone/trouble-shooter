@@ -8,15 +8,16 @@ import CopyIcon from '../icon/CopyIcon';
 import styles from './Code.module.scss';
 
 const SAVE_INTERVAL = 2000;
+let codeTimer;
+let clipboardTimer;
 
-let timer;
 const Pre = ({ type, handleKeyUp }) => {
   const pre = useRef(null);
   const previewCode = useSelector(state => state.entities.previewCode);
   const [initialCode, setInitialCode] = useState('');
 
   useEffect(() => {
-    if (type === 'html') setInitialCode(previewCode.html);
+    if (type === 'html') setInitialCode(previewCode.html); 
     else if (type === 'css') setInitialCode(previewCode.css);
     else if (type === 'js') setInitialCode(previewCode.js);
   }, []);
@@ -37,7 +38,16 @@ const Pre = ({ type, handleKeyUp }) => {
 }
 
 const PreviewCode = ({ type }) => {
+  const [currentCode, setCurrentCode] = useState('');
+  const [message, setMessage] = useState('');
+  const previewCode = useSelector(state => state.entities.previewCode);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (type === 'html') setCurrentCode(previewCode.html);
+    else if (type === 'css') setCurrentCode(previewCode.css);
+    else if (type === 'js') setCurrentCode(previewCode.js);
+  }, []);
 
   const showTitle = () => {
     if (type === 'html') return <p className={styles.title}>HTML</p>
@@ -45,8 +55,22 @@ const PreviewCode = ({ type }) => {
     if (type === 'js') return <p className={styles.title}>JavaScript</p>
   };
 
+  const showMessage = () => {
+    return <p className={styles.message}>{message}</p>
+  };
+
   const copyCodeToClipboard = () => {
-    console.log('clicked')
+    navigator.clipboard.writeText(currentCode).then(() => {
+      setMessage('');
+      clearTimeout(clipboardTimer);
+      setMessage('clipboard에 복사했습니다.');
+      clipboardTimer = setTimeout(() => setMessage(''), 2000);
+    }, () => {
+      setMessage('');
+      clearTimeout(clipboardTimer);
+      setMessage('다시 시도해주세요.');
+      setTimeout(() => setMessage(''), 2000);
+    });
   };
 
   const applyCodeToPreview = code => {
@@ -54,8 +78,9 @@ const PreviewCode = ({ type }) => {
   };
 
   const handleCodeKeyUp = code => {
-    clearTimeout(timer);
-    timer = setTimeout(() => {
+    setCurrentCode(code);
+    clearTimeout(codeTimer);
+    codeTimer = setTimeout(() => {
       applyCodeToPreview(code);
     }, SAVE_INTERVAL);
   };
@@ -64,6 +89,7 @@ const PreviewCode = ({ type }) => {
     <div className={styles.codeWrap}>
       <header className={styles.header}>
         {showTitle()}
+        {message && showMessage()}
         <p className={styles.copy} onClick={copyCodeToClipboard}>
           <CopyIcon size="12" />
         </p>
