@@ -7,7 +7,10 @@ import adoptCSSColor from '../../helper/adoptCSSColor';
 import adoptHTMLColor from '../../helper/adoptHTMLColor';
 import styles from './Code.module.scss';
 
-const Pre = ({ type, setCurrentCode }) => {
+const SAVE_INTERVAL = 2000;
+
+let timer;
+const Pre = ({ type, handleKeyUp }) => {
   const pre = useRef(null);
   const previewCode = useSelector(state => state.entities.previewCode);
   const [initialCode, setInitialCode] = useState('');
@@ -18,15 +21,11 @@ const Pre = ({ type, setCurrentCode }) => {
     else if (type === 'js') setInitialCode(previewCode.js);
   }, []);
 
-  const handleKeyUp = () => {
-    setCurrentCode(pre.current.textContent);
-  };
-
   return (  
     <pre 
       ref={pre}
       className={styles.code} 
-      onKeyUp={handleKeyUp} 
+      onKeyUp={() => handleKeyUp(pre.current.textContent)} 
       contentEditable
       suppressContentEditableWarning
     >
@@ -39,7 +38,6 @@ const Pre = ({ type, setCurrentCode }) => {
 
 const PreviewCode = ({ type }) => {
   const [dropdown, setDropdown] = useState('');
-  const [currentCode, setCurrentCode] = useState('');
   const dispatch = useDispatch();
 
   const showTitle = () => {
@@ -56,12 +54,10 @@ const PreviewCode = ({ type }) => {
     console.log('clicked')
   };
 
-  const applyCodeToPreview = () => {
-    if (currentCode) {
-      dispatch(setPreviewCode({
-        [type]: currentCode
-      }));
-    }
+  const applyCodeToPreview = code => {
+    dispatch(setPreviewCode({
+      [type]: code
+    }));
   };
 
   const handleButtonClick = color => {
@@ -73,7 +69,14 @@ const PreviewCode = ({ type }) => {
     setTimeout(() => {
       if (dropdown === color) setDropdown('');
     }, 200);
-  }
+  };
+
+  const handleCodeKeyUp = code => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      applyCodeToPreview(code);
+    }, SAVE_INTERVAL);
+  };
 
   return (
     <div className={styles.codeWrap}>
@@ -109,7 +112,7 @@ const PreviewCode = ({ type }) => {
         </div>
         {showTitle()}
       </header>
-      <Pre type={type} setCurrentCode={setCurrentCode} />
+      <Pre type={type} handleKeyUp={handleCodeKeyUp} />
     </div>
   );
 }
