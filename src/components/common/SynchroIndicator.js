@@ -9,7 +9,7 @@ const Wrap = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1;
+  z-index: 2;
   background: rgba(0, 0, 0, 0.05);
   box-sizing: border-box;
 `;

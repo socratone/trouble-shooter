@@ -4,6 +4,17 @@
   padding-bottom: 56.25%; /* 16:9 비율 */
 }
 
+.fullScreenButton {
+  position: absolute;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1;
+  cursor: pointer;
+}
+
 .iframe {
   position: absolute;
   box-sizing: border-box;

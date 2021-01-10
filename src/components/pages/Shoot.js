@@ -21,6 +21,7 @@ const Shoot = () => {
   const [leftWidthRate, setLeftWidthRate] = useState(60); // %
   const [isMouseDown, setMouseDown] = useState(false);
   const previewCode = useSelector(state => state.entities.previewCode);
+  const isFullScreen = useSelector(state => state.ui.preview.isFullScreen);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -71,8 +72,11 @@ const Shoot = () => {
       onMouseMove={(e) => handleMouseMove(e)}
     >
       <section className={styles.leftSection} style={{ width: `${leftWidthRate}%`}}>
-        <h3 className={styles.title}>{data && data.title}</h3>
-        {data && data.shoot.items.map((item, i) => setShootItem(item, i))}
+        {!isFullScreen && <h3 className={styles.title}>{data && data.title}</h3>}
+        {!isFullScreen && data && 
+          data.shoot.items.map((item, i) => setShootItem(item, i))}
+        {isFullScreen && <Title head>Preview</Title>}
+        {isFullScreen && <Preview code={previewCode} />}
       </section>
       <div className={styles.resizer}
         onMouseDown={handleResizerMouseDown}
@@ -83,9 +87,10 @@ const Shoot = () => {
         className={styles.rightSection} 
         style={{ width: `${100 - leftWidthRate}%`}}
       >
-        <Title head>Preview</Title>
-        <Preview code={previewCode} />
-        <Title>Full Codes</Title>
+        {!isFullScreen && <Title head>Preview</Title>}
+        {!isFullScreen && <Preview code={previewCode} />}
+        {!isFullScreen && <Title>Full Codes</Title>}
+        {isFullScreen && <Title head>Full Codes</Title>}
         {previewCode.html && <PreviewCode key="html" type="html" />}
         {previewCode.css && <PreviewCode key="css" type="css" />}
         {previewCode.js && <PreviewCode key="js" type="js" />}
