@@ -6,11 +6,11 @@
   --nav-font-color: white;
   --button-color: #cfcfcf;
   --button-border-color: #b0b0b0;
-  --code-header-color: #4b4b4b;
+  --code-header-color: transparent;
   --code-header-font-color: #a1a1a1;
   --code-background-color: #414141;
   --code-font-color: white;
-  --code-scrollbar-color: #5e5c5c;
+  --code-scrollbar-color: #5f5f5f;
   --code-scrollbar-hover-color: #777474;
 }
 
