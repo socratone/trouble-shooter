@@ -32,40 +32,11 @@
   display: flex;
 }
 
-.redButton {
-  position: relative;
-  background-color: var(--button-red-color);
-  width: 14px;
-  height: 14px;
-  border-radius: 7px;
-  cursor: pointer;
-  margin-right: 10px;
-}
-
-.orangeButton {
-  position: relative;
-  background-color: var(--button-orange-color);
-  width: 14px;
-  height: 14px;
-  border-radius: 7px;
-  cursor: pointer;
-  margin-right: 10px;
-}
-
-.greenButton {
-  position: relative;
-  background-color: var(--button-green-color);
-  width: 14px;
-  height: 14px;
-  border-radius: 7px;
-  cursor: pointer;
-}
-
 .htmlTitle {
   display: flex;
   align-items: center;
   padding-right: 20px;
-  color: var(--button-red-color);
+  color: var(--red-button-color);
   font-size: 20px;
   font-weight: 900;
   font-family: 'Italianno', cursive;
@@ -75,7 +46,7 @@
   display: flex;
   align-items: center;
   padding-right: 20px;
-  color: var(--button-orange-color);
+  color: var(--orange-button-color);
   font-size: 20px;
   font-weight: 900;
   font-family: 'Italianno', cursive;
@@ -85,7 +56,7 @@
   display: flex;
   align-items: center;
   padding-right: 20px;
-  color: var(--button-blue-color);
+  color: var(--blue-button-color);
   font-size: 20px;
   font-weight: 900;
   font-family: 'Italianno', cursive;

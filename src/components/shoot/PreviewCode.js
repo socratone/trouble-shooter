@@ -5,6 +5,7 @@ import Dropdown from '../common/Dropdown';
 import adoptJSColor from '../../helper/adoptJSColor';
 import adoptCSSColor from '../../helper/adoptCSSColor';
 import adoptHTMLColor from '../../helper/adoptHTMLColor';
+import CircleButton from '../common/CircleButton';
 import styles from './Code.module.scss';
 
 const SAVE_INTERVAL = 2000;
@@ -82,33 +83,21 @@ const PreviewCode = ({ type }) => {
     <div className={styles.codeWrap}>
       <header className={styles.header}>
         <div className={styles.buttonWrap}>
-          <button 
-            className={styles.redButton} 
+          <CircleButton 
+            red
             onClick={() => handleButtonClick('red')} 
-            onBlur={() => handleButtonBlur('red')} 
-          >
-            {dropdown === 'red' && <Dropdown top="27px" left="-18.5px">
-              <li onClick={copyCodeToClipboard}>클립보드에 복사</li>
-            </Dropdown>}
-          </button>
-          <button 
-            className={styles.orangeButton} 
+            onBlur={() => handleButtonBlur('red')} >
+              {dropdown === 'red' && <Dropdown top="27px" left="-18.5px">
+                <li onClick={copyCodeToClipboard}>클립보드에 복사</li>
+              </Dropdown>}
+          </CircleButton>
+          <CircleButton 
             onClick={() => handleButtonClick('orange')} 
-            onBlur={() => handleButtonBlur('orange')}
-          >
-            {dropdown === 'orange' && <Dropdown top="27px" left="-18.5px">
-              <li onClick={saveCodeAsFile}>파일로 저장</li>
-            </Dropdown>}
-          </button>
-          <button 
-            className={styles.greenButton} 
+            onBlur={() => handleButtonBlur('orange')} />
+          <CircleButton 
+            green
             onClick={() => handleButtonClick('blue')} 
-            onBlur={() => handleButtonBlur('blue')} 
-          >
-            {dropdown === 'blue' && <Dropdown top="27px" left="-18.5px">
-              <li onClick={applyCodeToPreview}>Preview에 적용</li>
-            </Dropdown>}
-          </button>
+            onBlur={() => handleButtonBlur('blue')} />
         </div>
         {showTitle()}
       </header>
