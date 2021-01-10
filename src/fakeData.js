@@ -55,12 +55,12 @@ const troublesItems = [
       previewCode: {
         html: `<div class="button-wrap">
   <button class="button">클릭</button>
-  <div class="dropdown">
-    <p class="dropdown-item">서울</p>
-    <p class="dropdown-item">대전</p>
-    <p class="dropdown-item">대구</p>
-    <p class="dropdown-item">부산</p>
-  </div>
+  <ul class="dropdown">
+    <li class="dropdown-item">서울</li>
+    <li class="dropdown-item">대전</li>
+    <li class="dropdown-item">대구</li>
+    <li class="dropdown-item">부산</li>
+  </ul>
 </div>`,
         js: `const button = document.querySelector('.button');
 
@@ -76,9 +76,8 @@ button.addEventListener('blur', () => {
         css: `body {
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin: 0;
   height: 100vh;
+  margin: 0;
 }
 
 .button-wrap {
@@ -88,25 +87,27 @@ button.addEventListener('blur', () => {
 .button {
   display: flex;
   align-items: center;
-  background-color: transparent;
-  border: 0;
-  padding: 0;
-  font-size: 1rem;
-  cursor: pointer;
-  outline: none;
 }
 
 .dropdown {
   display: none;
   position: absolute;
   top: 30px;
-  width: 80px;
   border: 1px solid #d0d0d0;
   border-radius: 3px;
+  margin: 0;
+  padding: 4px 0;
 }
 
 .dropdown-item {
-  margin: 10px;
+  white-space: nowrap;
+  cursor: default;
+  list-style: none;
+  padding: 3px 20px;
+}
+
+.dropdown-item:hover {
+  background: skyblue;
 }`
       }
     }
