@@ -1,19 +1,24 @@
 $background-color: #ecececea;
 
 .dropdown {
+  padding: 4px 0;
   position: absolute;
   border-radius: 5px;
   background-color: $background-color;
-  z-index: 10;
+  z-index: 100;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.10), 0 10px 10px rgba(0,0,0,0.10);
   transition: top 0.3s;
+  cursor: default;
 
   li {
-    cursor: pointer;
-    margin: 10px 20px;
-    font-size: 15px;
+    padding: 3px 20px;
+    font-size: 14px;
     text-align: start;
     white-space: nowrap;
+
+    &:hover {
+      background: #ceced5;
+    }
   }
 }
 
