@@ -27,7 +27,7 @@ const Pre = ({ type, handleKeyUp }) => {
     <pre 
       ref={pre}
       className={styles.code} 
-      onKeyUp={() => handleKeyUp(pre.current.textContent)} 
+      onKeyUp={() => handleKeyUp(pre.current)} 
       contentEditable
       suppressContentEditableWarning
     >
@@ -78,13 +78,70 @@ const PreviewCode = ({ type }) => {
     dispatch(setPreviewCode({ [type]: code }));
   };
 
-  const handleCodeKeyUp = code => {
+  const getCursorLocatedNode = () => {
+    const selection = document.getSelection();
+    const nodeName = selection.anchorNode.parentElement.nodeName;
+    if (nodeName === 'SPAN') return selection.anchorNode.parentElement; // SPAN
+    return selection.anchorNode; // textNode
+  }
+  
+  const getCursorLocatedNodeIndex = element => {
+    const cursorLocatedNode = getCursorLocatedNode();
+    for (let i = 0; i < element.childNodes.length; i++) {
+      if (element.childNodes[i] === cursorLocatedNode) {
+        return i;
+      }
+    }
+  }
+
+  // const getTextsUpToCurrentPosition = (element, nodeIndex, charPosition) => {
+  //   let text = '';
+  //   for (let i = 0; i < nodeIndex; i++) {
+  //     const node = element.childNodes[i];
+  //     if (node.nodeType === 1) { // element
+  //       text += node.textContent;
+  //     } else if (node.nodeType === 3 && node.nodeValue) { // textNode
+  //       text += node.nodeValue;
+  //     }
+  //   }
+
+  //   const lastNode = element.childNodes[nodeIndex];
+  //   let lastText = '';
+  //   if (lastNode.nodeType === 1) {
+  //     lastText = lastNode.textContent.substring(0, charPosition)
+  //   } else if (lastNode.nodeType === 3 && lastNode.nodeValue) {
+  //     lastText = lastNode.nodeValue;
+  //   }
+  //   return text + lastText;
+  // }
+
+  const setCursor = (element, nodeIndex, charPosition) => {
+    const range = document.createRange();
+    const selection = window.getSelection();
+
+    const node = element.childNodes[nodeIndex];
+    if (node.nodeType === 1) {
+      range.setStart(node.childNodes[0], charPosition)
+    } else if (node.nodeType === 3) {
+      range.setStart(node, charPosition)
+    }
+    
+    selection.removeAllRanges()
+    selection.addRange(range)
+  }
+
+  const handleCodeKeyUp = (pre, e) => {
     dispatch(setIndicator({ isIndicator: true }));
-    setCurrentCode(code);
+    setCurrentCode(pre.textContent);
     clearTimeout(codeTimer);
     codeTimer = setTimeout(() => {
-      applyCodeToPreview(code);
+      const nodeIndex = getCursorLocatedNodeIndex(pre);
+      const charPosition = window.getSelection().getRangeAt(0).endOffset;
+
+      applyCodeToPreview(pre.textContent);
       dispatch(setIndicator({ isIndicator: false }));
+      
+      setCursor(pre, nodeIndex, charPosition)
     }, SAVE_INTERVAL);
   };
 
