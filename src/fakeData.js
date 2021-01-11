@@ -115,67 +115,78 @@ button.addEventListener('blur', () => {
     id: 2,
     thumbnail: '',
     title: 'Styled Components의 단점',
-    description: '스타일 컴포넌트를 이용하면 css class의 이름 중복 걱정을 하지 않아도 된다는 장점이 있다. 그러나 이는 css 모듈을 사용해도 마찬가지고 다음 열거할 몇 가지 단점 때문에 필자는 스타일 컴포넌트 보다는 css 모듈을 사용한다. 그러나 이는 css 모듈을 사용해도 마찬가지고 다음 열거할 몇 가지 단점 때문에 필자는 스타일 컴포넌트 보다는 css 모듈을 사용한다.',
-    category: 'css'
+    category: 'css',
+    createdAt: '2021-04-01',
   },
   {
     id: 3,
     thumbnail: '',
     title: 'AWS EC2를 이용해서 백엔드 api 서버 만들기',
-    description: '요즘에는 정적 인터넷 웹페이지를 S3에 올리고 EC2를 백엔드 api로 활용하는 방식을 많이 쓰는 것 같다. 별도의 자동화 툴 없이도 S3에 변화된 내용을 바로 적용할 수 있어 개발하기 좋다.',
-    category: 'js'
+    category: 'js',
+    createdAt: '2021-04-01',
   },
   {
     id: 4,
     thumbnail: '',
     title: 'AWS EC2에 MySQL, NodeJS 설치하기',
-    description: '우선 EC2를 생성하고 터미널로 pem 키를 이용해서 EC2의 ubuntu 컴퓨터 접속까지 성공해야 한다.',
-    category: 'nodejs'
+    category: 'nodejs',
+    createdAt: '2021-04-01',
   },
   {
     id: 5,
     thumbnail: 'https://i.ytimg.com/vi/AP4JWtzIAt0/maxresdefault.jpg',
     title: '웹 앱에서 AWS S3에 파일 올리는 방법',
-    description: 'AWS의 콘솔에서 S3에 파일을 직접 올리는 방법도 있지만 앱에서 사용자가 파일을 올릴 수 있게 하려면 web에서 javascript 코드를 이용해 파일을 올리는 방법을 알아야 한다.',
-    category: 's3'
+    category: 's3',
+    createdAt: '2021-04-01',
   },
   {
     id: 6,
     thumbnail: '',
     title: '다른 곳을 클릭 했을 때 드롭다운 메뉴를 사라지게 하는 방법',
-    description: '버튼을 클릭 했을 때 드롭다운 메뉴가 나타나게 하는 것까지는 했다고 치자. 여기서 메뉴를 클릭하지 않고 다른 곳을 클릭 했을 때 드롭다운 메뉴가 사라지는 방법에 대해 다루겠다. 알고 보면 별 것 아닌데 모르면 어렵게 구현해야 한다.',
-    category: 'html'
+    category: 'html',
+    createdAt: '2021-04-01',
   },
   {
     id: 7,
     thumbnail: 'https://repository-images.githubusercontent.com/65794292/bdacfa80-6132-11e9-90b9-33e6eee04d1f',
     title: 'Styled Components의 단점',
-    description: '스타일 컴포넌트를 이용하면 css class의 이름 중복 걱정을 하지 않아도 된다는 장점이 있다. 그러나 이는 css 모듈을 사용해도 마찬가지고 다음 열거할 몇 가지 단점 때문에 필자는 스타일 컴포넌트 보다는 css 모듈을 사용한다. 그러나 이는 css 모듈을 사용해도 마찬가지고 다음 열거할 몇 가지 단점 때문에 필자는 스타일 컴포넌트 보다는 css 모듈을 사용한다.',
-    category: 'css'
+    category: 'css',
+    createdAt: '2021-04-01',
   },
   {
     id: 8,
     thumbnail: '',
     title: 'AWS EC2를 이용해서 백엔드 api 서버 만들기',
-    description: '요즘에는 정적 인터넷 웹페이지를 S3에 올리고 EC2를 백엔드 api로 활용하는 방식을 많이 쓰는 것 같다. 별도의 자동화 툴 없이도 S3에 변화된 내용을 바로 적용할 수 있어 개발하기 좋다.',
-    category: 'ec2'
+    category: 'ec2',
+    createdAt: '2021-04-01',
   },
   {
     id: 9,
     thumbnail: '',
     title: 'AWS EC2에 MySQL, NodeJS 설치하기',
-    description: '우선 EC2를 생성하고 터미널로 pem 키를 이용해서 EC2의 ubuntu 컴퓨터 접속까지 성공해야 한다.',
-    category: 'nodejs'
+    category: 'nodejs',
+    createdAt: '2021-04-01',
   },
   {
     id: 10,
     thumbnail: '',
     title: '웹 앱에서 AWS S3에 파일 올리는 방법',
-    description: 'AWS의 콘솔에서 S3에 파일을 직접 올리는 방법도 있지만 앱에서 사용자가 파일을 올릴 수 있게 하려면 web에서 javascript 코드를 이용해 파일을 올리는 방법을 알아야 한다.',
-    category: 's3'
+    category: 's3',
+    createdAt: '2021-04-01',
+  },
+];
+
+const beginnerItems = [
+  {
+    id: 1,
+    thumbnail: '',
+    title: 'AWS EC2를 이용해서 백엔드 api 서버 만들기',
+    category: 'js',
+    createdAt: '2021-04-01',
   },
 ];
 
 export {
-  troublesItems
+  troublesItems,
+  beginnerItems
 }

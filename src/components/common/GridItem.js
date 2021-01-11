@@ -1,12 +1,12 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import getStackThumbnail from '../../helper/getStackThumbnail';
-import styles from './TroublesItem.module.scss';
+import styles from './GridItem.module.scss';
 
-const TroublesItem = ({ item }) => {
+const GridItem = ({ item, page }) => {
   const history = useHistory();
   const handleClick = () => {
-    history.push('/shoot/' + item.id);
+    history.push(`/${page}/` + item.id);
   }
 
   const setThumbnail = () => {
@@ -38,4 +38,4 @@ const TroublesItem = ({ item }) => {
   );
 }
  
-export default TroublesItem;
+export default GridItem;

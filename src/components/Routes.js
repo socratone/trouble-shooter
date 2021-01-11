@@ -19,14 +19,17 @@ const Routes = () => {
       <div className={styles.mainWrap}>
         <HeaderBumper />
         <Switch>
+          <Route path="/beginner/:id">
+            <Beginner />
+          </Route>
           <Route path="/beginner">
             <Beginner />
           </Route>
+          <Route path="/troubles/:id">
+            <Shoot />
+          </Route>
           <Route path="/troubles">
             <Troubles />
-          </Route>
-          <Route path="/shoot/:id">
-            <Shoot />
           </Route>
           <Route path="/">
             <Home />

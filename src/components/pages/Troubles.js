@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setTroublesItems } from '../../store/reducers/troublesItems';
 import convertCategoryName from '../../helper/convertCategoryName';
 import NormalPageFrame from '../common/NormalPageFrame';
-import TroublesItem from '../Troubles/TroublesItem';
+import GridItem from '../common/GridItem';
 import Button from '../common/Button';
 import TextInput from '../common/TextInput';
 import ArrowIcon from '../icon/ArrowIcon';
@@ -95,7 +95,7 @@ const Troubles = () => {
         </header>
         <section className={styles.grid}>
           {getFilteredItems(items).map(item => 
-            <TroublesItem key={item.id} item={item} />
+            <GridItem key={item.id} item={item} page="troubles" />
           )}
         </section>
       </main>
