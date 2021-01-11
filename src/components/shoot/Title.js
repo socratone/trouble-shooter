@@ -1,19 +1,22 @@
 import styled, { css } from 'styled-components';
 
 const Title = styled.h3`
-  margin: 2rem 0 1rem 0;
-  font-weight: 600;
-  font-size: 1.25em;
+  font-size: 22px;
   line-height: 1.3;
+  margin-top: 48px;
+  margin-bottom: 24px;
+  margin-left: 0;
+  margin-right: 0;
   
-  ${props => props.head && css`
-    margin: 0 0 1rem 0;
+  ${props => props.sub && css`
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 32px;
+    margin-bottom: 16px; 
   `}
-    
-    ${props => props.sub && css`
-    font-size: 1.5rem;
-    font-weight: 400;
-    margin: 3rem 0;
+
+  ${props => props.head && css`
+    margin-top: 0;
   `}
 `;
 

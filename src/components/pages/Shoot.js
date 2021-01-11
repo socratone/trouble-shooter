@@ -53,6 +53,8 @@ const Shoot = () => {
   const setShootItem = (item, key) => {
     if (item.type === 'title') 
       return <Title key={key}>{item.value}</Title>
+    else if (item.type === 'subTitle') 
+      return <Title key={key} sub>{item.value}</Title>
     else if (item.type === 'text') 
       return <Text key={key}>{item.value}</Text>
     else if (item.type === 'list') 
@@ -72,10 +74,10 @@ const Shoot = () => {
       onMouseMove={(e) => handleMouseMove(e)}
     >
       <section className={styles.leftSection} style={{ width: `${leftWidthRate}%`}}>
-        {!isFullScreen && <h3 className={styles.title}>{data && data.title}</h3>}
+        {!isFullScreen && <Title head>{data && data.title}</Title>}
         {!isFullScreen && data && 
           data.shoot.items.map((item, i) => setShootItem(item, i))}
-        {isFullScreen && <Title head>Preview</Title>}
+        {isFullScreen && <Title sub head>Preview</Title>}
         {isFullScreen && <Preview code={previewCode} />}
       </section>
       <div className={styles.resizer}
@@ -87,10 +89,10 @@ const Shoot = () => {
         className={styles.rightSection} 
         style={{ width: `${100 - leftWidthRate}%`}}
       >
-        {!isFullScreen && <Title head>Preview</Title>}
+        {!isFullScreen && <Title sub head>Preview</Title>}
         {!isFullScreen && <Preview code={previewCode} />}
-        {!isFullScreen && <Title>Full Codes</Title>}
-        {isFullScreen && <Title head>Full Codes</Title>}
+        {!isFullScreen && <Title sub>Full Codes</Title>}
+        {isFullScreen && <Title sub head>Full Codes</Title>}
         {previewCode.html && <PreviewCode key="html" type="html" />}
         {previewCode.css && <PreviewCode key="css" type="css" />}
         {previewCode.js && <PreviewCode key="js" type="js" />}

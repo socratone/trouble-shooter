@@ -3,13 +3,12 @@ const troublesItems = [
     id: 1,
     thumbnail: 'https://bashooka.com/wp-content/uploads/2018/06/css-dropdown-menu-ex-2.jpg',
     title: '다른 곳을 클릭 했을 때 드롭다운 메뉴를 사라지게 하는 방법',
-    description: '버튼을 클릭 했을 때 드롭다운 메뉴가 나타나게 하는 것까지는 했다고 치자. 여기서 메뉴를 클릭하지 않고 다른 곳을 클릭 했을 때 드롭다운 메뉴가 사라지는 방법에 대해 다루겠다. 알고 보면 별 것 아닌데 모르면 어렵게 구현해야 한다.',
     category: 'html',
     createdAt: '2021-04-01',
     shoot: {
       items: [
         {
-          type: 'title',
+          type: 'subTitle',
           value: '목표'
         },
         {
@@ -17,7 +16,7 @@ const troublesItems = [
           value: 'blur 이벤트를 이용해서 다른 곳을 클릭할 때 드롭다운 메뉴를 사라지게 할 수 있다.' 
         },
         {
-          type: 'title',
+          type: 'subTitle',
           value: '선행 지식'
         },
         {
@@ -25,12 +24,12 @@ const troublesItems = [
           value: '드롭다운 메뉴를 만드는 방법'
         },
         {
-          type: 'title',
+          type: 'subTitle',
           value: 'Shooting'
         },
         {
           type: 'text',
-          value: '버튼을 눌렀을 때 드롭다운 메뉴가 나타나도록 구현했다고 가정합시다. 아직은 다른 곳을 클릭하더라도 드롭다운 메뉴가 사라지지 않습니다. 다른 곳을 클릭했을 때 사라지게 하는 가장 간단한 방법은 blur 이벤트를 이용하는 것입니다. blur 이벤트는 <input>류의 엘리먼트만 적용 가능합니다. <button>도 blur 이벤트를 사용할 수 있습니다.'
+          value: '버튼을 눌렀을 때 드롭다운 메뉴가 나타나도록 구현했다고 가정합시다. 아직은 다른 곳을 클릭하더라도 드롭다운 메뉴가 사라지지 않습니다. 다른 곳을 클릭했을 때 사라지게 하는 가장 간단한 방법은 blur 이벤트를 이용하는 것입니다. 다만 blur 이벤트는 <input>류의 엘리먼트에서만 작동하니 주의해야 합니다. 다행히 <button>에는 blur 이벤트를 사용할 수 있습니다.'
         },
         {
           type: 'text',
@@ -44,7 +43,7 @@ const troublesItems = [
 });`
         },
         {
-          type: 'title',
+          type: 'subTitle',
           value: '참고'
         },
         {
