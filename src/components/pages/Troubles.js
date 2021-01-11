@@ -35,7 +35,7 @@ const Troubles = () => {
   const filterItemsByQuery = items => {
     return items.filter(item => {
       if (item.title.toLowerCase().indexOf(query) >= 0) return true;
-      if (item.description.toLowerCase().indexOf(query) >= 0) return true;
+      // TODO: 본문 검색
     });
   };
 
