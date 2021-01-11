@@ -9,7 +9,7 @@ const FullScreenIcon = ({ size, color }) => (
   >
     <path 
       style={{ fill: color }} 
-      d="M24 22h-24v-20h24v20zm-1-19h-22v18h22v-18zm-4 7h-1v-3.241l-11.241 11.241h3.241v1h-5v-5h1v3.241l11.241-11.241h-3.241v-1h5v5z"
+      d="M24,24H0V0h24V24z M23,1H1v22h22V1z M19,10h-1V6.8L6.8,18H10v1H5v-5h1v3.2L17.2,6H14V5h5C19,5,19,10,19,10z"
     />
   </svg>
 );

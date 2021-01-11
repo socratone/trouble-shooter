@@ -43,8 +43,8 @@ const Preview = ({ code }) => {
   return (  
     <div className={styles.wrap}>
       <button className={styles.fullScreenButton} onClick={handleClick}>
-        {!isFullScreen && <FullScreenIcon size="24" color="grey" />}
-        {isFullScreen && <SmallScreenIcon size="24" color="grey" />}
+        {!isFullScreen && <FullScreenIcon size="20" color="grey" />}
+        {isFullScreen && <SmallScreenIcon size="20" color="grey" />}
       </button>
       {isIndicator && <SynchroIndicator size="30" />}
       <iframe className={styles.iframe} srcDoc={setCode()} />

@@ -9,7 +9,8 @@ const SmallScreenIcon = ({ size, color }) => (
   >
     <path 
       style={{ fill: color }} 
-      d="M24 22h-24v-20h24v20zm-23-9v8h10v-8h-10zm22 8v-18h-22v9h11v9h11zm-4-9h-5v-5h1v3.241l5.241-5.241.759.759-5.241 5.241h3.241v1z"
+      d="M24,24H0V0h24V24z M1,13v10h10.5V13H1z M23,23V1H1v11h11.5v11H23z M19,10h-5V5h1v3.2L20.2,3L21,3.8L15.8,9H19
+	C19,9,19,10,19,10z"
     />
   </svg>
 );
