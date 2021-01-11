@@ -1,7 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import getStackThumbnail from '../../helper/getStackThumbnail';
-import Stack from './Stack';
 import styles from './TroublesItem.module.scss';
 
 const TroublesItem = ({ item }) => {
@@ -28,8 +27,11 @@ const TroublesItem = ({ item }) => {
           </div>
         </div>
         <div className={styles.textArea}>
-          <Stack item={item} margin="0 8px 0 0" />
           <p className={styles.title}>{item.title}</p>
+          <div className={styles.bottomWrap}>
+            <p className={styles.category}>{item.category}</p>
+            <p className={styles.date}>{item.createdAt}</p>
+          </div>
         </div>
       </article>
     </div>

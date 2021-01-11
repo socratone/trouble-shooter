@@ -48,6 +48,7 @@
 .textArea {
   padding: 10px;
   display: flex;
+  flex-direction: column;
   background-color: white;
 }
 
@@ -55,4 +56,19 @@
   font-size: 15px;
   display: flex;
   align-items: center;
+}
+
+.bottomWrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.category {
+  font-size: 14px;
+  color: gray;
+}
+
+.date {
+  font-size: 14px;
+  color: gray;
 }
