@@ -1,9 +1,8 @@
 const troublesItems = [
   {
     id: 1,
-    thumbnail: 'https://bashooka.com/wp-content/uploads/2018/06/css-dropdown-menu-ex-2.jpg',
     title: '다른 곳을 클릭 했을 때 드롭다운 메뉴를 사라지게 하는 방법',
-    category: 'html',
+    category: 'js',
     createdAt: '2021-04-01',
     shoot: {
       items: [
