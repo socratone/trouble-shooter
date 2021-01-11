@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setPreviewCode } from '../../store/reducers/previewCode';
-import Title from '../shoot/Title';
-import Text from '../shoot/Text';
-import Image from '../shoot/Image';
-import Preview from '../shoot/Preview';
-import Code from '../shoot/Code';
-import PreviewCode from '../shoot/PreviewCode';
-import List from '../shoot/List';
-import Link from '../shoot/Link';
+import Title from '../common/Title';
+import Text from '../common/Text';
+import Image from '../common/Image';
+import Preview from '../common/Preview';
+import Code from '../common/Code';
+import PreviewCode from '../common/PreviewCode';
+import List from '../common/List';
+import Link from '../common/Link';
 import ResizeIcon from '../icon/ResizeIcon';
 import styles from './Shoot.module.scss';
 
@@ -29,9 +29,9 @@ const Shoot = () => {
     const [data] = troublesItems.filter(item => item.id === Number(id));
     setData(data);
     dispatch(setPreviewCode({
-      html: data.shoot.previewCode.html,
-      css: data.shoot.previewCode.css,
-      js: data.shoot.previewCode.js
+      html: data.page.previewCode.html,
+      css: data.page.previewCode.css,
+      js: data.page.previewCode.js
     }));
   }, []);
 
@@ -76,7 +76,7 @@ const Shoot = () => {
       <section className={styles.leftSection} style={{ width: `${leftWidthRate}%`}}>
         {!isFullScreen && <Title head>{data && data.title}</Title>}
         {!isFullScreen && data && 
-          data.shoot.items.map((item, i) => setShootItem(item, i))}
+          data.page.items.map((item, i) => setShootItem(item, i))}
         {isFullScreen && <Title sub head>Preview</Title>}
         {isFullScreen && <Preview code={previewCode} />}
       </section>

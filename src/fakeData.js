@@ -4,7 +4,7 @@ const troublesItems = [
     title: '다른 곳을 클릭 했을 때 드롭다운 메뉴를 사라지게 하는 방법',
     category: 'js',
     createdAt: '2021-04-01',
-    shoot: {
+    page: {
       items: [
         {
           type: 'subTitle',
@@ -183,6 +183,9 @@ const beginnerItems = [
     title: 'AWS EC2를 이용해서 백엔드 api 서버 만들기',
     category: 'js',
     createdAt: '2021-04-01',
+    page: {
+      items: []
+    }
   },
 ];
 
