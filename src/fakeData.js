@@ -184,7 +184,16 @@ const beginnerItems = [
     category: 'js',
     createdAt: '2021-04-01',
     page: {
-      items: []
+      items: [
+        {
+          type: 'subTitle',
+          value: '목표'
+        },
+        {
+          type: 'text',
+          value: '글을 작성할 공간입니다.'
+        },
+      ]
     }
   },
 ];
