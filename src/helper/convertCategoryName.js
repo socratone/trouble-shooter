@@ -1,8 +1,11 @@
-const convertCategoryName = category => {
-  if (category === 'all') return '전체';
-  if (category === 'css') return 'CSS';
-  if (category === 'js') return 'JavaScript';
-  if (category === 's3') return 'S3';
-}
+const categoryName = {
+  all: '전체',
+  css: 'CSS',
+  js: 'JavaScript',
+  aws: 'AWS',
+  basic: '기본',
+};
+
+const convertCategoryName = category => categoryName[category];
 
 export default convertCategoryName;

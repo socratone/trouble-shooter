@@ -77,9 +77,10 @@ const Troubles = () => {
             </Button>
             {clickCategory && <Dropdown top="52px">
               <li onClick={() => selectCategory('all')}>전체</li>
-              <li onClick={() => selectCategory('js')}>JavaScript</li>
+              <li onClick={() => selectCategory('html')}>HTML</li>
               <li onClick={() => selectCategory('css')}>CSS</li>
-              <li onClick={() => selectCategory('s3')}>S3</li>
+              <li onClick={() => selectCategory('js')}>JavaScript</li>
+              <li onClick={() => selectCategory('aws')}>AWS</li>
             </Dropdown>}
           </div>
           <div className={styles.searchWrap}>

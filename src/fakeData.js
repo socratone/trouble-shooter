@@ -122,7 +122,7 @@ button.addEventListener('blur', () => {
     id: 3,
     thumbnail: '',
     title: 'AWS EC2를 이용해서 백엔드 api 서버 만들기',
-    category: 'js',
+    category: 'aws',
     createdAt: '2021-04-01',
   },
   {
@@ -136,7 +136,7 @@ button.addEventListener('blur', () => {
     id: 5,
     thumbnail: 'https://i.ytimg.com/vi/AP4JWtzIAt0/maxresdefault.jpg',
     title: '웹 앱에서 AWS S3에 파일 올리는 방법',
-    category: 's3',
+    category: 'aws',
     createdAt: '2021-04-01',
   },
   {
@@ -157,7 +157,7 @@ button.addEventListener('blur', () => {
     id: 8,
     thumbnail: '',
     title: 'AWS EC2를 이용해서 백엔드 api 서버 만들기',
-    category: 'ec2',
+    category: 'aws',
     createdAt: '2021-04-01',
   },
   {
@@ -171,7 +171,7 @@ button.addEventListener('blur', () => {
     id: 10,
     thumbnail: '',
     title: '웹 앱에서 AWS S3에 파일 올리는 방법',
-    category: 's3',
+    category: 'aws',
     createdAt: '2021-04-01',
   },
 ];
@@ -180,8 +180,8 @@ const beginnerItems = [
   {
     id: 1,
     thumbnail: '',
-    title: 'AWS EC2를 이용해서 백엔드 api 서버 만들기',
-    category: 'js',
+    title: '자바스크립트 변수',
+    category: 'basic',
     createdAt: '2021-04-01',
     page: {
       items: [

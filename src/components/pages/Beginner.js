@@ -77,9 +77,7 @@ const Beginner = () => {
             </Button>
             {clickCategory && <Dropdown top="52px">
               <li onClick={() => selectCategory('all')}>전체</li>
-              <li onClick={() => selectCategory('js')}>JavaScript</li>
-              <li onClick={() => selectCategory('css')}>CSS</li>
-              <li onClick={() => selectCategory('s3')}>S3</li>
+              <li onClick={() => selectCategory('basic')}>기본</li>
             </Dropdown>}
           </div>
           <div className={styles.searchWrap}>

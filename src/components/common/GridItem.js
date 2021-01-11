@@ -1,6 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import getStackThumbnail from '../../helper/getStackThumbnail';
+import getThumbnail from '../../helper/getThumbnail';
 import styles from './GridItem.module.scss';
 
 const GridItem = ({ item, page }) => {
@@ -11,7 +11,7 @@ const GridItem = ({ item, page }) => {
 
   const setThumbnail = () => {
     if (item.thumbnail) return item.thumbnail;
-    return getStackThumbnail(item.category);
+    return getThumbnail(item.category);
   }
 
   return (
