@@ -10,7 +10,6 @@ import Beginner from './pages/Beginner';
 import Troubles from './pages/Troubles';
 import Shoot from './pages/Shoot';
 import HeaderBumper from './common/HeaderBumper';
-import Jump from './pages/Jump';
 import styles from './Routes.module.scss';
 
 const Routes = () => {
@@ -21,13 +20,13 @@ const Routes = () => {
         <HeaderBumper />
         <Switch>
           <Route path="/beginner/:id">
-            <Jump />
+            <Shoot page="beginner" />
           </Route>
           <Route path="/beginner">
             <Beginner />
           </Route>
           <Route path="/troubles/:id">
-            <Shoot />
+            <Shoot page="troubles" />
           </Route>
           <Route path="/troubles">
             <Troubles />

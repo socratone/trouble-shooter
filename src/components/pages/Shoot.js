@@ -13,9 +13,9 @@ import Link from '../common/Link';
 import ResizeIcon from '../icon/ResizeIcon';
 import styles from './Shoot.module.scss';
 
-import { troublesItems } from '../../fakeData';
+import { troublesItems, beginnerItems } from '../../fakeData';
 
-const Shoot = () => {
+const Shoot = ({ page }) => {
   const { id } = useParams();
   const [data, setData] = useState(null);
   const [leftWidthRate, setLeftWidthRate] = useState(60); // %
@@ -26,7 +26,12 @@ const Shoot = () => {
 
   useEffect(() => {
     // TODO: get api
-    const [data] = troublesItems.filter(item => item.id === Number(id));
+    let data;
+    if (page === 'beginner') {
+      [data] = beginnerItems.filter(item => item.id === Number(id));
+    } else if (page === 'troubles') {
+      [data] = troublesItems.filter(item => item.id === Number(id));
+    }
     setData(data);
     dispatch(setPreviewCode({
       html: data.page.previewCode.html,
