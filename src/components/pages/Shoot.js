@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setPreviewCode } from '../../store/reducers/previewCode';
+import applySpacesAndLineBreaksToText from '../../helper/applySpacesAndLineBreaksToText';
+import { getTroublesItem } from '../../api/troubles';
 import Title from '../common/Title';
 import Text from '../common/Text';
 import Image from '../common/Image';
@@ -13,7 +15,7 @@ import Link from '../common/Link';
 import ResizeIcon from '../icon/ResizeIcon';
 import styles from './Shoot.module.scss';
 
-import { troublesItems, beginnerItems } from '../../fakeData';
+// import { troublesItems, beginnerItems } from '../../fakeData';
 
 const Shoot = ({ page }) => {
   const { id } = useParams();
@@ -26,18 +28,26 @@ const Shoot = ({ page }) => {
 
   useEffect(() => {
     // TODO: get api
-    let data;
-    if (page === 'beginner') {
-      [data] = beginnerItems.filter(item => item.id === Number(id));
-    } else if (page === 'troubles') {
-      [data] = troublesItems.filter(item => item.id === Number(id));
-    }
-    setData(data);
-    dispatch(setPreviewCode({
-      html: data.page.previewCode.html,
-      css: data.page.previewCode.css,
-      js: data.page.previewCode.js
-    }));
+    (async () => {
+      let data;
+      if (page === 'beginner') {
+        // [data] = beginnerItems.filter(item => item.id === Number(id));
+      } else if (page === 'troubles') {
+        const troublesItem = await getTroublesItem(id);
+        console.log('troublesItem:', troublesItem)
+        console.log('troublesItem.page:', troublesItem.page)
+        const page = JSON.parse(troublesItem.page);
+        troublesItem.page = page;
+        console.log('page:', page)
+        
+        setData(troublesItem);
+        dispatch(setPreviewCode({
+          html: page.previewCode.html,
+          css: page.previewCode.css,
+          js: page.previewCode.js
+        }));
+      }
+    })();
   }, []);
 
   const handleResizerMouseDown = () => {
@@ -61,7 +71,7 @@ const Shoot = ({ page }) => {
     else if (item.type === 'subTitle') 
       return <Title key={key} sub>{item.value}</Title>
     else if (item.type === 'text') 
-      return <Text key={key}>{item.value}</Text>
+      return <Text key={key}>{applySpacesAndLineBreaksToText(item.value)}</Text>
     else if (item.type === 'list') 
       return <List key={key}>{item.value}</List>
     else if (item.type === 'link') 

@@ -1,0 +1,82 @@
+.editor {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: 1rem;
+  padding: 10px 0;
+}
+
+.textInput {
+  font-size: 1rem;
+  padding: 10px;
+}
+
+.select {
+  font-size: 1rem;
+  padding: 10px;
+  width: 200px;
+}
+
+.textArea {
+  font-size: 1rem;
+  padding: 10px;
+  height: 400px;
+}
+
+.pageHead {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pageItemButtonWrap {
+  display: flex;
+  align-items: center;
+}
+
+.addPageItemButton {
+  background: gainsboro;
+  margin-left: 8px;
+  padding: 5px 8px;
+  border-radius: 100px;
+
+  &:hover {
+    background: gray
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+}
+
+.pageItemWrap {
+  padding: 10px;
+  border: grey 1px dashed;
+}
+
+.submitWrap {
+  display: flex;
+  justify-content: center;
+}
+
+.submit {
+  padding: 20px;
+  background: gainsboro;
+  border-radius: 100px;
+
+  &:hover {
+    background: gray;
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+}

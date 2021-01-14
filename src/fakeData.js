@@ -28,7 +28,7 @@ const troublesItems = [
         },
         {
           type: 'text',
-          value: '버튼을 눌렀을 때 드롭다운 메뉴가 나타나도록 구현했다고 가정합시다. 아직은 다른 곳을 클릭하더라도 드롭다운 메뉴가 사라지지 않습니다. 다른 곳을 클릭했을 때 사라지게 하는 가장 간단한 방법은 blur 이벤트를 이용하는 것입니다. 다만 blur 이벤트는 <input>류의 엘리먼트에서만 작동하니 주의해야 합니다. 다행히 <button>에는 blur 이벤트를 사용할 수 있습니다.'
+          value: `버튼을 눌렀을 때 드롭다운 메뉴가 나타나도록 구현했다고 가정합시다. 아직은 다른 곳을 클릭하더라도 드롭다운 메뉴가 사라지지 않습니다. 다른 곳을 클릭했을 때 사라지게 하는 가장 간단한 방법은 blur 이벤트를 이용하는 것입니다. 다만 blur 이벤트는 <input>류의 엘리먼트에서만 작동하니 주의해야 합니다. 다행히 <button>에는 blur 이벤트를 사용할 수 있습니다.`
         },
         {
           type: 'text',
@@ -118,109 +118,17 @@ button.addEventListener('blur', () => {
     category: 'js',
     createdAt: '2021-01-12',
     page: {
-      items: [
+      "items": [
         {
-          type: 'subTitle',
-          value: '목표'
-        },
-        {
-          type: 'list',
-          value: '드롭다운 메뉴를 구현한다.' 
-        },
-        {
-          type: 'subTitle',
-          value: '선행 지식'
-        },
-        {
-          type: 'list',
-          value: 'CSS의 position, z-index'
-        },
-        {
-          type: 'subTitle',
-          value: 'Shooting'
-        },
-        {
-          type: 'text',
-          value: '드롭다운 메뉴는 기존에 구성해놓은 박스 영역에 제한되지 않고 떠 있어야 합니다. 이것을 가능하게 해주는 CSS의 속성이 position입니다. position을 absolute로 설정하면 엘리먼트는 더 이상 부모 엘리먼트의 한 영역을 차지하지 않고 겹쳐진 채로 독자적인 영역을 지니게 됩니다.'
-        },
-        {
-          type: 'text',
-          value: '<button>에 blur 이벤트를 걸어주고 이벤트 호출시 드롭다운 메뉴의 display를 none으로 바꾸면 <button>의 선택이 해제될 때 드롭다운 메뉴가 사라지게 됩니다.'
-        },
-        {
-          type: 'js',
-          value: `button.addEventListener('click', () => {
-  const dropDown = document.querySelector('.dropdown');
-  dropDown.style.display = 'block';
-});`
-        },
-        {
-          type: 'subTitle',
-          value: '참고'
-        },
-        {
-          type: 'link',
-          value: '드롭다운',
-          url: 'https://youtu.be/X0bf0hfE3qA'
-        },
+          "type": "link",
+          "value": "드롭다운",
+          "url": "https://youtu.be/X0bf0hfE3qA"
+        }
       ],
-      previewCode: {
-        html: `<div class="button-wrap">
-  <button class="button">클릭</button>
-  <ul class="dropdown">
-    <li class="dropdown-item">서울</li>
-    <li class="dropdown-item">대전</li>
-    <li class="dropdown-item">대구</li>
-    <li class="dropdown-item">부산</li>
-  </ul>
-</div>`,
-        css: `body {
-  display: flex;
-  justify-content: center;
-  height: 100vh;
-  margin: 0;
-}
-
-.button-wrap {
-  position: relative;
-}
-
-.button {
-  display: flex;
-  align-items: center;
-}
-
-.dropdown {
-  display: none;
-  position: absolute;
-  top: 30px;
-  border: 1px solid #d0d0d0;
-  border-radius: 3px;
-  margin: 0;
-  padding: 4px 0;
-}
-
-.dropdown-item {
-  white-space: nowrap;
-  cursor: default;
-  list-style: none;
-  padding: 3px 20px;
-}
-
-.dropdown-item:hover {
-  background: skyblue;
-}`,
-        js: `const button = document.querySelector('.button');
-
-button.addEventListener('click', () => {
-  const dropDown = document.querySelector('.dropdown');
-  dropDown.style.display = 'block';
-});
-
-button.addEventListener('blur', () => {
-  const dropDown = document.querySelector('.dropdown');
-  dropDown.style.display = '';
-});`
+      "previewCode": {
+        "html": "<div>red</div>",
+        "css": "div { color: red; }",
+        "js": ""
       }
     }
   },

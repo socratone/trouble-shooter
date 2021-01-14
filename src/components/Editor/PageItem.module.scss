@@ -1,0 +1,32 @@
+.item {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.xButton {
+  cursor: pointer;
+}
+
+.text {
+  padding: 10px;
+  font-size: 16px;
+}
+
+.textArea {
+  padding: 10px;
+  font-size: 16px;
+  height: 100px;
+}
+
+.line {
+  background: grey;
+  height: 5px;
+  cursor: pointer;
+  margin: 10px 0;
+}

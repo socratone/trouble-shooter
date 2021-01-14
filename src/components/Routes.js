@@ -10,6 +10,7 @@ import Beginner from './pages/Beginner';
 import Troubles from './pages/Troubles';
 import Shoot from './pages/Shoot';
 import HeaderBumper from './common/HeaderBumper';
+import Editor from './pages/Editor';
 import styles from './Routes.module.scss';
 
 const Routes = () => {
@@ -30,6 +31,9 @@ const Routes = () => {
           </Route>
           <Route path="/troubles">
             <Troubles />
+          </Route>
+          <Route path="/editor">
+            <Editor />
           </Route>
           <Route path="/">
             <Home />

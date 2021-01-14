@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setTroublesItems } from '../../store/reducers/troublesItems';
 import convertCategoryName from '../../helper/convertCategoryName';
+import { getTroublesItems } from '../../api/troubles';
 import NormalPageFrame from '../common/NormalPageFrame';
 import GridItem from '../common/GridItem';
 import Button from '../common/Button';
@@ -9,8 +10,6 @@ import TextInput from '../common/TextInput';
 import ArrowIcon from '../icon/ArrowIcon';
 import Dropdown from '../common/Dropdown';
 import styles from './Troubles.module.scss';
-
-import { troublesItems } from '../../fakeData';
 
 const Troubles = () => {
   const [category, setCategory] = useState('all');
@@ -21,8 +20,9 @@ const Troubles = () => {
 
   const dispatch = useDispatch();
   useEffect(() => {
-    // TODO: get api
-    dispatch(setTroublesItems(troublesItems));
+    (async () => {
+      dispatch(setTroublesItems(await getTroublesItems()));
+    })();
   }, []);
 
   const filterItemsByCategory = items => {
