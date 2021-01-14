@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 import nav from './reducers/nav';
 import preview from './reducers/preview';
-import editor from './reducers/editor';
+import troublesEditor from './reducers/troublesEditor';
 
 export default combineReducers({
   nav,
   preview,
-  editor
+  troublesEditor
 });

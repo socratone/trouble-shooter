@@ -1,22 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { postTroublesItem } from '../../api/troubles';
-import { setPageHead } from '../../store/reducers/editor';
+import { setPageHead, setPage, setTitle, setCategory } from '../../store/reducers/troublesEditor';
 import PageItem from '../Editor/PageItem';
 import styles from './Editor.module.scss';
 
 const Editor = () => {
-  const [title, setTitle] = useState('');
-  const [category, setCategory] = useState('js');
-  const [page, setPage] = useState({ 
-    items: [], 
-    previewCode: { 
-      html: '',
-      css: '',
-      js: ''
-    }
-  });
-  const pageHead = useSelector(state => state.ui.editor.pageHead);
+  const title = useSelector(state => state.ui.troublesEditor.title);
+  const category = useSelector(state => state.ui.troublesEditor.category);
+  const page = useSelector(state => state.ui.troublesEditor.page);
+  const pageHead = useSelector(state => state.ui.troublesEditor.pageHead);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -24,37 +17,20 @@ const Editor = () => {
   }, []);
   
   const handleTitleInput = ({ target }) => {
-    setTitle(target.value);
+    dispatch(setTitle({ title: target.value }));
   };
-
+  
   const handleCategoryInput = ({ target }) => {
-    setCategory(target.value);
+    dispatch(setCategory({ category: target.value }));
   };
 
   const handlePlusButton = type => {
+    const items = [...page.items];
     const newPage = {...page};
-    newPage.items.splice(pageHead + 1, 0, { type: type, value: '' });
-    setPage(newPage);
+    items.splice(pageHead + 1, 0, { type: type, value: '' }); // url은 생성하지 않는다.
+    newPage.items = items;
+    dispatch(setPage({ page: newPage }));
     dispatch(setPageHead({ pageHead: pageHead + 1 }));
-  };
-
-  const handlePageItemInput = ({ target, index }) => {
-    const newPage = {...page};
-    newPage.items[index] = { type: newPage.items[index].type, value: target.value };
-    setPage(newPage);
-  };
-
-  const handlePageItemX = index => {
-    if (index > pageHead) {
-      const newPage = {...page};
-      newPage.items.splice(index, 1);
-      setPage(newPage);
-    } else {
-      dispatch(setPageHead({ pageHead: pageHead - 1 }));
-      const newPage = {...page};
-      newPage.items.splice(index, 1);
-      setPage(newPage);
-    }
   };
 
   const handleSubmitButton = async () => {
@@ -67,19 +43,19 @@ const Editor = () => {
   const handleHTMLInput = ({ target }) => {
     const newPage = {...page};
     newPage.previewCode.html = target.value;
-    setPage(newPage);
+    dispatch(setPage({ page: newPage }));
   };
 
   const handleCSSInput = ({ target }) => {
     const newPage = {...page};
     newPage.previewCode.css = target.value;
-    setPage(newPage);
+    dispatch(setPage({ page: newPage }));
   };
 
   const handleJSInput = ({ target }) => {
     const newPage = {...page};
     newPage.previewCode.js = target.value;
-    setPage(newPage);
+    dispatch(setPage({ page: newPage }));
   };
 
   return (  
@@ -105,14 +81,17 @@ const Editor = () => {
             <button className={styles.addPageItemButton} onClick={() => handlePlusButton('title')}>
               Title
             </button>
-            <button className={styles.addPageItemButton} onClick={() => handlePlusButton('text')}>
-              Text
-            </button>
             <button className={styles.addPageItemButton} onClick={() => handlePlusButton('subTitle')}>
               SubTitle
             </button>
+            <button className={styles.addPageItemButton} onClick={() => handlePlusButton('text')}>
+              Text
+            </button>
             <button className={styles.addPageItemButton} onClick={() => handlePlusButton('list')}>
               List
+            </button>
+            <button className={styles.addPageItemButton} onClick={() => handlePlusButton('link')}>
+              Link
             </button>
             <button className={styles.addPageItemButton} onClick={() => handlePlusButton('html')}>
               HTML
@@ -126,12 +105,11 @@ const Editor = () => {
           </div>
         </div>
         <div className={styles.pageItemWrap}>
-          {page.items.map((input, i) => <PageItem 
+          {page.items.map((item, i) => <PageItem 
             key={i} 
-            type={input.type} 
-            value={input.value} 
-            handlePageItemInput={handlePageItemInput} 
-            handlePageItemX={handlePageItemX}
+            type={item.type} 
+            value={item.value} 
+            url={item.url}
             index={i} 
           />)}
         </div>
