@@ -10,7 +10,7 @@ import Beginner from './pages/Beginner';
 import Troubles from './pages/Troubles';
 import Shoot from './pages/Shoot';
 import HeaderBumper from './common/HeaderBumper';
-import Editor from './pages/Editor';
+import TroublesEditor from './pages/TroublesEditor';
 import styles from './Routes.module.scss';
 
 const Routes = () => {
@@ -32,8 +32,8 @@ const Routes = () => {
           <Route path="/troubles">
             <Troubles />
           </Route>
-          <Route path="/editor">
-            <Editor />
+          <Route path="/editor/troubles">
+            <TroublesEditor />
           </Route>
           <Route path="/">
             <Home />

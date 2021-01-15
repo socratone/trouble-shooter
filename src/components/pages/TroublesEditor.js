@@ -2,14 +2,14 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { postTroublesItem } from '../../api/troubles';
 import { setPageHead, setPage, setTitle, setCategory } from '../../store/reducers/troublesEditor';
+import AddPageItemButton from '../Editor/AddPageItemButton';
 import PageItem from '../Editor/PageItem';
 import styles from './Editor.module.scss';
 
-const Editor = () => {
+const TroublesEditor = () => {
   const title = useSelector(state => state.ui.troublesEditor.title);
   const category = useSelector(state => state.ui.troublesEditor.category);
   const page = useSelector(state => state.ui.troublesEditor.page);
-  const pageHead = useSelector(state => state.ui.troublesEditor.pageHead);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -22,15 +22,6 @@ const Editor = () => {
   
   const handleCategoryInput = ({ target }) => {
     dispatch(setCategory({ category: target.value }));
-  };
-
-  const handlePlusButton = type => {
-    const items = [...page.items];
-    const newPage = {...page};
-    items.splice(pageHead + 1, 0, { type: type, value: '' }); // url은 생성하지 않는다.
-    newPage.items = items;
-    dispatch(setPage({ page: newPage }));
-    dispatch(setPageHead({ pageHead: pageHead + 1 }));
   };
 
   const handleSubmitButton = async () => {
@@ -77,31 +68,15 @@ const Editor = () => {
       <div className={styles.item}>
         <div className={styles.pageHead}>
           <p className={styles.title}>본문</p>
-          <div className={styles.pageItemButtonWrap}>
-            <button className={styles.addPageItemButton} onClick={() => handlePlusButton('title')}>
-              Title
-            </button>
-            <button className={styles.addPageItemButton} onClick={() => handlePlusButton('subTitle')}>
-              SubTitle
-            </button>
-            <button className={styles.addPageItemButton} onClick={() => handlePlusButton('text')}>
-              Text
-            </button>
-            <button className={styles.addPageItemButton} onClick={() => handlePlusButton('list')}>
-              List
-            </button>
-            <button className={styles.addPageItemButton} onClick={() => handlePlusButton('link')}>
-              Link
-            </button>
-            <button className={styles.addPageItemButton} onClick={() => handlePlusButton('html')}>
-              HTML
-            </button>
-            <button className={styles.addPageItemButton} onClick={() => handlePlusButton('css')}>
-              CSS
-            </button>
-            <button className={styles.addPageItemButton} onClick={() => handlePlusButton('js')}>
-              JavaScript
-            </button>
+          <div className={styles.addPageItemButtonWrap}>
+            <AddPageItemButton type="title" />
+            <AddPageItemButton type="subTitle" />
+            <AddPageItemButton type="text" />
+            <AddPageItemButton type="list" />
+            <AddPageItemButton type="link" />
+            <AddPageItemButton type="html" />
+            <AddPageItemButton type="css" />
+            <AddPageItemButton type="js" />
           </div>
         </div>
         <div className={styles.pageItemWrap}>
@@ -137,4 +112,4 @@ const Editor = () => {
   );
 }
  
-export default Editor;
+export default TroublesEditor;
