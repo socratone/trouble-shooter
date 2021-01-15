@@ -138,15 +138,27 @@ const TroublesEditor = () => {
       </div>
       <div className={styles.item}>
         <p className={styles.title}>HTML</p>
-        <textarea type="text" className={styles.textArea} onChange={handleHTMLInput}/>
+        <textarea 
+          type="text" 
+          className={styles.textArea} 
+          onChange={handleHTMLInput}
+          value={page.previewCode.html}/>
       </div>
       <div className={styles.item}>
         <p className={styles.title}>CSS</p>
-        <textarea type="text" className={styles.textArea} onChange={handleCSSInput}/>
+        <textarea 
+          type="text" 
+          className={styles.textArea} 
+          onChange={handleCSSInput}
+          value={page.previewCode.css}/>
       </div>
       <div className={styles.item}>
         <p className={styles.title}>JavaScript</p>
-        <textarea type="text" className={styles.textArea} onChange={handleJSInput}/>
+        <textarea 
+          type="text" 
+          className={styles.textArea} 
+          onChange={handleJSInput}
+          value={page.previewCode.js}/>
       </div>
       <div className={styles.submitWrap}>
         {!id && <button 
