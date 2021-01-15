@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { postTroublesItem } from '../../api/troubles';
 import { setPageHead, setPage, setTitle, setCategory } from '../../store/reducers/troublesEditor';
 import AddPageItemButton from '../Editor/AddPageItemButton';
-import PageItem from '../Editor/PageItem';
+import TroublesPageItem from '../Editor/TroublesPageItem';
 import styles from './Editor.module.scss';
 
 const TroublesEditor = () => {
@@ -90,7 +90,7 @@ const TroublesEditor = () => {
           </div>
         </div>
         <div className={styles.pageItemWrap}>
-          {page.items.map((item, i) => <PageItem 
+          {page.items.map((item, i) => <TroublesPageItem 
             key={i} 
             type={item.type} 
             value={item.value} 

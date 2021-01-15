@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setPageHead, setPage } from '../../store/reducers/troublesEditor';
 import styles from './PageItem.module.scss';
 
-const PageItem = ({ type, value, url, index }) => {
+const TroublesPageItem = ({ type, value, url, index }) => {
   const page = useSelector(state => state.ui.troublesEditor.page);
   const pageHead = useSelector(state => state.ui.troublesEditor.pageHead);
   const dispatch = useDispatch();
@@ -50,7 +50,7 @@ const PageItem = ({ type, value, url, index }) => {
   };
 
   const showInput = () => {
-    if (type === 'text') {
+    if (type === 'text' || type === 'html' || type === 'css' || type === 'js') {
       return <textarea 
         value={value} 
         onChange={handleInputChange}
@@ -100,4 +100,4 @@ const PageItem = ({ type, value, url, index }) => {
   );
 }
 
-export default PageItem;
+export default TroublesPageItem;
