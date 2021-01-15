@@ -57,6 +57,14 @@
   height: 100px;
 }
 
+.code {
+  padding: 10px;
+  font-size: 15px;
+  height: 100px;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
 .line {
   background: grey;
   height: 5px;

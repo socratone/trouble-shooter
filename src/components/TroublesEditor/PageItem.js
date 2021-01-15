@@ -133,11 +133,16 @@ const PageItem = ({ type, value, url, width, index }) => {
   };
 
   const showInput = () => {
-    if (type === 'text' || type === 'html' || type === 'css' || type === 'js') {
+    if (type === 'text') {
       return <textarea 
         value={value} 
         onChange={handleInputChange}
         className={styles.textArea}/>
+    } else if (type === 'html' || type === 'css' || type === 'js') {
+      return <textarea 
+        value={value} 
+        onChange={handleInputChange}
+        className={styles.code}/>
     } else if (type === 'link') {
       return <>
         <input

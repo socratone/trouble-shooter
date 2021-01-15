@@ -153,7 +153,7 @@ const TroublesEditor = () => {
           <p className={styles.title}>HTML</p>
           <textarea 
             type="text" 
-            className={styles.textArea} 
+            className={styles.code} 
             onChange={handleHTMLInput}
             value={page.previewCode.html}/>
         </div>
@@ -161,7 +161,7 @@ const TroublesEditor = () => {
           <p className={styles.title}>CSS</p>
           <textarea 
             type="text" 
-            className={styles.textArea} 
+            className={styles.code} 
             onChange={handleCSSInput}
             value={page.previewCode.css}/>
         </div>
@@ -169,7 +169,7 @@ const TroublesEditor = () => {
           <p className={styles.title}>JavaScript</p>
           <textarea 
             type="text" 
-            className={styles.textArea} 
+            className={styles.code} 
             onChange={handleJSInput}
             value={page.previewCode.js}/>
         </div>
