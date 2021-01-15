@@ -34,11 +34,8 @@ const Shoot = ({ page }) => {
         // [data] = beginnerItems.filter(item => item.id === Number(id));
       } else if (page === 'troubles') {
         const troublesItem = await getTroublesItem(id);
-        console.log('troublesItem:', troublesItem)
-        console.log('troublesItem.page:', troublesItem.page)
         const page = JSON.parse(troublesItem.page);
         troublesItem.page = page;
-        console.log('page:', page)
         
         setData(troublesItem);
         dispatch(setPreviewCode({

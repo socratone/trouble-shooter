@@ -32,7 +32,10 @@ const Routes = () => {
           <Route path="/troubles">
             <Troubles />
           </Route>
-          <Route path="/editor/troubles">
+          <Route path="/troubles-editor/:id">
+            <TroublesEditor />
+          </Route>
+          <Route path="/troubles-editor">
             <TroublesEditor />
           </Route>
           <Route path="/">

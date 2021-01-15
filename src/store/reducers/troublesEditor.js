@@ -27,9 +27,14 @@ const slice = createSlice({
     },
     setPageHead: (state, action) => {
       state.pageHead = action.payload.pageHead;
-    },
+    }
   }
 });
 
-export const { setTitle, setCategory, setPage, setPageHead } = slice.actions;
+export const { 
+  setTitle, 
+  setCategory, 
+  setPage, 
+  setPageHead
+} = slice.actions;
 export default slice.reducer;

@@ -1,20 +1,36 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { postTroublesItem } from '../../api/troubles';
-import { setPageHead, setPage, setTitle, setCategory } from '../../store/reducers/troublesEditor';
+import { useHistory, useParams } from 'react-router-dom';
+import { postTroublesItem, putTroublesItem, getTroublesItem } from '../../api/troubles';
+import { setPageHead, setPage, setTitle, setCategory, setAll } from '../../store/reducers/troublesEditor';
 import AddPageItemButton from '../Editor/AddPageItemButton';
 import TroublesPageItem from '../Editor/TroublesPageItem';
 import styles from './Editor.module.scss';
 
 const TroublesEditor = () => {
+  const { id } = useParams();
   const title = useSelector(state => state.ui.troublesEditor.title);
   const category = useSelector(state => state.ui.troublesEditor.category);
   const page = useSelector(state => state.ui.troublesEditor.page);
   const pageHead = useSelector(state => state.ui.troublesEditor.pageHead);
   const dispatch = useDispatch();
+  const history = useHistory();
 
   useEffect(() => {
-    dispatch(setPageHead({ pageHead: -1 }));
+    (async () => {
+      if (id) { // 수정할 때
+        const troublesItem = await getTroublesItem(id);
+        if (troublesItem.error) return alert(troublesItem.error.message);
+        const page = JSON.parse(troublesItem.page);
+
+        dispatch(setTitle({ title: troublesItem.title }));
+        dispatch(setCategory({ category: troublesItem.category }));
+        dispatch(setPage({ page }));
+        dispatch(setPageHead({ pageHead: page.items.length - 1 }));
+      } else { // 새로운 글을 쓸 때
+        dispatch(setPageHead({ pageHead: -1 }));
+      }
+    })();
   }, []);
   
   const handleTitleInput = ({ target }) => {
@@ -25,11 +41,26 @@ const TroublesEditor = () => {
     dispatch(setCategory({ category: target.value }));
   };
 
-  const handleSubmitButton = async () => {
+  const handlePostButton = async () => {
     if (title.length < 1) return alert('제목을 입력하세요.');
     if (page.items.length < 1) return alert('본문을 입력하세요.')
     const result = await postTroublesItem({ title, category, page });
-    console.log('result:', result)
+    if (result.error) {
+      console.log('error:', result.error)
+      return alert(result.error.message); 
+    }
+    history.goBack();
+  };
+
+  const handlePutButton = async () => {
+    if (title.length < 1) return alert('제목을 입력하세요.');
+    if (page.items.length < 1) return alert('본문을 입력하세요.')
+    const result = await putTroublesItem({ title, category, page }, id);
+    if (result.error) {
+      console.log('error:', result.error)
+      return alert(result.error.message); 
+    }
+    history.goBack();
   };
 
   const addPageItem = type => {
@@ -42,20 +73,26 @@ const TroublesEditor = () => {
   };
 
   const handleHTMLInput = ({ target }) => {
+    const previewCode = {...page.previewCode};
     const newPage = {...page};
-    newPage.previewCode.html = target.value;
+    newPage.previewCode = previewCode;
+    previewCode.html = target.value;
     dispatch(setPage({ page: newPage }));
   };
 
   const handleCSSInput = ({ target }) => {
+    const previewCode = {...page.previewCode};
     const newPage = {...page};
-    newPage.previewCode.css = target.value;
+    newPage.previewCode = previewCode;
+    previewCode.css = target.value;
     dispatch(setPage({ page: newPage }));
   };
 
   const handleJSInput = ({ target }) => {
+    const previewCode = {...page.previewCode};
     const newPage = {...page};
-    newPage.previewCode.js = target.value;
+    newPage.previewCode = previewCode;
+    previewCode.js = target.value;
     dispatch(setPage({ page: newPage }));
   };
 
@@ -112,11 +149,16 @@ const TroublesEditor = () => {
         <textarea type="text" className={styles.textArea} onChange={handleJSInput}/>
       </div>
       <div className={styles.submitWrap}>
-        <button 
+        {!id && <button 
           className={styles.submit} 
-          onClick={handleSubmitButton}>
-            Submit
-        </button>
+          onClick={handlePostButton}>
+            등록하기
+        </button>}
+        {id && <button 
+          className={styles.submit} 
+          onClick={handlePutButton}>
+            수정하기
+        </button>}
       </div>
     </main>
   );
