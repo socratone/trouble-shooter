@@ -4,12 +4,12 @@ import { deleteTroublesItem } from '../../api/troubles';
 import YesNoModal from '../modal/YesNoModal';
 import styles from './EditToolBar.module.scss';
 
-const EditToolBar = ({ page, id }) => {
+const EditToolBar = ({ id }) => {
   const [modal, setModal] = useState('');
   const history = useHistory();
 
   const handleEdit = () => {
-    history.push('/' + page + '-editor/' + id);
+    history.push('/editor/' + id);
   };
 
   const handleErase = () => {
@@ -22,7 +22,7 @@ const EditToolBar = ({ page, id }) => {
       setModal('');
       return alert(result.error.message);
     }
-    history.push('/' + page);
+    history.push('/');
   };
 
   const showRemoveModal = () => (

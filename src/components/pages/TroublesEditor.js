@@ -4,9 +4,9 @@ import { useHistory, useParams } from 'react-router-dom';
 import { postTroublesItem, putTroublesItem, getTroublesItem } from '../../api/troubles';
 import { setPageHead, setPage, setTitle, setCategory } from '../../store/reducers/troublesEditor';
 import NormalPageFrame from '../common/NormalPageFrame';
-import AddPageItemButton from '../Editor/AddPageItemButton';
-import TroublesPageItem from '../Editor/TroublesPageItem';
-import styles from './Editor.module.scss';
+import AddPageItemButton from '../TroublesEditor/AddPageItemButton';
+import PageItem from '../TroublesEditor/PageItem';
+import styles from './TroublesEditor.module.scss';
 
 const TroublesEditor = () => {
   const { id } = useParams();
@@ -139,7 +139,7 @@ const TroublesEditor = () => {
             </div>
           </div>
           <div className={styles.pageItemWrap}>
-            {page.items.map((item, i) => <TroublesPageItem 
+            {page.items.map((item, i) => <PageItem 
               key={i} 
               type={item.type} 
               value={item.value} 

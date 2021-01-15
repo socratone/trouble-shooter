@@ -12,6 +12,7 @@ import styles from './Troubles.module.scss';
 
 import { beginnerItems } from '../../fakeData';
 
+// TODO: 삭제
 const Beginner = () => {
   const [category, setCategory] = useState('all');
   const [clickCategory, setClickCategory] = useState(false);

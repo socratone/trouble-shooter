@@ -16,8 +16,6 @@ import ResizeIcon from '../icon/ResizeIcon';
 import EditToolBar from '../Shoot/EditToolBar';
 import styles from './Shoot.module.scss';
 
-// import { troublesItems, beginnerItems } from '../../fakeData';
-
 const Shoot = ({ page }) => {
   const { id } = useParams();
   const [data, setData] = useState(null);
@@ -88,7 +86,7 @@ const Shoot = ({ page }) => {
       onMouseMove={(e) => handleMouseMove(e)}
     >
       <section className={styles.leftSection} style={{ width: `${leftWidthRate}%`}}>
-        <EditToolBar page={page} id={id} />
+        <EditToolBar id={id} />
         {!isFullScreen && <Title head>{data && data.title}</Title>}
         {!isFullScreen && data && 
           data.page.items.map((item, i) => setShootItem(item, i))}

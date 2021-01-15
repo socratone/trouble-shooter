@@ -6,7 +6,7 @@ import styles from './PageItem.module.scss';
 
 const s3URL = process.env.REACT_APP_S3_URL;
 
-const TroublesPageItem = ({ type, value, url, width, index }) => {
+const PageItem = ({ type, value, url, width, index }) => {
   const [previewImage, setPreviewImage] = useState('');
   const page = useSelector(state => state.ui.troublesEditor.page);
   const pageHead = useSelector(state => state.ui.troublesEditor.pageHead);
@@ -17,7 +17,7 @@ const TroublesPageItem = ({ type, value, url, width, index }) => {
     if (index === pageHead) return 'dodgerblue';
   };
 
-  const handleLine = () => {
+  const handleLineClick = () => {
     dispatch(setPageHead({ pageHead: index }));
   };
 
@@ -81,7 +81,7 @@ const TroublesPageItem = ({ type, value, url, width, index }) => {
     dispatch(setPage({ page: newPage }));
   };
 
-  const handleImageInputChange = () => { // value 수정
+  const handleImageKeyChange = () => { // value 수정
     const file = inputFile.current.files[0];
     const items = [...page.items];
     const newPage = {...page};
@@ -163,7 +163,7 @@ const TroublesPageItem = ({ type, value, url, width, index }) => {
           accept="image/png, image/jpeg"
           onChange={e => {
             previewImageFile(e);
-            handleImageInputChange();
+            handleImageKeyChange();
           }}
         />}
         <input
@@ -206,10 +206,10 @@ const TroublesPageItem = ({ type, value, url, width, index }) => {
       {showInput()}
       <div 
         className={styles.line} 
-        onClick={handleLine}
+        onClick={handleLineClick}
         style={{ background: changeLineColor() }} />
     </article>
   );
 }
 
-export default TroublesPageItem;
+export default PageItem;

@@ -24,7 +24,7 @@ const Routes = () => {
             <Shoot page="beginner" />
           </Route>
           <Route path="/beginner">
-            <Beginner />
+            <Troubles />
           </Route>
           <Route path="/troubles/:id">
             <Shoot page="troubles" />
@@ -32,10 +32,10 @@ const Routes = () => {
           <Route path="/troubles">
             <Troubles />
           </Route>
-          <Route path="/troubles-editor/:id">
+          <Route path="/editor/:id">
             <TroublesEditor />
           </Route>
-          <Route path="/troubles-editor">
+          <Route path="/editor">
             <TroublesEditor />
           </Route>
           <Route path="/">
