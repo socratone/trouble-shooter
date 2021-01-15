@@ -62,12 +62,15 @@ const PageItem = ({ type, value, url, index }) => {
           value={value} 
           onChange={handleLinkTextChange}
           className={styles.textInput}
-          style={{ marginBottom: '10px' }}/>
+          style={{ marginBottom: '10px' }}
+          placeholder="제목"/>
+          
         <input
           type="text" 
           value={url} 
           onChange={handleLinkURLChange}
-          className={styles.textInput}/>
+          className={styles.textInput}
+          placeholder="URL"/>
       </>
     } else {
       return <input
