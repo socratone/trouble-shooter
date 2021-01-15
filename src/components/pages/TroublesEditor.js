@@ -10,6 +10,7 @@ const TroublesEditor = () => {
   const title = useSelector(state => state.ui.troublesEditor.title);
   const category = useSelector(state => state.ui.troublesEditor.category);
   const page = useSelector(state => state.ui.troublesEditor.page);
+  const pageHead = useSelector(state => state.ui.troublesEditor.pageHead);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -29,6 +30,15 @@ const TroublesEditor = () => {
     if (page.items.length < 1) return alert('본문을 입력하세요.')
     const result = await postTroublesItem({ title, category, page });
     console.log('result:', result)
+  };
+
+  const addPageItem = type => {
+    const items = [...page.items];
+    const newPage = {...page};
+    items.splice(pageHead + 1, 0, { type: type, value: '' }); // url은 생성하지 않는다.
+    newPage.items = items;
+    dispatch(setPage({ page: newPage }));
+    dispatch(setPageHead({ pageHead: pageHead + 1 }));
   };
 
   const handleHTMLInput = ({ target }) => {
@@ -69,14 +79,14 @@ const TroublesEditor = () => {
         <div className={styles.pageHead}>
           <p className={styles.title}>본문</p>
           <div className={styles.addPageItemButtonWrap}>
-            <AddPageItemButton type="title" />
-            <AddPageItemButton type="subTitle" />
-            <AddPageItemButton type="text" />
-            <AddPageItemButton type="list" />
-            <AddPageItemButton type="link" />
-            <AddPageItemButton type="html" />
-            <AddPageItemButton type="css" />
-            <AddPageItemButton type="js" />
+            <AddPageItemButton name="Title" onClick={() => addPageItem('title')}/>
+            <AddPageItemButton name="SubTitle" onClick={() => addPageItem('subTitle')}/>
+            <AddPageItemButton name="Text" onClick={() => addPageItem('text')}/>
+            <AddPageItemButton name="List" onClick={() => addPageItem('list')}/>
+            <AddPageItemButton name="Link" onClick={() => addPageItem('link')}/>
+            <AddPageItemButton name="HTML" onClick={() => addPageItem('html')}/>
+            <AddPageItemButton name="CSS" onClick={() => addPageItem('css')}/>
+            <AddPageItemButton name="JavaScript" onClick={() => addPageItem('js')}/>
           </div>
         </div>
         <div className={styles.pageItemWrap}>
