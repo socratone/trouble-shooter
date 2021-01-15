@@ -1,12 +1,22 @@
 .shoot {
   display: flex;
   overflow: hidden;
+
+  @media (max-width: 700px) {
+    flex-direction: column;
+    overflow: visible;
+  }
 }
 
 .leftSection {
   padding: 20px;
   overflow-y: scroll;
   width: 60%;
+  box-sizing: border-box;
+
+  @media (max-width: 700px) {
+    width: 100% !important;
+  }
 }
 
 .resizer {
@@ -17,12 +27,21 @@
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
+
+  @media (max-width: 700px) {
+    display: none;
+  }
 }
 
 .rightSection {
   padding: 20px;
   overflow-y: auto;
   width: 40%;
+  box-sizing: border-box;
+
+  @media (max-width: 700px) {
+    width: 100% !important;
+  }
 }
 
 // 스크롤바
