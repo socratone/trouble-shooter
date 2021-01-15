@@ -78,7 +78,7 @@ const Shoot = ({ page }) => {
     else if (item.type === 'js' || item.type === 'html' || item.type === 'css')
       return <Code key={key} type={item.type}>{item.value}</Code>
     else if (item.type === 'image') 
-      return <Image key={key} src={item.value} width={item.width} align={item.align} />
+      return <Image key={key} url={item.url} width={item.width} />
   };
 
   return (  

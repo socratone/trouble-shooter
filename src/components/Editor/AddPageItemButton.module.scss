@@ -3,9 +3,11 @@
   margin-left: 8px;
   padding: 5px 8px;
   border-radius: 100px;
+  border: grey solid 1px;
+  cursor: pointer;
 
   &:hover {
-    background: gray
+    background: whitesmoke;
   }
 
   &:active {

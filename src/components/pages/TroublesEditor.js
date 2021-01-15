@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import { postTroublesItem, putTroublesItem, getTroublesItem } from '../../api/troubles';
-import { setPageHead, setPage, setTitle, setCategory, setAll } from '../../store/reducers/troublesEditor';
+import { setPageHead, setPage, setTitle, setCategory } from '../../store/reducers/troublesEditor';
 import NormalPageFrame from '../common/NormalPageFrame';
 import AddPageItemButton from '../Editor/AddPageItemButton';
 import TroublesPageItem from '../Editor/TroublesPageItem';
@@ -42,7 +42,15 @@ const TroublesEditor = () => {
     dispatch(setCategory({ category: target.value }));
   };
 
+  const validateImageFile = () => {
+    const images = page.items.filter(item => item.type === 'image');
+    const incompletes = images.filter(item => !item.value || !item.url)
+    if (incompletes.length > 0) return false;
+    return true;
+  };
+
   const handlePostButton = async () => {
+    if (!validateImageFile()) return alert('이미지 파일 정보가 부족합니다.');
     if (title.length < 1) return alert('제목을 입력하세요.');
     if (page.items.length < 1) return alert('본문을 입력하세요.')
     const result = await postTroublesItem({ title, category, page });
@@ -54,6 +62,7 @@ const TroublesEditor = () => {
   };
 
   const handlePutButton = async () => {
+    if (!validateImageFile()) return alert('이미지 파일 정보가 부족합니다.');
     if (title.length < 1) return alert('제목을 입력하세요.');
     if (page.items.length < 1) return alert('본문을 입력하세요.')
     const result = await putTroublesItem({ title, category, page }, id);
@@ -126,6 +135,7 @@ const TroublesEditor = () => {
               <AddPageItemButton name="HTML" onClick={() => addPageItem('html')}/>
               <AddPageItemButton name="CSS" onClick={() => addPageItem('css')}/>
               <AddPageItemButton name="JavaScript" onClick={() => addPageItem('js')}/>
+              <AddPageItemButton name="Image" onClick={() => addPageItem('image')}/>
             </div>
           </div>
           <div className={styles.pageItemWrap}>
@@ -134,6 +144,7 @@ const TroublesEditor = () => {
               type={item.type} 
               value={item.value} 
               url={item.url}
+              width={item.width}
               index={i} 
             />)}
           </div>
