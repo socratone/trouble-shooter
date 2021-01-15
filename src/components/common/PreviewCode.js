@@ -26,6 +26,7 @@ const Pre = ({ type, handleKeyUp }) => {
   const handleBlur = async () => {
     const text = pre.current.textContent;
     await setColorCode('');
+    console.log('text:', text)
     setColorCode(text);
   };
 
@@ -36,7 +37,7 @@ const Pre = ({ type, handleKeyUp }) => {
       ref={pre}
       className={styles.code} 
       onKeyUp={() => handleKeyUp(pre.current)} 
-      onBlur={handleBlur}
+      // onBlur={handleBlur}
       contentEditable
       suppressContentEditableWarning
     >
