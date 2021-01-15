@@ -115,7 +115,7 @@ const TroublesEditor = () => {
         </div>
         <div className={styles.item}>
           <p className={styles.title}>카테고리</p>
-          <select name="cars" id="cars" className={styles.select} value={category} onChange={handleCategoryInput}>
+          <select className={styles.select} value={category} onChange={handleCategoryInput}>
             <optgroup label="카테고리">
               <option value="html">HTML</option>
               <option value="css">CSS</option>
