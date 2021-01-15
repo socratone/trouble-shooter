@@ -26,7 +26,6 @@ const postTroublesItem = async item => {
   // headers.append('x-auth-token', token);
   headers.append('Content-Type', 'application/json');
   const page = JSON.stringify(item.page)
-  console.log('page:', page)
 
   try {
     const raw = JSON.stringify({ 
@@ -55,7 +54,6 @@ const putTroublesItem = async (item, id) => {
   // headers.append('x-auth-token', token);
   headers.append('Content-Type', 'application/json');
   const page = JSON.stringify(item.page)
-  console.log('page:', page)
 
   try {
     const raw = JSON.stringify({ 

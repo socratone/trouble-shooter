@@ -17,7 +17,6 @@ const EditToolBar = ({ page, id }) => {
   };
 
   const requestRemoveItem = async () => {
-    console.log('삭제 요청');
     const result = await deleteTroublesItem(id);
     if (result.error) {
       setModal('');
