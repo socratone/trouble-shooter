@@ -78,9 +78,30 @@ const putTroublesItem = async (item, id) => {
   }
 }; 
 
+const deleteTroublesItem = async id => {
+  const headers = new Headers();
+  // const token = localStorage.getItem('token')
+  // headers.append('x-auth-token', token);
+  headers.append('Content-Type', 'application/json');
+
+  try {
+    const res = await fetch(url + '/api/troubles/' + id, {
+      method: 'DELETE',
+      headers: headers,
+      redirect: 'follow'
+    });
+  
+    const result = await res.json();
+    return result;
+  } catch (error) {
+    return { error };
+  }
+};
+
 export {
   getTroublesItems,
   getTroublesItem,
   postTroublesItem,
   putTroublesItem,
+  deleteTroublesItem
 };

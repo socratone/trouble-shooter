@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import { postTroublesItem, putTroublesItem, getTroublesItem } from '../../api/troubles';
 import { setPageHead, setPage, setTitle, setCategory, setAll } from '../../store/reducers/troublesEditor';
+import NormalPageFrame from '../common/NormalPageFrame';
 import AddPageItemButton from '../Editor/AddPageItemButton';
 import TroublesPageItem from '../Editor/TroublesPageItem';
 import styles from './Editor.module.scss';
@@ -49,7 +50,7 @@ const TroublesEditor = () => {
       console.log('error:', result.error)
       return alert(result.error.message); 
     }
-    history.goBack();
+    history.push('/troubles/' + result.insertId);
   };
 
   const handlePutButton = async () => {
@@ -60,7 +61,7 @@ const TroublesEditor = () => {
       console.log('error:', result.error)
       return alert(result.error.message); 
     }
-    history.goBack();
+    history.push('/troubles/' + id);
   };
 
   const addPageItem = type => {
@@ -97,82 +98,84 @@ const TroublesEditor = () => {
   };
 
   return (  
-    <main className={styles.editor}>
-      <div className={styles.item}>
-        <p className={styles.title}>제목</p>
-        <input type="text" className={styles.textInput} value={title} onChange={handleTitleInput}/>
-      </div>
-      <div className={styles.item}>
-        <p className={styles.title}>카테고리</p>
-        <select name="cars" id="cars" className={styles.select} value={category} onChange={handleCategoryInput}>
-          <optgroup label="카테고리">
-            <option value="html">HTML</option>
-            <option value="css">CSS</option>
-            <option value="js">JavaScript</option>
-          </optgroup>
-        </select>
-      </div>
-      <div className={styles.item}>
-        <div className={styles.pageHead}>
-          <p className={styles.title}>본문</p>
-          <div className={styles.addPageItemButtonWrap}>
-            <AddPageItemButton name="Title" onClick={() => addPageItem('title')}/>
-            <AddPageItemButton name="SubTitle" onClick={() => addPageItem('subTitle')}/>
-            <AddPageItemButton name="Text" onClick={() => addPageItem('text')}/>
-            <AddPageItemButton name="List" onClick={() => addPageItem('list')}/>
-            <AddPageItemButton name="Link" onClick={() => addPageItem('link')}/>
-            <AddPageItemButton name="HTML" onClick={() => addPageItem('html')}/>
-            <AddPageItemButton name="CSS" onClick={() => addPageItem('css')}/>
-            <AddPageItemButton name="JavaScript" onClick={() => addPageItem('js')}/>
+    <NormalPageFrame>
+      <main className={styles.editor}>
+        <div className={styles.item}>
+          <p className={styles.title}>제목</p>
+          <input type="text" className={styles.textInput} value={title} onChange={handleTitleInput}/>
+        </div>
+        <div className={styles.item}>
+          <p className={styles.title}>카테고리</p>
+          <select name="cars" id="cars" className={styles.select} value={category} onChange={handleCategoryInput}>
+            <optgroup label="카테고리">
+              <option value="html">HTML</option>
+              <option value="css">CSS</option>
+              <option value="js">JavaScript</option>
+            </optgroup>
+          </select>
+        </div>
+        <div className={styles.item}>
+          <div className={styles.pageHead}>
+            <p className={styles.title}>본문</p>
+            <div className={styles.addPageItemButtonWrap}>
+              <AddPageItemButton name="Title" onClick={() => addPageItem('title')}/>
+              <AddPageItemButton name="SubTitle" onClick={() => addPageItem('subTitle')}/>
+              <AddPageItemButton name="Text" onClick={() => addPageItem('text')}/>
+              <AddPageItemButton name="List" onClick={() => addPageItem('list')}/>
+              <AddPageItemButton name="Link" onClick={() => addPageItem('link')}/>
+              <AddPageItemButton name="HTML" onClick={() => addPageItem('html')}/>
+              <AddPageItemButton name="CSS" onClick={() => addPageItem('css')}/>
+              <AddPageItemButton name="JavaScript" onClick={() => addPageItem('js')}/>
+            </div>
+          </div>
+          <div className={styles.pageItemWrap}>
+            {page.items.map((item, i) => <TroublesPageItem 
+              key={i} 
+              type={item.type} 
+              value={item.value} 
+              url={item.url}
+              index={i} 
+            />)}
           </div>
         </div>
-        <div className={styles.pageItemWrap}>
-          {page.items.map((item, i) => <TroublesPageItem 
-            key={i} 
-            type={item.type} 
-            value={item.value} 
-            url={item.url}
-            index={i} 
-          />)}
+        <div className={styles.item}>
+          <p className={styles.title}>HTML</p>
+          <textarea 
+            type="text" 
+            className={styles.textArea} 
+            onChange={handleHTMLInput}
+            value={page.previewCode.html}/>
         </div>
-      </div>
-      <div className={styles.item}>
-        <p className={styles.title}>HTML</p>
-        <textarea 
-          type="text" 
-          className={styles.textArea} 
-          onChange={handleHTMLInput}
-          value={page.previewCode.html}/>
-      </div>
-      <div className={styles.item}>
-        <p className={styles.title}>CSS</p>
-        <textarea 
-          type="text" 
-          className={styles.textArea} 
-          onChange={handleCSSInput}
-          value={page.previewCode.css}/>
-      </div>
-      <div className={styles.item}>
-        <p className={styles.title}>JavaScript</p>
-        <textarea 
-          type="text" 
-          className={styles.textArea} 
-          onChange={handleJSInput}
-          value={page.previewCode.js}/>
-      </div>
-      <div className={styles.submitWrap}>
-        {!id && <button 
-          className={styles.submit} 
-          onClick={handlePostButton}>
-            등록하기
-        </button>}
-        {id && <button 
-          className={styles.submit} 
-          onClick={handlePutButton}>
-            수정하기
-        </button>}
-      </div>
-    </main>
+        <div className={styles.item}>
+          <p className={styles.title}>CSS</p>
+          <textarea 
+            type="text" 
+            className={styles.textArea} 
+            onChange={handleCSSInput}
+            value={page.previewCode.css}/>
+        </div>
+        <div className={styles.item}>
+          <p className={styles.title}>JavaScript</p>
+          <textarea 
+            type="text" 
+            className={styles.textArea} 
+            onChange={handleJSInput}
+            value={page.previewCode.js}/>
+        </div>
+        <div className={styles.submitWrap}>
+          {!id && <button 
+            className={styles.submit} 
+            onClick={handlePostButton}>
+              등록하기
+          </button>}
+          {id && <button 
+            className={styles.submit} 
+            onClick={handlePutButton}>
+              수정하기
+          </button>}
+        </div>
+      </main>
+    </NormalPageFrame>
   );
 }
  

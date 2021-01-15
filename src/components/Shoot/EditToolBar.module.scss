@@ -1,0 +1,16 @@
+.wrap {
+  display: flex;
+}
+
+.editButton {
+  cursor: pointer;
+  color: gray;
+  font-size: 16px;
+}
+
+.eraseButton {
+  cursor: pointer;
+  color: gray;
+  font-size: 16px;
+  margin-left: 10px;
+}

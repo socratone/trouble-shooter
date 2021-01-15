@@ -13,6 +13,7 @@ import PreviewCode from '../common/PreviewCode';
 import List from '../common/List';
 import Link from '../common/Link';
 import ResizeIcon from '../icon/ResizeIcon';
+import EditToolBar from '../Shoot/EditToolBar';
 import styles from './Shoot.module.scss';
 
 // import { troublesItems, beginnerItems } from '../../fakeData';
@@ -34,6 +35,7 @@ const Shoot = ({ page }) => {
         // [data] = beginnerItems.filter(item => item.id === Number(id));
       } else if (page === 'troubles') {
         const troublesItem = await getTroublesItem(id);
+        if (troublesItem.error) return alert(troublesItem.error.message);
         const page = JSON.parse(troublesItem.page);
         troublesItem.page = page;
         
@@ -86,6 +88,7 @@ const Shoot = ({ page }) => {
       onMouseMove={(e) => handleMouseMove(e)}
     >
       <section className={styles.leftSection} style={{ width: `${leftWidthRate}%`}}>
+        <EditToolBar page={page} id={id} />
         {!isFullScreen && <Title head>{data && data.title}</Title>}
         {!isFullScreen && data && 
           data.page.items.map((item, i) => setShootItem(item, i))}
