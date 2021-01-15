@@ -6,7 +6,6 @@ import {
 } from "react-router-dom";
 import Nav from './nav/Nav';
 import Home from './pages/Home';
-import Beginner from './pages/Beginner';
 import Troubles from './pages/Troubles';
 import Shoot from './pages/Shoot';
 import HeaderBumper from './common/HeaderBumper';
