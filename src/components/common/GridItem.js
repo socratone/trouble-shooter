@@ -1,6 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import getThumbnail from '../../helper/getThumbnail';
+import convertSQLDate from '../../helper/convertSQLDate';
 import styles from './GridItem.module.scss';
 
 const GridItem = ({ item, page }) => {
@@ -30,7 +31,7 @@ const GridItem = ({ item, page }) => {
           <p className={styles.title}>{item.title}</p>
           <div className={styles.bottomWrap}>
             <p className={styles.category}>{item.category}</p>
-            <p className={styles.date}>{item.createdAt}</p>
+            <p className={styles.date}>{convertSQLDate(item.createdAt)}</p>
           </div>
         </div>
       </article>
