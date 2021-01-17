@@ -1,6 +1,7 @@
 import React from 'react';
 import NormalPageFrame from '../common/NormalPageFrame';
 import Header from '../Home/Header';
+import Footer from '../Home/Footer';
 import styles from './Home.module.scss';
 
 const Home = () => {
@@ -11,7 +12,8 @@ const Home = () => {
         <section>
           hello world
         </section>
-      </NormalPageFrame>  
+      </NormalPageFrame> 
+      <Footer />
     </main>
   );
 }

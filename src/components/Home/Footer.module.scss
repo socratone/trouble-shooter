@@ -1,0 +1,21 @@
+.footer {
+  padding: 20px;
+  box-sizing: border-box;
+  background: whitesmoke;
+}
+
+.item {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: grey;
+}
+
+.item:last-child {
+  margin-bottom: 0;
+}
+
+.admin {
+  cursor: pointer;
+  font-size: 14px;
+  color: grey;
+}
