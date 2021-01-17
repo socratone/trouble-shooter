@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^12.6.0",
     "aws-sdk": "^2.828.0",
     "dotenv": "^8.2.0",
+    "jwt-decode": "^3.1.2",
     "node-sass": "^4.14.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",

@@ -22,8 +22,8 @@ const getTroublesItem = async id => {
 
 const postTroublesItem = async item => {
   const headers = new Headers();
-  // const token = localStorage.getItem('token')
-  // headers.append('x-auth-token', token);
+  const token = localStorage.getItem('token');
+  headers.append('x-auth-token', token);
   headers.append('Content-Type', 'application/json');
   const page = JSON.stringify(item.page)
 
@@ -50,8 +50,8 @@ const postTroublesItem = async item => {
 
 const putTroublesItem = async (item, id) => {
   const headers = new Headers();
-  // const token = localStorage.getItem('token')
-  // headers.append('x-auth-token', token);
+  const token = localStorage.getItem('token');
+  headers.append('x-auth-token', token);
   headers.append('Content-Type', 'application/json');
   const page = JSON.stringify(item.page)
 
@@ -78,8 +78,8 @@ const putTroublesItem = async (item, id) => {
 
 const deleteTroublesItem = async id => {
   const headers = new Headers();
-  // const token = localStorage.getItem('token')
-  // headers.append('x-auth-token', token);
+  const token = localStorage.getItem('token');
+  headers.append('x-auth-token', token);
   headers.append('Content-Type', 'application/json');
 
   try {

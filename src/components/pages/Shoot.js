@@ -21,6 +21,7 @@ const Shoot = ({ page }) => {
   const [data, setData] = useState(null);
   const [leftWidthRate, setLeftWidthRate] = useState(60); // %
   const [isMouseDown, setMouseDown] = useState(false);
+  const user = useSelector(state => state.entities.user);
   const previewCode = useSelector(state => state.entities.previewCode);
   const isFullScreen = useSelector(state => state.ui.preview.isFullScreen);
   const dispatch = useDispatch();
@@ -86,7 +87,7 @@ const Shoot = ({ page }) => {
       onMouseMove={(e) => handleMouseMove(e)}
     >
       <section className={styles.leftSection} style={{ width: `${leftWidthRate}%`}}>
-        <EditToolBar id={id} />
+        {user.isAdmin && <EditToolBar id={id} />}
         {!isFullScreen && <Title head>{data && data.title}</Title>}
         {!isFullScreen && data && 
           data.page.items.map((item, i) => setShootItem(item, i))}

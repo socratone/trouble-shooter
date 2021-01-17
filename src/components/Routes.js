@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { setAdmin } from '../store/reducers/user';
+import getUserByToken from '../helper/getUserByToken';
 import Nav from './nav/Nav';
 import Home from './pages/Home';
 import Troubles from './pages/Troubles';
@@ -14,6 +17,12 @@ import Admin from './pages/Admin';
 import styles from './Routes.module.scss';
 
 const Routes = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    const user = getUserByToken(localStorage.getItem('token'));
+    if (user.account === 'admin') dispatch(setAdmin({ isAdmin: true }));
+  }, []);
+
   return (  
     <Router>
       <Nav />

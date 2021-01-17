@@ -10,6 +10,7 @@ import styles from './TroublesEditor.module.scss';
 
 const TroublesEditor = () => {
   const { id } = useParams();
+  const user = useSelector(state => state.entities.user);
   const title = useSelector(state => state.ui.troublesEditor.title);
   const category = useSelector(state => state.ui.troublesEditor.category);
   const page = useSelector(state => state.ui.troublesEditor.page);
@@ -105,6 +106,10 @@ const TroublesEditor = () => {
     previewCode.js = target.value;
     dispatch(setPage({ page: newPage }));
   };
+
+  if (!user.isAdmin) return (
+    <p style={{ padding: '20px', textAlign: 'center' }}>admin 인증이 필요합니다.</p>
+  );
 
   return (  
     <NormalPageFrame>
