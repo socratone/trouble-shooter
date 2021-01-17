@@ -9,8 +9,8 @@ const s3URL = process.env.REACT_APP_S3_URL;
 
 const PageItem = ({ type, value, url, width, index }) => {
   const [previewImage, setPreviewImage] = useState('');
-  const page = useSelector(state => state.ui.troublesEditor.page);
-  const pageHead = useSelector(state => state.ui.troublesEditor.pageHead);
+  const page = useSelector(state => state.entities.troublesEditor.page);
+  const pageHead = useSelector(state => state.entities.troublesEditor.pageHead);
   const inputFile = useRef(null);
   const dispatch = useDispatch();
 
