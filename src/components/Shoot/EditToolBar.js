@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { deleteItem } from '../../api/item';
 import YesNoModal from '../modal/YesNoModal';
+import PencilIcon from '../icon/PencilIcon';
+import TrashIcon from '../icon/TrashIcon';
 import styles from './EditToolBar.module.scss';
 
 const EditToolBar = ({ id }) => {
@@ -36,8 +38,12 @@ const EditToolBar = ({ id }) => {
   return (  
     <>
       <div className={styles.wrap}>
-        <button className={styles.editButton} onClick={handleEdit}>edit</button>
-        <button className={styles.eraseButton} onClick={handleErase} >erase</button>
+        <button className={styles.button} onClick={handleEdit}>
+          <PencilIcon size="18" color="grey" />
+        </button>
+        <button className={styles.button} onClick={handleErase}>
+          <TrashIcon size="18" color="grey" />
+        </button>
       </div>
       {modal === 'remove' && showRemoveModal()}
     </>
