@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { putImageFile, listImageFiles, deleteImageFile } from '../../api/S3';
-import { setPageHead, setPage } from '../../store/reducers/troublesEditor';
+import { setPageHead, setPage } from '../../store/reducers/editor';
 import XIcon from '../icon/XIcon';
 import styles from './PageItem.module.scss';
 
@@ -9,8 +9,8 @@ const s3URL = process.env.REACT_APP_S3_URL;
 
 const PageItem = ({ type, value, url, width, index }) => {
   const [previewImage, setPreviewImage] = useState('');
-  const page = useSelector(state => state.entities.troublesEditor.page);
-  const pageHead = useSelector(state => state.entities.troublesEditor.pageHead);
+  const page = useSelector(state => state.entities.editor.page);
+  const pageHead = useSelector(state => state.entities.editor.pageHead);
   const inputFile = useRef(null);
   const dispatch = useDispatch();
 

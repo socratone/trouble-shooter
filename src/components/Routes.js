@@ -13,7 +13,7 @@ import Troubles from './pages/Troubles';
 import Beginner from './pages/Beginner';
 import Shoot from './pages/Shoot';
 import HeaderBumper from './common/HeaderBumper';
-import TroublesEditor from './pages/TroublesEditor';
+import Editor from './pages/Editor';
 import Admin from './pages/Admin';
 import styles from './Routes.module.scss';
 
@@ -43,10 +43,10 @@ const Routes = () => {
             <Troubles />
           </Route>
           <Route path="/editor/:id">
-            <TroublesEditor />
+            <Editor />
           </Route>
           <Route path="/editor">
-            <TroublesEditor />
+            <Editor />
           </Route>
           <Route path="/admin">
             <Admin />

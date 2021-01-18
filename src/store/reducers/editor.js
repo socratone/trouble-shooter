@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const slice = createSlice({
-  name: 'troublesEditor',
+  name: 'editor',
   initialState: {
     pageHead: -1,
     title: '',

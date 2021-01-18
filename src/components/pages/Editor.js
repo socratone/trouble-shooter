@@ -2,31 +2,31 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import { postItem, putItem, getItem } from '../../api/item';
-import { setPageHead, setPage, setTitle, setCategory } from '../../store/reducers/troublesEditor';
+import { setPageHead, setPage, setTitle, setCategory } from '../../store/reducers/editor';
 import NormalPageFrame from '../common/NormalPageFrame';
-import AddPageItemButton from '../TroublesEditor/AddPageItemButton';
-import PageItem from '../TroublesEditor/PageItem';
-import styles from './TroublesEditor.module.scss';
+import AddPageItemButton from '../Editor/AddPageItemButton';
+import PageItem from '../Editor/PageItem';
+import styles from './Editor.module.scss';
 
-const TroublesEditor = () => {
+const Editor = () => {
   const { id } = useParams();
   const user = useSelector(state => state.entities.user);
-  const title = useSelector(state => state.entities.troublesEditor.title);
-  const category = useSelector(state => state.entities.troublesEditor.category);
-  const page = useSelector(state => state.entities.troublesEditor.page);
-  const pageHead = useSelector(state => state.entities.troublesEditor.pageHead);
+  const title = useSelector(state => state.entities.editor.title);
+  const category = useSelector(state => state.entities.editor.category);
+  const page = useSelector(state => state.entities.editor.page);
+  const pageHead = useSelector(state => state.entities.editor.pageHead);
   const dispatch = useDispatch();
   const history = useHistory();
 
   useEffect(() => {
     (async () => {
       if (id) { // 수정할 때
-        const troublesItem = await getItem(id);
-        if (troublesItem.error) return alert(troublesItem.error.message);
-        const page = JSON.parse(troublesItem.page);
+        const item = await getItem(id);
+        if (item.error) return alert(item.error.message);
+        const page = JSON.parse(item.page);
 
-        dispatch(setTitle({ title: troublesItem.title }));
-        dispatch(setCategory({ category: troublesItem.category }));
+        dispatch(setTitle({ title: item.title }));
+        dispatch(setCategory({ category: item.category }));
         dispatch(setPage({ page }));
         dispatch(setPageHead({ pageHead: page.items.length - 1 }));
       } else { // 새로운 글을 쓸 때
@@ -59,7 +59,7 @@ const TroublesEditor = () => {
       console.log('error:', result.error)
       return alert(result.error.message); 
     }
-    history.push('/troubles/' + result.insertId);
+    history.goBack();
   };
 
   const handlePutButton = async () => {
@@ -71,7 +71,7 @@ const TroublesEditor = () => {
       console.log('error:', result.error)
       return alert(result.error.message); 
     }
-    history.push('/troubles/' + id);
+    history.goBack();
   };
 
   const addPageItem = type => {
@@ -195,4 +195,4 @@ const TroublesEditor = () => {
   );
 }
  
-export default TroublesEditor;
+export default Editor;
