@@ -124,17 +124,17 @@ const Editor = () => {
           <select className={styles.select} value={category} onChange={handleCategoryInput}>
             <optgroup label="Troubles">
               {categoryJSON.troubles.map(item => 
-                <option value={item.id}>{item.name}</option>
+                <option key={item.id} value={item.id}>{item.name}</option>
               )}
             </optgroup>
             <optgroup label="Beginner">
               {categoryJSON.beginner.map(item => 
-                <option value={item.id}>{item.name}</option>
+                <option key={item.id} value={item.id}>{item.name}</option>
               )}
             </optgroup>
             <optgroup label="Algorithm">
               {categoryJSON.algorithm.map(item => 
-                <option value={item.id}>{item.name}</option>
+                <option key={item.id} value={item.id}>{item.name}</option>
               )}
             </optgroup>
           </select>

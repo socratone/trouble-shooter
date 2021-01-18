@@ -7,8 +7,8 @@ const categoryJSON = {
   ],
   beginner: [
     {
-      id: 'varialbe',
-      name: '변수'
+      id: 'basic',
+      name: '기초'
     }
   ],
   troubles: [
@@ -24,22 +24,14 @@ const categoryJSON = {
       id: 'js',
       name: 'JavaScript'
     },
-    {
-      id: 'ec2',
-      name: 'EC2'
-    },
-    {
-      id: 's3',
-      name: 'S3'
-    },
-    {
-      id: 'test',
-      name: 'Test'
-    },
-    {
-      id: 'docker',
-      name: 'Docker'
-    },
+    // {
+    //   id: 'docker',
+    //   name: 'Docker'
+    // },
+    // {
+    //   id: 'redux',
+    //   name: 'Redux'
+    // },
     {
       id: 'mysql',
       name: 'MySQL'
@@ -53,37 +45,41 @@ const categoryJSON = {
       name: 'MongoDB'
     },
     {
-      id: 'redux',
-      name: 'Redux'
+      id: 'nodejs',
+      name: 'NodeJS'
     },
     {
       id: 'webpack',
       name: 'Webpack'
     },
-    {
-      id: 'gulp',
-      name: 'Gulp'
-    },
+    // {
+    //   id: 'gulp',
+    //   name: 'Gulp'
+    // },
     {
       id: 'babel',
       name: 'Babel'
+    },
+    {
+      id: 'jest',
+      name: 'Jest'
     },
     {
       id: 'electron',
       name: 'Electron'
     },
     {
-      id: 'reactnative',
-      name: 'React Native'
+      id: 'aws',
+      name: 'AWS'
     },
-    {
-      id: 'react',
-      name: 'React'
-    },
-    {
-      id: 'nodejs',
-      name: 'NodeJS'
-    },
+    // {
+    //   id: 'reactnative',
+    //   name: 'React Native'
+    // },
+    // {
+    //   id: 'react',
+    //   name: 'React'
+    // },
   ]
 };
 
