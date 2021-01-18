@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setItems } from '../../store/reducers/beginnerItems';
 import convertCategoryName from '../../helper/convertCategoryName';
+import filterItemsByCategory from '../../helper/filterItemsByCategory';
+import filterItemsByQuery from '../../helper/filterItemsByQuery';
 import { getBeginnerItems } from '../../api/item';
 import NormalPageFrame from '../common/NormalPageFrame';
 import GridItem from '../common/GridItem';
@@ -26,24 +28,10 @@ const Beginner = () => {
     })();
   }, []);
 
-  const filterItemsByCategory = items => {
-    return items.filter(item => {
-      if (category === 'all') return true;
-      if (item.category === category) return true;
-    });
-  };
-
-  const filterItemsByQuery = items => {
-    return items.filter(item => {
-      if (item.title.toLowerCase().indexOf(query) >= 0) return true;
-      // TODO: 본문 검색
-    });
-  };
-
   const getFilteredItems = items => {
-    let filteredItems = filterItemsByCategory(items);
-    if (query !== '') filteredItems = filterItemsByQuery(filteredItems);
-    return filteredItems;
+    items = filterItemsByCategory({ items , category });
+    if (query !== '') items = filterItemsByQuery({ items, query });
+    return items;
   };
 
   const toggleCategory = () => {
