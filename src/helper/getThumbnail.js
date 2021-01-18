@@ -4,6 +4,7 @@ const thumbnail = {
   html: 'https://techbeacon.com/sites/default/files/styles/social/public/html5-mobile-app-native-hybrid-pros-cons.jpg?itok=R3pMKIzh',
   css: 'https://colorlib.com/wp/wp-content/uploads/sites/2/creative-css3-tutorials.jpg',
   js: 'https://media.vlpt.us/images/azurestefan/post/683ee66b-2287-4ceb-837d-e2c9226252be/JavaScript.png',
+  dom: 'https://a.ilovecoding.org/thumb/dom.png',
   mysql: 'https://www.percona.com/blog/wp-content/uploads/2008/02/Finding-the-largest-tables-on-MySQL.jpg',
   sqlite: 'https://i.morioh.com/e1e505ba29.png',
   mongodb: 'https://nakedsecurity.sophos.com/wp-content/uploads/sites/2/2017/01/mongodb.png?w=775',
