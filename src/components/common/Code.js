@@ -29,17 +29,17 @@ const Code = ({ type, children }) => {
   };
 
   const copyCodeToClipboard = () => {
-    navigator.clipboard.writeText(children).then(() => {
-      setMessage('');
-      clearTimeout(clipboardTimer);
-      setMessage('clipboard에 복사했습니다.');
-      clipboardTimer = setTimeout(() => setMessage(''), 2000);
-    }, () => {
-      setMessage('');
-      clearTimeout(clipboardTimer);
-      setMessage('다시 시도해주세요.');
-      setTimeout(() => setMessage(''), 2000);
-    });
+    const textarea = document.createElement('textarea');
+    textarea.textContent = children;
+    document.body.append(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    textarea.remove();
+
+    setMessage('');
+    clearTimeout(clipboardTimer);
+    setMessage('clipboard에 복사했습니다.');
+    clipboardTimer = setTimeout(() => setMessage(''), 2000);
   };
 
   return (
