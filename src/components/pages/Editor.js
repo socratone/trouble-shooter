@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import { setPageHead, setPage, setTitle, setCategory } from '../../store/reducers/editor';
 import { postItem, putItem, getItem } from '../../api/item';
-import convertCategoryName from '../../helper/convertCategoryName';
+import categoryJSON from '../../data/categoryJSON'; 
 import NormalPageFrame from '../common/NormalPageFrame';
 import AddPageItemButton from '../Editor/AddPageItemButton';
 import PageItem from '../Editor/PageItem';
@@ -123,12 +123,19 @@ const Editor = () => {
           <p className={styles.title}>카테고리</p>
           <select className={styles.select} value={category} onChange={handleCategoryInput}>
             <optgroup label="Troubles">
-              <option value="html">{convertCategoryName('html')}</option>
-              <option value="css">{convertCategoryName('css')}</option>
-              <option value="javascript">{convertCategoryName('javascript')}</option>
+              {categoryJSON.troubles.map(item => 
+                <option value={item.id}>{item.name}</option>
+              )}
             </optgroup>
             <optgroup label="Beginner">
-              <option value="variable">{convertCategoryName('variable')}</option>
+              {categoryJSON.beginner.map(item => 
+                <option value={item.id}>{item.name}</option>
+              )}
+            </optgroup>
+            <optgroup label="Algorithm">
+              {categoryJSON.algorithm.map(item => 
+                <option value={item.id}>{item.name}</option>
+              )}
             </optgroup>
           </select>
         </div>

@@ -16,6 +16,7 @@ const RightNav = () => {
       <div className={styles.margin} onClick={handleClick} />
       <nav className={styles.nav}>
         <RightNavItem to="/">Home</RightNavItem>
+        <RightNavItem to="/algorithm">Algorithm</RightNavItem>
         <RightNavItem to="/beginner">Beginner</RightNavItem>
         <RightNavItem to="/troubles">Troubles</RightNavItem>
       </nav>

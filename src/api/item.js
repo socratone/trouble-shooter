@@ -19,6 +19,15 @@ const getBeginnerItems = async () => {
     return { error };
   }
 }; 
+const getAlgorithmItems = async () => {
+  try {
+    const res = await fetch(url + '/api/item/algorithm');
+    const result = await res.json();
+    return result;
+  } catch (error) {
+    return { error };
+  }
+}; 
 
 const getItem = async id => {
   try {
@@ -109,6 +118,7 @@ const deleteItem = async id => {
 export {
   getTroublesItems,
   getBeginnerItems,
+  getAlgorithmItems,
   getItem,
   postItem,
   putItem,

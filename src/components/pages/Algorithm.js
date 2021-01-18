@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setItems } from '../../store/reducers/troublesItems';
+import { setItems } from '../../store/reducers/algorithmItems';
 import filterItemsByCategory from '../../helper/filterItemsByCategory';
 import filterItemsByQuery from '../../helper/filterItemsByQuery';
-import { getTroublesItems } from '../../api/item';
-import categoryJSON from '../../data/categoryJSON';
+import { getAlgorithmItems } from '../../api/item';
+import categoryJSON from '../../data/categoryJSON'; 
 import NormalPageFrame from '../common/NormalPageFrame';
 import GridItem from '../common/GridItem';
 import Button from '../common/Button';
@@ -13,17 +13,17 @@ import ArrowIcon from '../icon/ArrowIcon';
 import Dropdown from '../common/Dropdown';
 import styles from './Items.module.scss';
 
-const Troubles = () => {
+const Algorithm = () => {
   const [category, setCategory] = useState('all');
   const [clickCategory, setClickCategory] = useState(false);
   const [searchValue, setSearchValue] = useState('');
   const [query, setQuery] = useState('');
-  const items = useSelector(state => state.entities.troublesItems);
+  const items = useSelector(state => state.entities.algorithmItems);
 
   const dispatch = useDispatch();
   useEffect(() => {
     (async () => {
-      const items = await getTroublesItems(); 
+      const items = await getAlgorithmItems(); 
       dispatch(setItems(items));
     })();
   }, []);
@@ -57,7 +57,7 @@ const Troubles = () => {
   };
 
   const setButtonName = () => {
-    const [item] = categoryJSON.troubles.filter(item => item.id === category);
+    const [item] = categoryJSON.algorithm.filter(item => item.id === category);
     if (item) return item.name;
     return '전체';
   };
@@ -72,7 +72,7 @@ const Troubles = () => {
             </Button>
             {clickCategory && <Dropdown top="52px">
               <li onClick={() => selectCategory('all')}>전체</li>
-              {categoryJSON.troubles.map(item =>
+              {categoryJSON.algorithm.map(item =>
                 <li key={item.id} onClick={() => selectCategory(item.id)}>
                   {item.name}
                 </li>
@@ -92,7 +92,7 @@ const Troubles = () => {
         </header>
         <section className={styles.grid}>
           {getFilteredItems(items).map(item => 
-            <GridItem key={item.id} item={item} page="troubles" />
+            <GridItem key={item.id} item={item} page="algorithm" />
           )}
         </section>
       </main>
@@ -100,4 +100,4 @@ const Troubles = () => {
   );
 }
  
-export default Troubles;
+export default Algorithm;

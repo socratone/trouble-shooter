@@ -16,6 +16,9 @@ const Nav = () => {
           <Logo />
         </div>
         <ul className={styles.itemWrap}>
+          <NavItem to="/algorithm">
+            Algorithm
+          </NavItem>
           <NavItem to="/beginner">
             Beginner
           </NavItem>

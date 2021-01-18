@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setItems } from '../../store/reducers/beginnerItems';
-import convertCategoryName from '../../helper/convertCategoryName';
 import filterItemsByCategory from '../../helper/filterItemsByCategory';
 import filterItemsByQuery from '../../helper/filterItemsByQuery';
 import { getBeginnerItems } from '../../api/item';
+import categoryJSON from '../../data/categoryJSON';
 import NormalPageFrame from '../common/NormalPageFrame';
 import GridItem from '../common/GridItem';
 import Button from '../common/Button';
@@ -56,21 +56,27 @@ const Beginner = () => {
     setQuery(searchValue.toLowerCase());
   };
 
+  const setButtonName = () => {
+    const [item] = categoryJSON.beginner.filter(item => item.id === category);
+    if (item) return item.name;
+    return '전체';
+  };
+
   return (
     <NormalPageFrame>
       <main>
         <header className={styles.header}>
           <div className={styles.categoryWrap}>
             <Button onClick={toggleCategory} onBlur={handleCategoryBlur}>
-              {convertCategoryName(category)} <ArrowIcon size="10" />
+              {setButtonName()} <ArrowIcon size="10" />
             </Button>
             {clickCategory && <Dropdown top="52px">
-              <li onClick={() => selectCategory('all')}>
-                {convertCategoryName('all')}
-              </li>
-              <li onClick={() => selectCategory('variable')}>
-                {convertCategoryName('variable')}
-              </li>
+              <li onClick={() => selectCategory('all')}>전체</li>
+              {categoryJSON.beginner.map(item =>
+                <li key={item.id} onClick={() => selectCategory(item.id)}>
+                  {item.name}
+                </li>
+              )}
             </Dropdown>}
           </div>
           <div className={styles.searchWrap}>

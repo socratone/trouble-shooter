@@ -11,7 +11,6 @@ const GridItem = ({ item, page }) => {
   }
 
   const setThumbnail = () => {
-    if (item.thumbnail) return item.thumbnail;
     return getThumbnail(item.category);
   }
 

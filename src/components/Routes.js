@@ -11,6 +11,7 @@ import Nav from './nav/Nav';
 import Home from './pages/Home';
 import Troubles from './pages/Troubles';
 import Beginner from './pages/Beginner';
+import Algorithm from './pages/Algorithm';
 import Shoot from './pages/Shoot';
 import HeaderBumper from './common/HeaderBumper';
 import Editor from './pages/Editor';
@@ -30,6 +31,12 @@ const Routes = () => {
       <div className={styles.mainWrap}>
         <HeaderBumper />
         <Switch>
+          <Route path="/algorithm/:id">
+            <Shoot page="algorithm" />
+          </Route>
+          <Route path="/algorithm">
+            <Algorithm />
+          </Route>
           <Route path="/beginner/:id">
             <Shoot page="beginner" />
           </Route>
