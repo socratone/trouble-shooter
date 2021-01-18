@@ -24,6 +24,14 @@ const categoryJSON = {
       id: 'js',
       name: 'JavaScript'
     },
+    {
+      id: 'dom',
+      name: 'DOM'
+    },
+    {
+      id: 'nodejs',
+      name: 'NodeJS'
+    },
     // {
     //   id: 'mysql',
     //   name: 'MySQL'
@@ -35,10 +43,6 @@ const categoryJSON = {
     // {
     //   id: 'mongodb',
     //   name: 'MongoDB'
-    // },
-    // {
-    //   id: 'nodejs',
-    //   name: 'NodeJS'
     // },
     // {
     //   id: 'webpack',
