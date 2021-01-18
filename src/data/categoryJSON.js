@@ -25,6 +25,46 @@ const categoryJSON = {
       name: 'JavaScript'
     },
     // {
+    //   id: 'mysql',
+    //   name: 'MySQL'
+    // },
+    // {
+    //   id: 'sqlite',
+    //   name: 'SQLite'
+    // },
+    // {
+    //   id: 'mongodb',
+    //   name: 'MongoDB'
+    // },
+    // {
+    //   id: 'nodejs',
+    //   name: 'NodeJS'
+    // },
+    // {
+    //   id: 'webpack',
+    //   name: 'Webpack'
+    // },
+    // {
+    //   id: 'babel',
+    //   name: 'Babel'
+    // },
+    // {
+    //   id: 'jest',
+    //   name: 'Jest'
+    // },
+    // {
+    //   id: 'electron',
+    //   name: 'Electron'
+    // },
+    {
+      id: 'aws',
+      name: 'AWS'
+    },
+    // {
+    //   id: 'gulp',
+    //   name: 'Gulp'
+    // },
+    // {
     //   id: 'docker',
     //   name: 'Docker'
     // },
@@ -32,46 +72,6 @@ const categoryJSON = {
     //   id: 'redux',
     //   name: 'Redux'
     // },
-    {
-      id: 'mysql',
-      name: 'MySQL'
-    },
-    {
-      id: 'sqlite',
-      name: 'SQLite'
-    },
-    {
-      id: 'mongodb',
-      name: 'MongoDB'
-    },
-    {
-      id: 'nodejs',
-      name: 'NodeJS'
-    },
-    {
-      id: 'webpack',
-      name: 'Webpack'
-    },
-    // {
-    //   id: 'gulp',
-    //   name: 'Gulp'
-    // },
-    {
-      id: 'babel',
-      name: 'Babel'
-    },
-    {
-      id: 'jest',
-      name: 'Jest'
-    },
-    {
-      id: 'electron',
-      name: 'Electron'
-    },
-    {
-      id: 'aws',
-      name: 'AWS'
-    },
     // {
     //   id: 'reactnative',
     //   name: 'React Native'
