@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setPreviewCode } from '../../store/reducers/previewCode';
 import applySpacesAndLineBreaksToText from '../../helper/applySpacesAndLineBreaksToText';
-import { getTroublesItem } from '../../api/troubles';
+import { getItem } from '../../api/item';
 import Title from '../common/Title';
 import Text from '../common/Text';
 import Image from '../common/Image';
@@ -33,7 +33,7 @@ const Shoot = ({ page }) => {
       if (page === 'beginner') {
         // [data] = beginnerItems.filter(item => item.id === Number(id));
       } else if (page === 'troubles') {
-        const troublesItem = await getTroublesItem(id);
+        const troublesItem = await getItem(id);
         if (troublesItem.error) return alert(troublesItem.error.message);
         const page = JSON.parse(troublesItem.page);
         troublesItem.page = page;

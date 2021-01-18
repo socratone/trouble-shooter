@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setTroublesItems } from '../../store/reducers/troublesItems';
+import { pushItems } from '../../store/reducers/troublesItems';
 import convertCategoryName from '../../helper/convertCategoryName';
-import { getTroublesItems } from '../../api/troubles';
+import { getTroublesItems } from '../../api/item';
 import NormalPageFrame from '../common/NormalPageFrame';
 import GridItem from '../common/GridItem';
 import Button from '../common/Button';
@@ -21,7 +21,8 @@ const Troubles = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     (async () => {
-      dispatch(setTroublesItems(await getTroublesItems()));
+      const items = await getTroublesItems(); 
+      dispatch(pushItems({ items }));
     })();
   }, []);
 

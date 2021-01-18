@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
-import { postTroublesItem, putTroublesItem, getTroublesItem } from '../../api/troubles';
+import { postItem, putItem, getItem } from '../../api/item';
 import { setPageHead, setPage, setTitle, setCategory } from '../../store/reducers/troublesEditor';
 import NormalPageFrame from '../common/NormalPageFrame';
 import AddPageItemButton from '../TroublesEditor/AddPageItemButton';
@@ -21,7 +21,7 @@ const TroublesEditor = () => {
   useEffect(() => {
     (async () => {
       if (id) { // 수정할 때
-        const troublesItem = await getTroublesItem(id);
+        const troublesItem = await getItem(id);
         if (troublesItem.error) return alert(troublesItem.error.message);
         const page = JSON.parse(troublesItem.page);
 
@@ -54,7 +54,7 @@ const TroublesEditor = () => {
     if (!validateImageFile()) return alert('이미지 파일 정보가 부족합니다.');
     if (title.length < 1) return alert('제목을 입력하세요.');
     if (page.items.length < 1) return alert('본문을 입력하세요.')
-    const result = await postTroublesItem({ title, category, page });
+    const result = await postItem({ title, category, page });
     if (result.error) {
       console.log('error:', result.error)
       return alert(result.error.message); 
@@ -66,7 +66,7 @@ const TroublesEditor = () => {
     if (!validateImageFile()) return alert('이미지 파일 정보가 부족합니다.');
     if (title.length < 1) return alert('제목을 입력하세요.');
     if (page.items.length < 1) return alert('본문을 입력하세요.')
-    const result = await putTroublesItem({ title, category, page }, id);
+    const result = await putItem({ title, category, page }, id);
     if (result.error) {
       console.log('error:', result.error)
       return alert(result.error.message); 

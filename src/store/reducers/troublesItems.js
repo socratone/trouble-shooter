@@ -4,11 +4,11 @@ const slice = createSlice({
   name: 'troublesItems',
   initialState: [],
   reducers: {
-    setTroublesItems: (state, action) => {
-      return action.payload;
-    }
+    pushItems: (state, action) => {
+      return state.concat(action.payload.items);
+    },
   }
 });
 
-export const { setTroublesItems } = slice.actions;
+export const { pushItems } = slice.actions;
 export default slice.reducer;

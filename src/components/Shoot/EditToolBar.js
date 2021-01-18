@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { deleteTroublesItem } from '../../api/troubles';
+import { deleteItem } from '../../api/item';
 import YesNoModal from '../modal/YesNoModal';
 import styles from './EditToolBar.module.scss';
 
@@ -17,7 +17,7 @@ const EditToolBar = ({ id }) => {
   };
 
   const requestRemoveItem = async () => {
-    const result = await deleteTroublesItem(id);
+    const result = await deleteItem(id);
     if (result.error) {
       setModal('');
       return alert(result.error.message);

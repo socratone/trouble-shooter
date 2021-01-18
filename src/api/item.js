@@ -2,7 +2,7 @@ const url = process.env.REACT_APP_API_URL || 'http://localhost:3001';
 
 const getTroublesItems = async () => {
   try {
-    const res = await fetch(url + '/api/troubles');
+    const res = await fetch(url + '/api/item/troubles');
     const result = await res.json();
     return result;
   } catch (error) {
@@ -10,9 +10,9 @@ const getTroublesItems = async () => {
   }
 }; 
 
-const getTroublesItem = async id => {
+const getBeginnerItems = async () => {
   try {
-    const res = await fetch(url + '/api/troubles/' + id);
+    const res = await fetch(url + '/api/item/beginner');
     const result = await res.json();
     return result;
   } catch (error) {
@@ -20,7 +20,17 @@ const getTroublesItem = async id => {
   }
 }; 
 
-const postTroublesItem = async item => {
+const getItem = async id => {
+  try {
+    const res = await fetch(url + '/api/item/' + id);
+    const result = await res.json();
+    return result;
+  } catch (error) {
+    return { error };
+  }
+}; 
+
+const postItem = async item => {
   const headers = new Headers();
   const token = localStorage.getItem('token');
   headers.append('x-auth-token', token);
@@ -34,7 +44,7 @@ const postTroublesItem = async item => {
       page
     });
 
-    const res = await fetch(url + '/api/troubles/', {
+    const res = await fetch(url + '/api/item/', {
       method: 'POST',
       headers,
       body: raw,
@@ -48,7 +58,7 @@ const postTroublesItem = async item => {
   }
 }; 
 
-const putTroublesItem = async (item, id) => {
+const putItem = async (item, id) => {
   const headers = new Headers();
   const token = localStorage.getItem('token');
   headers.append('x-auth-token', token);
@@ -62,7 +72,7 @@ const putTroublesItem = async (item, id) => {
       page
     });
 
-    const res = await fetch(url + '/api/troubles/' + id, {
+    const res = await fetch(url + '/api/item/' + id, {
       method: 'PUT',
       headers,
       body: raw,
@@ -76,14 +86,14 @@ const putTroublesItem = async (item, id) => {
   }
 }; 
 
-const deleteTroublesItem = async id => {
+const deleteItem = async id => {
   const headers = new Headers();
   const token = localStorage.getItem('token');
   headers.append('x-auth-token', token);
   headers.append('Content-Type', 'application/json');
 
   try {
-    const res = await fetch(url + '/api/troubles/' + id, {
+    const res = await fetch(url + '/api/item/' + id, {
       method: 'DELETE',
       headers: headers,
       redirect: 'follow'
@@ -98,8 +108,9 @@ const deleteTroublesItem = async id => {
 
 export {
   getTroublesItems,
-  getTroublesItem,
-  postTroublesItem,
-  putTroublesItem,
-  deleteTroublesItem
+  getBeginnerItems,
+  getItem,
+  postItem,
+  putItem,
+  deleteItem
 };
