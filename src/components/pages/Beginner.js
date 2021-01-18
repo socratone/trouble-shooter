@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setItems } from '../../store/reducers/troublesItems';
+import { setItems } from '../../store/reducers/beginnerItems';
 import convertCategoryName from '../../helper/convertCategoryName';
-import { getTroublesItems } from '../../api/item';
+import { getBeginnerItems } from '../../api/item';
 import NormalPageFrame from '../common/NormalPageFrame';
 import GridItem from '../common/GridItem';
 import Button from '../common/Button';
@@ -11,17 +11,17 @@ import ArrowIcon from '../icon/ArrowIcon';
 import Dropdown from '../common/Dropdown';
 import styles from './Items.module.scss';
 
-const Troubles = () => {
+const Beginner = () => {
   const [category, setCategory] = useState('all');
   const [clickCategory, setClickCategory] = useState(false);
   const [searchValue, setSearchValue] = useState('');
   const [query, setQuery] = useState('');
-  const items = useSelector(state => state.entities.troublesItems);
+  const items = useSelector(state => state.entities.beginnerItems);
 
   const dispatch = useDispatch();
   useEffect(() => {
     (async () => {
-      const items = await getTroublesItems(); 
+      const items = await getBeginnerItems(); 
       dispatch(setItems(items));
     })();
   }, []);
@@ -97,7 +97,7 @@ const Troubles = () => {
         </header>
         <section className={styles.grid}>
           {getFilteredItems(items).map(item => 
-            <GridItem key={item.id} item={item} page="troubles" />
+            <GridItem key={item.id} item={item} page="beginner" />
           )}
         </section>
       </main>
@@ -105,4 +105,4 @@ const Troubles = () => {
   );
 }
  
-export default Troubles;
+export default Beginner;

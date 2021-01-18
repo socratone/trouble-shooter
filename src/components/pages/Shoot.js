@@ -27,24 +27,18 @@ const Shoot = ({ page }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // TODO: get api
     (async () => {
-      let data;
-      if (page === 'beginner') {
-        // [data] = beginnerItems.filter(item => item.id === Number(id));
-      } else if (page === 'troubles') {
-        const troublesItem = await getItem(id);
-        if (troublesItem.error) return alert(troublesItem.error.message);
-        const page = JSON.parse(troublesItem.page);
-        troublesItem.page = page;
-        
-        setData(troublesItem);
-        dispatch(setPreviewCode({
-          html: page.previewCode.html,
-          css: page.previewCode.css,
-          js: page.previewCode.js
-        }));
-      }
+      const item = await getItem(id);
+      if (item.error) return alert(item.error.message);
+      const page = JSON.parse(item.page);
+      item.page = page;
+      
+      setData(item);
+      dispatch(setPreviewCode({
+        html: page.previewCode.html,
+        css: page.previewCode.css,
+        js: page.previewCode.js
+      }));
     })();
   }, []);
 

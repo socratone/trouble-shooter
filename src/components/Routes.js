@@ -10,6 +10,7 @@ import getUserByToken from '../helper/getUserByToken';
 import Nav from './nav/Nav';
 import Home from './pages/Home';
 import Troubles from './pages/Troubles';
+import Beginner from './pages/Beginner';
 import Shoot from './pages/Shoot';
 import HeaderBumper from './common/HeaderBumper';
 import TroublesEditor from './pages/TroublesEditor';
@@ -33,7 +34,7 @@ const Routes = () => {
             <Shoot page="beginner" />
           </Route>
           <Route path="/beginner">
-            <Troubles />
+            <Beginner />
           </Route>
           <Route path="/troubles/:id">
             <Shoot page="troubles" />
