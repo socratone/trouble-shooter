@@ -1,5 +1,15 @@
 const url = process.env.REACT_APP_API_URL || 'http://localhost:3001';
 
+const getHomeItems = async () => {
+  try {
+    const res = await fetch(url + '/api/item/home');
+    const result = await res.json();
+    return result;
+  } catch (error) {
+    return { error };
+  }
+}; 
+
 const getTroublesItems = async () => {
   try {
     const res = await fetch(url + '/api/item/troubles');
@@ -116,6 +126,7 @@ const deleteItem = async id => {
 };
 
 export {
+  getHomeItems,
   getTroublesItems,
   getBeginnerItems,
   getAlgorithmItems,

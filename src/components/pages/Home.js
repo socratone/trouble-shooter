@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setItems } from '../../store/reducers/homeItems';
-import { getTroublesItems } from '../../api/item';
+import { getHomeItems } from '../../api/item';
 import NormalPageFrame from '../common/NormalPageFrame';
 import Header from '../Home/Header';
 import Footer from '../Home/Footer';
@@ -13,7 +13,7 @@ const Home = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     (async () => {
-      const items = await getTroublesItems();
+      const items = await getHomeItems();
       dispatch(setItems(items));
     })();
   }, []);
