@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
-import { postItem, putItem, getItem } from '../../api/item';
 import { setPageHead, setPage, setTitle, setCategory } from '../../store/reducers/editor';
+import { postItem, putItem, getItem } from '../../api/item';
+import convertCategoryName from '../../helper/convertCategoryName';
 import NormalPageFrame from '../common/NormalPageFrame';
 import AddPageItemButton from '../Editor/AddPageItemButton';
 import PageItem from '../Editor/PageItem';
@@ -121,10 +122,13 @@ const Editor = () => {
         <div className={styles.item}>
           <p className={styles.title}>카테고리</p>
           <select className={styles.select} value={category} onChange={handleCategoryInput}>
-            <optgroup label="카테고리">
-              <option value="html">HTML</option>
-              <option value="css">CSS</option>
-              <option value="js">JavaScript</option>
+            <optgroup label="Troubles">
+              <option value="html">{convertCategoryName('html')}</option>
+              <option value="css">{convertCategoryName('css')}</option>
+              <option value="javascript">{convertCategoryName('javascript')}</option>
+            </optgroup>
+            <optgroup label="Beginner">
+              <option value="variable">{convertCategoryName('variable')}</option>
             </optgroup>
           </select>
         </div>

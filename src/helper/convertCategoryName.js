@@ -1,9 +1,11 @@
 const categoryName = {
   all: '전체',
+  html: 'HTML',
   css: 'CSS',
-  js: 'JavaScript',
-  aws: 'AWS',
-  basic: '기본',
+  javascript: 'JavaScript',
+  s3: 'AWS S3',
+  ec2: 'AWS EC2',
+  variable: '변수',
 };
 
 const convertCategoryName = category => categoryName[category];
