@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+import homeItems from './reducers/homeItems';
 import troublesItems from './reducers/troublesItems';
 import beginnerItems from './reducers/beginnerItems';
 import algorithmItems from './reducers/algorithmItems';
@@ -8,6 +9,7 @@ import editor from './reducers/editor';
 
 export default combineReducers({
   user,
+  homeItems,
   troublesItems,
   beginnerItems,
   algorithmItems,
