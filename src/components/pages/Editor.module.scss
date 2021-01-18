@@ -1,4 +1,10 @@
 .editor {
+  display: grid;
+  grid-template-columns: 1fr 100px;
+  gap: 20px;
+}
+
+.mainSection {
   display: flex;
   flex-direction: column;
 }
@@ -33,16 +39,6 @@
     monospace;
 }
 
-.pageHead {
-  display: flex;
-  justify-content: space-between;
-}
-
-.addPageItemButtonWrap {
-  display: flex;
-  align-items: center;
-}
-
 .pageItemWrap {
   padding: 10px;
   border: grey 1px dashed;
@@ -70,4 +66,17 @@
   &:active {
     transform: scale(0.95);
   }
+}
+
+.aside {
+  width: 100px;
+}
+
+.float {
+  top: 0;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
 }
