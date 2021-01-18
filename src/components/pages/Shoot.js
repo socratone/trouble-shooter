@@ -16,7 +16,7 @@ import ResizeIcon from '../icon/ResizeIcon';
 import EditToolBar from '../Shoot/EditToolBar';
 import styles from './Shoot.module.scss';
 
-const Shoot = ({ page }) => {
+const Shoot = () => {
   const { id } = useParams();
   const [data, setData] = useState(null);
   const [leftWidthRate, setLeftWidthRate] = useState(60); // %

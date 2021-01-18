@@ -32,19 +32,19 @@ const Routes = () => {
         <HeaderBumper />
         <Switch>
           <Route path="/algorithm/:id">
-            <Shoot page="algorithm" />
+            <Shoot />
           </Route>
           <Route path="/algorithm">
             <Algorithm />
           </Route>
           <Route path="/beginner/:id">
-            <Shoot page="beginner" />
+            <Shoot />
           </Route>
           <Route path="/beginner">
             <Beginner />
           </Route>
           <Route path="/troubles/:id">
-            <Shoot page="troubles" />
+            <Shoot />
           </Route>
           <Route path="/troubles">
             <Troubles />

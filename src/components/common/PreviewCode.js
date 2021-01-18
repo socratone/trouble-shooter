@@ -21,7 +21,7 @@ const Pre = ({ type, handleKeyUp }) => {
     if (type === 'html') setColorCode(previewCode.html); 
     else if (type === 'css') setColorCode(previewCode.css);
     else if (type === 'js') setColorCode(previewCode.js);
-  }, []);
+  }, [previewCode]);
 
   const handleBlur = async () => {
     const text = pre.current.textContent;
