@@ -24,6 +24,7 @@ const Algorithm = () => {
   useEffect(() => {
     (async () => {
       const items = await getAlgorithmItems(); 
+      if (items.error) return alert(items.error.message);
       dispatch(setItems(items));
     })();
   }, []);

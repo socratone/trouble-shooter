@@ -24,6 +24,7 @@ const Troubles = () => {
   useEffect(() => {
     (async () => {
       const items = await getTroublesItems(); 
+      if (items.error) return alert(items.error.message);
       dispatch(setItems(items));
     })();
   }, []);

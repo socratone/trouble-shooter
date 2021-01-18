@@ -24,6 +24,7 @@ const Beginner = () => {
   useEffect(() => {
     (async () => {
       const items = await getBeginnerItems(); 
+      if (items.error) return alert(items.error.message);
       dispatch(setItems(items));
     })();
   }, []);

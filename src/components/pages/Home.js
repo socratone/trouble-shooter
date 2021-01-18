@@ -14,6 +14,7 @@ const Home = () => {
   useEffect(() => {
     (async () => {
       const items = await getHomeItems();
+      if (items.error) return alert(items.error.message);
       dispatch(setItems(items));
     })();
   }, []);
