@@ -74,6 +74,11 @@ const Shoot = () => {
       return <Image key={key} url={item.url} width={item.width} />
   };
 
+  const isBrowser = () => {
+    if (previewCode.html && previewCode.css && previewCode.js) return true;
+    return false;
+  };
+
   return (  
     <main 
       className={styles.shoot} 
@@ -97,9 +102,9 @@ const Shoot = () => {
         className={styles.rightSection} 
         style={{ width: `${100 - leftWidthRate}%`}}
       >
-        {!isFullScreen && <Title sub head>Preview</Title>}
+        {!isFullScreen && isBrowser() && <Title sub head>Preview</Title>}
         {!isFullScreen && <Preview code={previewCode} />}
-        {!isFullScreen && <Title sub>Full Codes</Title>}
+        {!isFullScreen && isBrowser() && <Title sub>Full Codes</Title>}
         {isFullScreen && <Title sub head>Full Codes</Title>}
         {previewCode.html && <PreviewCode key="html" type="html" />}
         {previewCode.css && <PreviewCode key="css" type="css" />}
