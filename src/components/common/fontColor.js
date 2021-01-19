@@ -24,4 +24,8 @@ const Green = styled.span`
   color: rgb(141, 200, 145);
 `;
 
-export { Red, Orange, Green, Emerald, Blue, Purple }
+const Grey = styled.span`
+  color: #a1a1a1;
+`;
+
+export { Red, Orange, Green, Emerald, Blue, Purple, Grey }

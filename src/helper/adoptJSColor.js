@@ -1,15 +1,33 @@
 import findReservedWord from './findReservedWord';
 import findMethodWord from './findMethodWord';
 import isStructureChar from './isStructureChar';
-import { Green, Purple, Emerald, Blue } from '../components/common/fontColor';
+import { Green, Purple, Emerald, Blue, Grey } from '../components/common/fontColor';
 
 const adoptJSColor = text => {
   let texts = [];
   let tempText = '';
   let hasQuote = false;
+  let isComment = false;
 
   for (let i = 0; i < text.length; i++) {
     tempText += text[i];
+
+    // 주석 확인
+    // close /
+    if (isComment) {
+      if (text[i] === '\n' || text[i + 1] === undefined) {
+        texts.push(<Grey key={i}>{tempText}</Grey>);
+        tempText = '';
+        isComment = false;
+      } 
+      continue;
+    }
+
+    // open /
+    if (text[i] === '/' && text[i + 1] === '/') {
+      isComment = true;
+      continue;
+    }
 
     // 따옴표 확인
     // close '
