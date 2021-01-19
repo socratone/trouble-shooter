@@ -7,11 +7,12 @@ import styles from './Code.module.scss';
 
 let clipboardTimer;
 
-const Pre = ({ type, children }) => (  
-  <pre className={styles.code} >
+const Pre = ({ type, children, style }) => (  
+  <pre className={styles.code} style={style}>
     {type === 'html' && adoptHTMLColor(children)}
     {type === 'css' && adoptCSSColor(children)}
     {type === 'js' && adoptJSColor(children)}
+    {type === 'terminal' && children}
   </pre>
 );
 
@@ -41,6 +42,22 @@ const Code = ({ type, children }) => {
     setMessage('clipboard에 복사했습니다.');
     clipboardTimer = setTimeout(() => setMessage(''), 2000);
   };
+
+  if (type === 'terminal') return (
+    <div className={styles.codeWrap}>
+      <div style={{ 
+        display: 'flex', 
+        alignItems: 'center', 
+        position: 'absolute', 
+        right: '20px', 
+        height: '100%' }}>
+          <p className={styles.copy} onClick={copyCodeToClipboard}>
+            <CopyIcon size="12" />
+          </p>
+      </div>
+      <Pre type={type} style={{ padding: '16px 20px' }}>{children}</Pre>
+    </div>
+  );
 
   return (
     <div className={styles.codeWrap}>

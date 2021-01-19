@@ -139,7 +139,7 @@ const PageItem = ({ type, value, url, width, index }) => {
         value={value} 
         onChange={handleInputChange}
         className={styles.textArea}/>
-    } else if (type === 'html' || type === 'css' || type === 'js') {
+    } else if (type === 'html' || type === 'css' || type === 'js' || type === 'terminal') {
       return <textarea 
         value={value} 
         onChange={handleInputChange}

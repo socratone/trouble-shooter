@@ -200,6 +200,7 @@ const Editor = () => {
             <AddPageItemButton name="HTML" onClick={() => addPageItem('html')}/>
             <AddPageItemButton name="CSS" onClick={() => addPageItem('css')}/>
             <AddPageItemButton name="JavaScript" onClick={() => addPageItem('js')}/>
+            <AddPageItemButton name="Terminal" onClick={() => addPageItem('terminal')}/>
             <AddPageItemButton name="Image" onClick={() => addPageItem('image')}/>
           </div>
         </aside>

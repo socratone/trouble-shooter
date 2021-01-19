@@ -72,7 +72,7 @@ const Shoot = () => {
       return <List key={key}>{item.value}</List>
     else if (item.type === 'link') 
       return <Link key={key} url={item.url}>{item.value}</Link>
-    else if (item.type === 'js' || item.type === 'html' || item.type === 'css')
+    else if (item.type === 'js' || item.type === 'html' || item.type === 'css' || item.type === 'terminal')
       return <Code key={key} type={item.type}>{item.value}</Code>
     else if (item.type === 'image') 
       return <Image key={key} url={item.url} width={item.width} />
