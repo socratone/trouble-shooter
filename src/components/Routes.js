@@ -10,6 +10,7 @@ import getUserByToken from '../helper/getUserByToken';
 import Nav from './nav/Nav';
 import Home from './pages/Home';
 import Troubles from './pages/Troubles';
+import About from './pages/About';
 import Beginner from './pages/Beginner';
 import Algorithm from './pages/Algorithm';
 import Shoot from './pages/Shoot';
@@ -48,6 +49,9 @@ const Routes = () => {
           </Route>
           <Route path="/troubles">
             <Troubles />
+          </Route>
+          <Route path="/about">
+            <About />
           </Route>
           <Route path="/editor/:id">
             <Editor />

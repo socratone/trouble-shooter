@@ -19,6 +19,7 @@ const RightNav = () => {
         <RightNavItem to="/algorithm">Algorithm</RightNavItem>
         <RightNavItem to="/beginner">Beginner</RightNavItem>
         <RightNavItem to="/troubles">Troubles</RightNavItem>
+        <RightNavItem to="/about">About</RightNavItem>
       </nav>
     </div>
   );
