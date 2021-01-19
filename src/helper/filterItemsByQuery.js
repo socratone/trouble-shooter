@@ -4,3 +4,5 @@ const filterItemsByQuery = ({ items , query }) => {
     // TODO: 본문 검색
   });
 };
+
+export default filterItemsByQuery;
