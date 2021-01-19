@@ -40,6 +40,10 @@ const Shoot = () => {
         js: page.previewCode.js
       }));
     })();
+
+    return () => {
+      dispatch(setPreviewCode({ html: '', css: '', js: '' }));
+    }
   }, []);
 
   const handleResizerMouseDown = () => {
