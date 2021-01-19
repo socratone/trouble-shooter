@@ -10,9 +10,9 @@ const slice = createSlice({
   reducers: {
     setPreviewCode: (state, action) => {
       const { payload } = action;
-      if (payload.html) state.html = payload.html;
-      if (payload.css) state.css = payload.css;
-      if (payload.js) state.js = payload.js;
+      if (payload.html !== undefined) state.html = payload.html;
+      if (payload.css !== undefined) state.css = payload.css;
+      if (payload.js !== undefined) state.js = payload.js;
     }
   }
 });
