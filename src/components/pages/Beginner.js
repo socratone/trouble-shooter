@@ -49,8 +49,12 @@ const Beginner = () => {
     setClickCategory(false);
   };
 
-  const handleSearchInputChange = e => {
-    setSearchValue(e.target.value);
+  const handleSearchInputChange = ({ target }) => {
+    setSearchValue(target.value);
+  };
+
+  const handleKeyUp = ({ key }) => {
+    if (key === 'Enter') handleSearchButtonClick();
   };
 
   const handleSearchButtonClick = () => {
@@ -87,6 +91,7 @@ const Beginner = () => {
               margin="0 10px 0 0" 
               value={searchValue} 
               onChange={handleSearchInputChange}
+              onKeyUp={handleKeyUp}
             />
             <Button onClick={handleSearchButtonClick}>찾기</Button>
           </div>
