@@ -48,7 +48,7 @@ const Admin = () => {
         {!user.isAdmin && <p className={styles.message}>admin 인증이 필요합니다.</p>}
         <input
           ref={input}
-          type="text" 
+          type="password" 
           placeholder="암호"
           value={password} 
           onChange={handleInputChange} 
