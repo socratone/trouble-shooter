@@ -99,10 +99,10 @@ const PageItem = ({ type, value, url, width, index }) => {
     const file = inputFile.current.files[0];
     if (!file) return alert('파일이 존재하지 않습니다.');
     
-    const key = 'assets/troubles/' + file.name;
+    const key = 'assets/image/' + file.name;
 
     // 같은 이름의 이미지 파일이 S3에 있는지 확인
-    const s3Files = await listImageFiles('/assets/troubles/');
+    const s3Files = await listImageFiles('/assets/image/');
     if (s3Files.error) return alert(s3Files.error.message);
     const [sameFile] = s3Files.filter(s3File => s3File.Key === key);
     if (sameFile) return alert('같은 이름의 이미지 파일이 이미 존재합니다.');
