@@ -8,9 +8,29 @@ const adoptJSColor = text => {
   let tempText = '';
   let hasQuote = false;
   let isComment = false;
+  let hasComment = false;
 
   for (let i = 0; i < text.length; i++) {
     tempText += text[i];
+
+    // 주석 확인
+    // close */
+    if (hasComment) {
+      if (text[i - 1] === '*' && text[i] === '/') {
+        texts.push(<Grey key={i}>{tempText}</Grey>);
+        tempText = '';
+        hasComment = false;
+      } 
+      continue;
+    } 
+
+    // open /*
+    if (text[i] === '/' && text[i + 1] === '*') {
+      texts.push(tempText.substring(0, tempText.length - 1));
+      tempText = '/';
+      hasComment = true;
+      continue;
+    }
 
     // 주석 확인
     // close /

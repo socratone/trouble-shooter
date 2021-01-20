@@ -1,14 +1,34 @@
 import findKeyWord from './findKeyWord';
 import findQueryWord from './findQueryWord';
-import { Green, Orange } from '../components/common/fontColor';
+import { Green, Orange, Grey } from '../components/common/fontColor';
 
 const adoptCSSColor = text => {
   let texts = [];
   let tempText = '';
+  let hasComment = false;
   let isInBracket = false;
 
   for (let i = 0; i < text.length; i++) {
     tempText += text[i];
+
+    // 주석 확인
+    // close */
+    if (hasComment) {
+      if (text[i - 1] === '*' && text[i] === '/') {
+        texts.push(<Grey key={i}>{tempText}</Grey>);
+        tempText = '';
+        hasComment = false;
+      } 
+      continue;
+    } 
+
+    // open /*
+    if (text[i] === '/' && text[i + 1] === '*') {
+      texts.push(tempText.substring(0, tempText.length - 1));
+      tempText = '/';
+      hasComment = true;
+      continue;
+    }
 
     if (text[i] === '{') isInBracket = true;
     else if (text[i] === '}') isInBracket = false;
