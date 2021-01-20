@@ -15,35 +15,27 @@ let clipboardTimer;
 const Pre = ({ type, handleKeyUp }) => {
   const pre = useRef(null);
   const previewCode = useSelector(state => state.entities.previewCode);
-  const [colorCode, setColorCode] = useState('');
+  const [initialCode, setInitialCode] = useState('');
 
   useEffect(() => {
-    if (type === 'html') setColorCode(previewCode.html); 
-    else if (type === 'css') setColorCode(previewCode.css);
-    else if (type === 'js') setColorCode(previewCode.js);
-  }, [previewCode]);
-
-  const handleBlur = async () => {
-    const text = pre.current.textContent;
-    await setColorCode('');
-    console.log('text:', text)
-    setColorCode(text);
-  };
-
-  if (!colorCode) return null;
-
+    // previewCode.html의 값을 서버에서 받았을 때 렌더링되므로
+    // previewCode.html에는 무조건 값이 있다.
+    if (type === 'html') setInitialCode(previewCode.html); 
+    else if (type === 'css') setInitialCode(previewCode.css);
+    else if (type === 'js') setInitialCode(previewCode.js);
+  }, []);
+  
   return (  
     <pre 
       ref={pre}
       className={styles.code} 
       onKeyUp={() => handleKeyUp(pre.current)} 
-      // onBlur={handleBlur}
       contentEditable
       suppressContentEditableWarning
     >
-      {type === 'html' && adoptHTMLColor(colorCode)}
-      {type === 'css' && adoptCSSColor(colorCode)}
-      {type === 'js' && adoptJSColor(colorCode)}
+      {type === 'html' && adoptHTMLColor(initialCode)}
+      {type === 'css' && adoptCSSColor(initialCode)}
+      {type === 'js' && adoptJSColor(initialCode)}
     </pre>
   );
 }
@@ -90,7 +82,8 @@ const PreviewCode = ({ type }) => {
 
   const handleCodeKeyUp = pre => {
     dispatch(setIndicator({ isIndicator: true }));
-    setCurrentCode(pre.textContent);
+    setCurrentCode(pre.textContent); // clipboard copy를 위한 state
+    // applyCodeToPreview('');
     clearTimeout(codeTimer);
     codeTimer = setTimeout(() => {
       applyCodeToPreview(pre.textContent);
