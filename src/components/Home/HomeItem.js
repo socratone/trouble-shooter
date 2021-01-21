@@ -3,8 +3,10 @@ import { useHistory } from 'react-router-dom';
 import convertSQLDate from '../../helper/convertSQLDate';
 import categoryJSON from '../../data/categoryJSON';
 import styles from './HomeItem.module.scss';
+import getIcon from '../../helper/getIcon';
 
 const HomeItem = ({ item }) => {
+  console.log('item:', item)
   const history = useHistory();
   const convertCategory = category => {
     const [item] = categoryJSON.troubles.filter(item => item.id === category);
@@ -19,6 +21,9 @@ const HomeItem = ({ item }) => {
   return (  
     <div className={styles.wrap}>
       <article className={styles.item} onClick={() => handleClick(item.id)}>
+        <img 
+          className={styles.icon}
+          src={getIcon(item.category)} width="25" />
         <span className={styles.title}>{item.title}</span>
         <span className={styles.category}>{convertCategory(item.category)}</span>
         <span className={styles.date}>{convertSQLDate(item.createdAt)}</span>

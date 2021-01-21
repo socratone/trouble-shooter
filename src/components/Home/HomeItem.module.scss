@@ -8,13 +8,19 @@
 
 .item {
   cursor: pointer;
-  display: inline;
+  display: flex;
+  align-items: center;
 
   &:hover {
     .title {
       font-weight: 600;
     }
   }
+}
+
+.icon {
+  display: block;
+  margin-right: 8px;
 }
 
 .title {
