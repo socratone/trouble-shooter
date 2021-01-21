@@ -27,7 +27,8 @@ const Work = ({ first, even, subTitle, title, description, image }) => {
           <p className={styles.subTitle}>{subTitle}</p>
           <p className={styles.title}>{title}</p>
           <div className={styles.description}>{description}</div>
-          <button>VIEW DETAIL</button>
+          <button className={styles.firstButton}>자세히 보기</button>
+          <button className={styles.secondButton}>홈페이지</button>
         </div>
       </div>
     </article>
