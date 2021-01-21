@@ -19,7 +19,9 @@ const Skill = () => {
         <section className={styles.main}>
           <article className={styles.gridItem}>
             <div className={styles.itemIcon}>
-              <WriteIcon size="60" color="#fdc073" />
+              <div className={styles.writeIcon}>
+                <WriteIcon size="60" color="#fdc073" />
+              </div>
             </div>
             <h3 className={styles.itemTitle}>Front-end</h3>
             <h4 className={styles.itemSubTitle}>능숙한 Stack</h4>
@@ -33,7 +35,9 @@ const Skill = () => {
           </article>
           <article className={styles.gridItem}>
             <div className={styles.itemIcon}>
-              <GearIcon size="60" color="#fdc073" />
+              <div className={styles.gearIcon}>
+                <GearIcon size="60" color="#fdc073" />
+              </div>
             </div>
             <h3 className={styles.itemTitle}>Back-end</h3>
             <h4 className={styles.itemSubTitle}>능숙한 Stack</h4>
@@ -47,7 +51,9 @@ const Skill = () => {
           </article>
           <article className={styles.gridItem}>
             <div className={styles.itemIcon}>
-              <RocketIcon size="60" color="#fdc073" />
+              <div className={styles.rocketIcon}>
+                <RocketIcon size="60" color="#fdc073" />
+              </div>
             </div>
             <h3 className={styles.itemTitle}>Deployment</h3>
             <h4 className={styles.itemSubTitle}>능숙한 Stack</h4>
