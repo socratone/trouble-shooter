@@ -34,10 +34,20 @@
   display: flex;
   align-items: center;
   margin: 0 10px;
+  cursor: pointer;
  
   p:last-child {
     margin-left: 5px;
   }
+}
+
+.contact {
+  width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #fdc073;
+  display: flex;
+  align-items: center;
 }
 
 .profile {
