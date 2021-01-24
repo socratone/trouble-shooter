@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from './Work.module.scss';
+import styles from './WorkItem.module.scss';
 
-const Work = ({ first, even, subTitle, title, description, image }) => {
+const WorkItem = ({ first, even, subTitle, title, description, image }) => {
   const setOrder = () => {
     if (even) return { order: '2' };
     return {};
@@ -36,4 +36,4 @@ const Work = ({ first, even, subTitle, title, description, image }) => {
 }
  
  
-export default Work;
+export default WorkItem;

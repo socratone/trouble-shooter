@@ -6,14 +6,14 @@ import NormalPageFrame from '../common/NormalPageFrame';
 import RocketIcon from '../icon/RocketIcon';
 import GearIcon from '../icon/GearIcon';
 import WriteIcon from '../icon/WriteIcon';
+import SectionHeader from './SectionHeader';
 
 const Skill = () => {
   return (  
     <section className={styles.wrap}>
-      <header className={styles.header}>
-        <h2 className={styles.headerTitle}>SKILL</h2>
-        <p className={styles.headerText}>사용 가능한 기술 Stack은 다음과 같습니다.</p>
-      </header>
+      <SectionHeader title="SKILL">
+        사용 가능한 기술 Stack은 다음과 같습니다.
+      </SectionHeader>
       <div className={styles.extraBackground} />
       <NormalPageFrame>
         <section className={styles.main}>
