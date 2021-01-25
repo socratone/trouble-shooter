@@ -79,12 +79,12 @@ const Header = () => {
         </a>
       </address>
       <img 
-        src="https://trouble-shooter.s3.ap-northeast-2.amazonaws.com/about/profile.png" 
+        src="https://trouble-shooter.s3.ap-northeast-2.amazonaws.com/profile/profile.png" 
         alt="profile"
         width="200"
         className={styles.profile}/>
       <img 
-        src="https://trouble-shooter.s3.ap-northeast-2.amazonaws.com/about/desk.png" 
+        src="https://trouble-shooter.s3.ap-northeast-2.amazonaws.com/profile/desk.png" 
         alt="profile"
         className={styles.desk}/>
     </header>
