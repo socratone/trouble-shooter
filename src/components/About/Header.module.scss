@@ -98,7 +98,9 @@
 }
 
 .desk {
-  @media (max-width: 750px) {
-    display: none;
-  }
+  display: block;
+  width: 100%;
+  max-width: 490px;
+  padding: 0 20px;
+  box-sizing: border-box;
 }

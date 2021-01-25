@@ -86,7 +86,6 @@ const Header = () => {
       <img 
         src="https://trouble-shooter.s3.ap-northeast-2.amazonaws.com/about/desk.png" 
         alt="profile"
-        width="450"
         className={styles.desk}/>
     </header>
   );
