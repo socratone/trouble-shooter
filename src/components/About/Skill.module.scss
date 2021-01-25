@@ -6,7 +6,7 @@
 }
 
 .headerTitle {
-  color: rgb(253, 192, 115);
+  color: #fdc073;
   font-family: 'Goldman', cursive;
   font-size: 25px;
   margin: 25px 0;
@@ -97,6 +97,17 @@
   font-size: 18px;
   margin-top: 25px;
   margin-bottom: 25px;
+}
+
+.buttonWrap {
+  margin-top: 20px;
+}
+
+.viewButton {
+  text-align: center;
+  cursor: pointer;
+  font-size: 16px;
+  color:grey;
 }
 
 @keyframes write {
