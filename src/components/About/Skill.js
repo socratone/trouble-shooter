@@ -19,7 +19,7 @@ const Skill = () => {
   return (  
     <section className={styles.wrap}>
       <SectionHeader title="SKILL">
-        사용 가능한 기술 Stack은 아래와 같습니다.
+        사용 가능한 기술 Stack은 다음과 같습니다.
       </SectionHeader>
       <div className={styles.extraBackground} />
       <NormalPageFrame>
