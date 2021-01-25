@@ -33,16 +33,25 @@
   border-radius: 12px;
   border: gainsboro solid 1px;
   z-index: 1;
+
+  @media (max-width: 750px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 .gridItem {
   padding: 20px;
   text-align: center;
   border-right: gainsboro solid 1px;
+
+  @media (max-width: 750px) {
+    border-right: 0;
+    border-bottom: gainsboro solid 1px;
+  }
 }
 
 .gridItem:last-child {
-  border-right: 0;
+  border: 0;
 }
 
 .itemIcon {

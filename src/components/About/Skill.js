@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { frontEndStack, backEndStack, deployStack } from '../../data/skill';
-import styles from './Skill.module.scss';
 import Stack from './Stack';
 import NormalPageFrame from '../common/NormalPageFrame';
 import RocketIcon from '../icon/RocketIcon';
 import GearIcon from '../icon/GearIcon';
 import WriteIcon from '../icon/WriteIcon';
 import SectionHeader from './SectionHeader';
+import styles from './Skill.module.scss';
 
 const Skill = () => {
   const [isDetail, setDetail] = useState(false);
@@ -23,7 +23,7 @@ const Skill = () => {
       </SectionHeader>
       <div className={styles.extraBackground} />
       <NormalPageFrame>
-        <section className={styles.main}>
+        <main className={styles.main}>
           <article className={styles.gridItem}>
             <div className={styles.itemIcon}>
               <div className={styles.writeIcon}>
@@ -36,7 +36,7 @@ const Skill = () => {
               <Stack key={stack.id} item={stack}>{stack.value}</Stack>
             )}
             {isDetail && <>
-              <h4 className={styles.itemSubTitle}>사용해본 Stack</h4>
+              <h4 className={styles.itemSubTitle}>Experienced Stack</h4>
               {frontEndStack.experienceds.map(stack => 
                 <Stack key={stack.id} item={stack}>{stack.value}</Stack>
               )}
@@ -61,7 +61,7 @@ const Skill = () => {
               <Stack key={stack.id} item={stack}>{stack.value}</Stack>
             )}
             {isDetail && <>
-              <h4 className={styles.itemSubTitle}>사용해본 Stack</h4>
+              <h4 className={styles.itemSubTitle}>Experienced Stack</h4>
               {backEndStack.experienceds.map(stack => 
                 <Stack key={stack.id} item={stack}>{stack.value}</Stack>
               )}
@@ -86,7 +86,7 @@ const Skill = () => {
               <Stack key={stack.id} item={stack}>{stack.value}</Stack>
             )}
             {isDetail && <>
-              <h4 className={styles.itemSubTitle}>사용해본 Stack</h4>
+              <h4 className={styles.itemSubTitle}>Experienced Stack</h4>
               {deployStack.experienceds.map(stack => 
                 <Stack key={stack.id} item={stack}>{stack.value}</Stack>
               )}
@@ -99,7 +99,7 @@ const Skill = () => {
               </button>
             </li>
           </article>
-        </section>
+        </main>
       </NormalPageFrame>
     </section>
   );
