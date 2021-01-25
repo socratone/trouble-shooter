@@ -50,7 +50,7 @@ const Routes = () => {
           <Route path="/troubles">
             <Troubles />
           </Route>
-          <Route path="/about">
+          <Route path="/portfolio">
             <About />
           </Route>
           <Route path="/editor/:id">

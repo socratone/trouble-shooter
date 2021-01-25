@@ -31,7 +31,7 @@ const Nav = () => {
           <NavItem 
             dropdown={
               <Dropdown top="45px" right="0">
-                <li onClick={() => history.push('/about')}>About</li>
+                <li onClick={() => history.push('/portfolio')}>Portfolio</li>
               </Dropdown>
             }
             line={false}>
