@@ -46,33 +46,36 @@ const Header = () => {
   return (  
     <header className={styles.header}>
       <h1 className={styles.title}>
-        Front-end Developer Socratone
+        <span>Front-end</span>
+        <span>Developer</span>
+        <span>Socratone</span>
       </h1>
-      <p className={styles.subTitle}>
-        코딩을 놀이 삼아 끊임없이 작업하고 콘텐츠를 만드는 개발자입니다.
+      <p className={styles.text}>
+        <span>같은 문제를 반복하지 않기 위해 블로그에</span>
+        <span>정리하고 기록하는 Front-end 개발자</span>
       </p>
       <address className={styles.linkWrap}>
         <a className={styles.link} onClick={handlePhoneClick}>
           <p><PhoneIcon size="30" color="whitesmoke" /></p>
-          <p>Phone</p>
+          <p className={styles.linkText}>Phone</p>
         </a>
         <p className={styles.contact} style={{ width: phoneNumberSize + 'px' }}>
           010-2569-1521
         </p>
         <a className={styles.link} onClick={handleEmailClick}>
           <p><EmailIcon size="30" color="whitesmoke" /></p>
-          <p>Email</p>
+          <p className={styles.linkText}>Email</p>
         </a>
         <p className={styles.contact} style={{ width: emailSize + 'px' }}>
           gim2origin@gmail.com
         </p>
         <a className={styles.link} href="https://github.com/socratone" target="_blank">
           <p><GithubIcon size="30" color="whitesmoke" /></p>
-          <p>Github</p>
+          <p className={styles.linkText}>Github</p>
         </a>
         <a className={styles.link} href="https://thinkforthink.tistory.com/" target="_blank">
           <p><BlogIcon size="30" color="whitesmoke" /></p>
-          <p>Blog</p>
+          <p className={styles.linkText}>Blog</p>
         </a>
       </address>
       <img 

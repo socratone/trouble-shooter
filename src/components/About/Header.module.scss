@@ -15,13 +15,48 @@
   font-weight: 400;
   color: whitesmoke;
   margin-bottom: 25px;
+
+  span {
+    margin: 0 12px 0 0;
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  @media (max-width: 750px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    span {
+      margin: 0;
+    }
+  }
 }
 
-.subTitle {
+.text {
   font-size: 17px;
   font-weight: 400;
   color: whitesmoke;
-  margin-bottom: 25px;
+  margin: 0 0 25px 0;
+
+  span {
+    margin: 0 4px 0 0;
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  @media (max-width: 750px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    span {
+      margin: 0 0 10px 0;
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
 }
 
 .linkWrap {
@@ -41,6 +76,12 @@
   }
 }
 
+.linkText {
+  @media (max-width: 750px) {
+    display: none;
+  }
+}
+
 .contact {
   width: 0;
   white-space: nowrap;
@@ -57,5 +98,7 @@
 }
 
 .desk {
-
+  @media (max-width: 750px) {
+    display: none;
+  }
 }
