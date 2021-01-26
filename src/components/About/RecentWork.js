@@ -41,6 +41,8 @@ const RecentWork = () => {
           <List>React, React Router, SASS, aws-sdk, @reduxjs/toolkit</List>
           <Title sub>Back-end</Title>
           <List>NodeJS, Express, MySQL, bcrypt, JWT, PM2</List>
+          <Title sub>Deployment</Title>
+          <List>S3, EC2, Route 53</List>
           <Title>Github</Title>
           <Link url="https://github.com/socratone/trouble-shooter-frontend.git">Front-end</Link>
           <Link url="https://github.com/socratone/trouble-shooter-backend.git">Back-end</Link>
@@ -49,36 +51,75 @@ const RecentWork = () => {
         even
         subTitle="Education Web"
         title="Gabriel Institum Latinitatis"
-        description="라틴어 교육 사이트입니다."
+        description="라틴어 교육과 온라인 강의 안내를 위한 웹입니다."
         term="2020년 12월 - 진행중"
         image="https://trouble-shooter.s3.ap-northeast-2.amazonaws.com/profile/gabriel.png"
         link="http://gabriel-latin.s3-website.ap-northeast-2.amazonaws.com/">
-          <List>안녕하세요</List>
-          <List>안녕하세요</List>
-          <List>안녕하세요</List>
+          <Title head>Stack</Title>
+          <Title sub>Front-end</Title>
+          <List>React, React Router, Redux, SASS, Styled Components, @reduxjs/toolkit</List>
+          <Title sub>Deployment</Title>
+          <List>S3</List>
+          <Title>Github</Title>
+          <Link url="https://github.com/socratone/gabriel-latin-frontend.git">Front-end</Link>
       </WorkItem>
       <WorkItem 
         subTitle="Personal Web"
         title="Kim Ji Young"
-        description="도자기로 성물을 만드는 김지영 작가님의 홈페이지입니다."
+        description="도자기로 성물을 만드는 김지영 작가님의 프로필 홈페이지입니다."
         term="2020년 12월"
         image="https://trouble-shooter.s3.ap-northeast-2.amazonaws.com/profile/kimjiyoung.png"
-        link="http://kimjiyoung.s3-website.ap-northeast-2.amazonaws.com" />
+        link="http://kimjiyoung.s3-website.ap-northeast-2.amazonaws.com">
+          <Title head>주요 기능</Title>
+          <Title sub>Admin 커스터마이징</Title>
+          <List>블로그의 글을 추가할 때 정해진 레이아웃에 제목, 글, 이미지를 수정할 수 있도록 구현</List>
+          <List>홈화면 이미지와 Profile의 이미지, 글자를 수정할 수 있도록 구현</List>
+          <Title>Stack</Title>
+          <Title sub>Front-end</Title>
+          <List>React, React Router, Redux, SASS, Styled Components, @reduxjs/toolkit</List>
+          <Title sub>Back-end</Title>
+          <List>NodeJS, Express, MySQL, bcrypt, JWT, PM2</List>
+          <Title sub>Deployment</Title>
+          <List>S3, EC2</List>
+          <Title>Github</Title>
+          <Link url="https://github.com/socratone/kimjiyoung-frontend.git">Front-end</Link>    
+          <Link url="https://github.com/socratone/kimjiyoung-backend.git">Back-end</Link>    
+      </WorkItem>
       <WorkItem 
         even
         subTitle="Electron App"
         title="Youtube Music Player"
-        description="유튜브 음악 영상을 재생리스트에 넣고 음악을 재생하는 데스크톱 앱입니다."
+        description="플레이리스트를 만들어 유튜브 영상을 넣고 편하게 음악 재생을 할 수 있는 데스크톱 앱입니다."
         term="2020년 11월"
-        image="https://picsum.photos/1920/1080"
-        />
+        image="https://trouble-shooter.s3.ap-northeast-2.amazonaws.com/profile/youtube-music-player.png">
+          <Title head>특징</Title>
+          <List>JavaScript를 이용하여 객체지향 프로그래밍으로 구현</List>
+          <Title>주요 기능</Title>
+          <List>Youtube IFrame Player API를 이용하여 음악 플레이어 구현</List>
+          <List>사용자 플레이리스트 CRUD</List>
+          <Title>Stack</Title>
+          <Title sub>Front-end</Title>
+          <List>Webpack, Babel, Axios</List>
+          <Title sub>Back-end & Electron</Title>
+          <List>Youtube IFrame Player API, Electron, NodeJS, SQLite, Express</List>
+          <Title>Github</Title>
+          <Link url="https://github.com/socratone/youtube-music-player-frontend.git">Front-end</Link>    
+          <Link url="https://github.com/socratone/youtube-music-player-electron.git">Back-end & Electron</Link>  
+      </WorkItem>
       <WorkItem 
         subTitle="Electron App"
         title="Finger Organist"
         description="리듬에 맞춰 손가락을 터치해 가톨릭 성가 반주를 해주는 앱입니다."
         term="2020년 7월 - 8월"
-        image="https://picsum.photos/960/540"
-        />
+        image="https://trouble-shooter.s3.ap-northeast-2.amazonaws.com/profile/finger-organist.png">
+          <Title head>주요 기능</Title>
+          <List>@tonejs/midi로 미디 데이터를 가져와서 클릭할 때마다 비트에 해당하는 음원을 재생하도록 구현</List>
+          <Title>Stack</Title>
+          <List>@tonejs/midi, React, React Router, SASS, Electron, NodeJS, Express</List>
+          <Title>Github</Title>
+          <Link url="https://github.com/socratone/finger-organist.git">Front-end</Link>    
+          <Link url="https://github.com/socratone/finger-organist-desktop.git">Electron</Link>  
+      </WorkItem>
     </section>
   );
 }
