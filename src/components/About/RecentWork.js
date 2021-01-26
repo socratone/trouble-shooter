@@ -76,7 +76,7 @@ const RecentWork = () => {
           <List>홈화면 이미지와 Profile의 이미지, 글자를 수정할 수 있도록 구현</List>
           <Title>Stack</Title>
           <Title sub>Front-end</Title>
-          <List>React, React Router, Redux, SASS, Styled Components, @reduxjs/toolkit</List>
+          <List>React, React Router, Redux, SASS, Styled Components, aws-sdk, @reduxjs/toolkit</List>
           <Title sub>Back-end</Title>
           <List>NodeJS, Express, MySQL, bcrypt, JWT, PM2</List>
           <Title sub>Deployment</Title>
@@ -99,9 +99,9 @@ const RecentWork = () => {
           <List>사용자 플레이리스트 CRUD</List>
           <Title>Stack</Title>
           <Title sub>Front-end</Title>
-          <List>Webpack, Babel, Axios</List>
+          <List>Youtube IFrame Player API, Webpack, Babel, Axios</List>
           <Title sub>Back-end & Electron</Title>
-          <List>Youtube IFrame Player API, Electron, NodeJS, SQLite, Express</List>
+          <List>Electron, NodeJS, SQLite, Express</List>
           <Title>Github</Title>
           <Link url="https://github.com/socratone/youtube-music-player-frontend.git">Front-end</Link>    
           <Link url="https://github.com/socratone/youtube-music-player-electron.git">Back-end & Electron</Link>  
