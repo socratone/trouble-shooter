@@ -64,7 +64,7 @@
   margin-bottom: 50px;
 }
 
-.link {
+.linkButton {
   color: whitesmoke;
   display: flex;
   align-items: center;
@@ -77,6 +77,7 @@
 }
 
 .linkText {
+  font-size: 16px;
   @media (max-width: 750px) {
     display: none;
   }

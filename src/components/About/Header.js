@@ -55,28 +55,28 @@ const Header = () => {
         <span>정리하고 기록하는 Front-end 개발자</span>
       </p>
       <address className={styles.linkWrap}>
-        <a className={styles.link} onClick={handlePhoneClick}>
+        <button className={styles.linkButton} onClick={handlePhoneClick}>
           <p><PhoneIcon size="30" color="whitesmoke" /></p>
           <p className={styles.linkText}>Phone</p>
-        </a>
+        </button>
         <p className={styles.contact} style={{ width: phoneNumberSize + 'px' }}>
           010-2569-1521
         </p>
-        <a className={styles.link} onClick={handleEmailClick}>
+        <button className={styles.linkButton} onClick={handleEmailClick}>
           <p><EmailIcon size="30" color="whitesmoke" /></p>
           <p className={styles.linkText}>Email</p>
-        </a>
+        </button>
         <p className={styles.contact} style={{ width: emailSize + 'px' }}>
           gim2origin@gmail.com
         </p>
-        <a className={styles.link} href="https://github.com/socratone" target="_blank">
+        <button className={styles.linkButton} href="https://github.com/socratone" target="_blank">
           <p><GithubIcon size="30" color="whitesmoke" /></p>
           <p className={styles.linkText}>Github</p>
-        </a>
-        <a className={styles.link} href="https://thinkforthink.tistory.com/" target="_blank">
+        </button>
+        <button className={styles.linkButton} href="https://thinkforthink.tistory.com/" target="_blank">
           <p><BlogIcon size="30" color="whitesmoke" /></p>
           <p className={styles.linkText}>Blog</p>
-        </a>
+        </button>
       </address>
       <img 
         src="https://trouble-shooter.s3.ap-northeast-2.amazonaws.com/profile/profile.png" 

@@ -22,8 +22,10 @@ const HomeItem = ({ item }) => {
     <div className={styles.wrap}>
       <article className={styles.item} onClick={() => handleClick(item.id)}>
         <img 
+          src={getIcon(item.category)}
+          alt={item.title}
           className={styles.icon}
-          src={getIcon(item.category)} width="25" />
+          width="25" />
         <span className={styles.title}>{item.title}</span>
         <span className={styles.category}>{convertCategory(item.category)}</span>
         <span className={styles.date}>{convertSQLDate(item.createdAt)}</span>

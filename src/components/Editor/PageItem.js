@@ -180,14 +180,26 @@ const PageItem = ({ type, value, url, width, index }) => {
           style={{ marginBottom: '10px' }}
           placeholder="width"/>
         {previewImage && !url && <>
-          <button onClick={uploadImage} className={styles.imagehandleButton}>이미지 올리기</button>
+          <button onClick={uploadImage} className={styles.imagehandleButton}>
+            이미지 올리기
+          </button>
           <p className={styles.imageText}>업로드 할 이미지 미리보기</p>
-          <img src={previewImage} className={styles.image} style={{ width }} />
+          <img 
+            src={previewImage} 
+            alt="preview" 
+            className={styles.image} 
+            style={{ width }} />
         </>}
         {url && <>
-          <button onClick={removeImage} className={styles.imagehandleButton}>이미지 삭제하기</button>
+          <button onClick={removeImage} className={styles.imagehandleButton}>
+            이미지 삭제하기
+          </button>
           <p className={styles.imageText}>업로드된 이미지</p>
-          <img src={s3URL + '/' + url} className={styles.image} style={{ width }} />
+          <img 
+            src={s3URL + '/' + url} 
+            alt="uploaded"
+            className={styles.image} 
+            style={{ width }} />
         </>}
       </>
     } else {

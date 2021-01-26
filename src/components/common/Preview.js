@@ -47,7 +47,7 @@ const Preview = ({ code }) => {
         {isFullScreen && <SmallScreenIcon size="20" color="grey" />}
       </button>
       {isIndicator && <SynchroIndicator size="30" />}
-      <iframe className={styles.iframe} srcDoc={setCode()} />
+      <iframe title="preview" className={styles.iframe} srcDoc={setCode()} />
     </div>
   );
 }

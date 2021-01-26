@@ -11,7 +11,7 @@ const Experience = () => {
         개발 경력은 다음과 같습니다.
       </SectionHeader>
       <NormalPageFrame>
-        <div className={styles.itemWrap}>
+        <div className={styles.companyWrap}>
           <Company
             image="https://trouble-shooter.s3.ap-northeast-2.amazonaws.com/profile/iportfolio.png" 
             name="아이포트폴리오"

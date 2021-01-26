@@ -25,79 +25,79 @@ const Skill = () => {
       <NormalPageFrame>
         <main className={styles.main}>
           <article className={styles.gridItem}>
-            <div className={styles.itemIcon}>
-              <div className={styles.writeIcon}>
-                <WriteIcon size="60" color="#fdc073" />
+            <div>
+              <div className={styles.itemIcon}>
+                <div className={styles.writeIcon}>
+                  <WriteIcon size="60" color="#fdc073" />
+                </div>
               </div>
-            </div>
-            <h3 className={styles.itemTitle}>Front-end</h3>
-            <h4 className={styles.itemSubTitle}>Skillful Stack</h4>
-            {frontEndStack.skillfuls.map(stack => 
-              <Stack key={stack.id} item={stack}>{stack.value}</Stack>
-            )}
-            {isDetail && <>
-              <h4 className={styles.itemSubTitle}>Experienced Stack</h4>
-              {frontEndStack.experienceds.map(stack => 
+              <h3 className={styles.itemTitle}>Front-end</h3>
+              <h4 className={styles.itemSubTitle}>Skillful Stack</h4>
+              {frontEndStack.skillfuls.map(stack => 
                 <Stack key={stack.id} item={stack}>{stack.value}</Stack>
               )}
-            </>}
-            <li className={styles.buttonWrap}>
-              <button 
-                className={styles.viewButton} 
-                onClick={handleDetailButton}>
-                  {isDetail ? '숨기기' : '더보기'}
-              </button>
-            </li>
+              {isDetail && <>
+                <h4 className={styles.itemSubTitle}>Experienced Stack</h4>
+                {frontEndStack.experienceds.map(stack => 
+                  <Stack key={stack.id} item={stack}>{stack.value}</Stack>
+                )}
+              </>}
+            </div>
+            <button 
+              className={styles.viewButton} 
+              onClick={handleDetailButton}>
+                {isDetail ? '숨기기' : '더보기'}
+            </button>
           </article>
           <article className={styles.gridItem}>
-            <div className={styles.itemIcon}>
-              <div className={styles.gearIcon}>
-                <GearIcon size="60" color="#fdc073" />
+            <div>
+              <div className={styles.itemIcon}>
+                <div className={styles.gearIcon}>
+                  <GearIcon size="60" color="#fdc073" />
+                </div>
               </div>
-            </div>
-            <h3 className={styles.itemTitle}>Back-end</h3>
-            <h4 className={styles.itemSubTitle}>Skillful Stack</h4>
-            {backEndStack.skillfuls.map(stack => 
-              <Stack key={stack.id} item={stack}>{stack.value}</Stack>
-            )}
-            {isDetail && <>
-              <h4 className={styles.itemSubTitle}>Experienced Stack</h4>
-              {backEndStack.experienceds.map(stack => 
+              <h3 className={styles.itemTitle}>Back-end</h3>
+              <h4 className={styles.itemSubTitle}>Skillful Stack</h4>
+              {backEndStack.skillfuls.map(stack => 
                 <Stack key={stack.id} item={stack}>{stack.value}</Stack>
               )}
-            </>}
-            <li className={styles.buttonWrap}>
-              <button 
-                className={styles.viewButton} 
-                onClick={handleDetailButton}>
-                  {isDetail ? '숨기기' : '더보기'}
-              </button>
-            </li>
+              {isDetail && <>
+                <h4 className={styles.itemSubTitle}>Experienced Stack</h4>
+                {backEndStack.experienceds.map(stack => 
+                  <Stack key={stack.id} item={stack}>{stack.value}</Stack>
+                )}
+              </>}
+            </div>
+            <button 
+              className={styles.viewButton} 
+              onClick={handleDetailButton}>
+                {isDetail ? '숨기기' : '더보기'}
+            </button>
           </article>
           <article className={styles.gridItem}>
-            <div className={styles.itemIcon}>
-              <div className={styles.rocketIcon}>
-                <RocketIcon size="60" color="#fdc073" />
+            <div>
+              <div className={styles.itemIcon}>
+                <div className={styles.rocketIcon}>
+                  <RocketIcon size="60" color="#fdc073" />
+                </div>
               </div>
-            </div>
-            <h3 className={styles.itemTitle}>Deployment</h3>
-            <h4 className={styles.itemSubTitle}>Skillful Stack</h4>
-            {deployStack.skillfuls.map(stack => 
-              <Stack key={stack.id} item={stack}>{stack.value}</Stack>
-            )}
-            {isDetail && <>
-              <h4 className={styles.itemSubTitle}>Experienced Stack</h4>
-              {deployStack.experienceds.map(stack => 
+              <h3 className={styles.itemTitle}>Deployment</h3>
+              <h4 className={styles.itemSubTitle}>Skillful Stack</h4>
+              {deployStack.skillfuls.map(stack => 
                 <Stack key={stack.id} item={stack}>{stack.value}</Stack>
               )}
-            </>}
-            <li className={styles.buttonWrap}>
-              <button 
-                className={styles.viewButton} 
-                onClick={handleDetailButton}>
-                  {isDetail ? '숨기기' : '더보기'}
-              </button>
-            </li>
+              {isDetail && <>
+                <h4 className={styles.itemSubTitle}>Experienced Stack</h4>
+                {deployStack.experienceds.map(stack => 
+                  <Stack key={stack.id} item={stack}>{stack.value}</Stack>
+                )}
+              </>}
+            </div>
+            <button 
+              className={styles.viewButton} 
+              onClick={handleDetailButton}>
+                {isDetail ? '숨기기' : '더보기'}
+            </button>
           </article>
         </main>
       </NormalPageFrame>

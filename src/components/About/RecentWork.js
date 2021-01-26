@@ -6,7 +6,7 @@ import styles from './RecentWork.module.scss';
 const RecentWork = () => {
   return (  
     <section className={styles.wrap}>
-      <SectionHeader title="Recent Work" bright>
+      <SectionHeader title="Recent Project" bright>
         최근에 작업한 프로젝트는 다음과 같습니다.
       </SectionHeader>
       <WorkItem 
@@ -41,7 +41,7 @@ const RecentWork = () => {
         title="Youtube Music Player"
         description="유튜브 음악 영상을 재생리스트에 넣고 음악을 재생하는 데스크톱 앱입니다."
         term="2020년 11월"
-        image="https://picsum.photos/560/420"
+        image="https://picsum.photos/1920/1080"
         firstLink="https://www.notion.so/Youtube-Music-Player-9a5ac0ca9bb74b56822f69c5044c5110"
         />
       <WorkItem 
@@ -49,7 +49,7 @@ const RecentWork = () => {
         title="Finger Organist"
         description="리듬에 맞춰 손가락을 터치해 가톨릭 성가 반주를 해주는 앱입니다."
         term="2020년 7월 - 8월"
-        image="https://picsum.photos/480/360"
+        image="https://picsum.photos/960/540"
         firstLink="https://www.notion.so/Finger-Organist-1564beacf4a643a498cee9be7fc8c2b0"
         />
     </section>

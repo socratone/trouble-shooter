@@ -6,6 +6,7 @@ const Company = ({ image, name, position, term }) => {
     <article className={styles.company}>
       <img 
         src={image} 
+        alt={name}
         className={styles.image}
         width="100"/>
       <h4 className={styles.name}>{name}</h4>
