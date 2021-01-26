@@ -60,7 +60,7 @@ const Header = () => {
           <p className={styles.linkText}>Phone</p>
         </button>
         <p className={styles.contact} style={{ width: phoneNumberSize + 'px' }}>
-          010-2569-1521
+          {process.env.REACT_APP_PHONE}
         </p>
         <button className={styles.linkButton} onClick={handleEmailClick}>
           <p><EmailIcon size="30" color="whitesmoke" /></p>
