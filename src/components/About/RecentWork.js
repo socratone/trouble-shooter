@@ -4,7 +4,6 @@ import WorkItem from './WorkItem';
 import Title from '../common/Title';
 import List from '../common/List';
 import Link from '../common/Link';
-import GithubIcon from '../icon/GithubIcon';
 import styles from './RecentWork.module.scss';
 
 const RecentWork = () => {
@@ -15,6 +14,7 @@ const RecentWork = () => {
       </SectionHeader>
       <WorkItem 
         head
+        clicked
         subTitle="Blog"
         title="Trouble Shooter"
         description="자바스크립트 코드로 해결할 수 있는 문제들을 쉽게 찾을 수 있도록 정리해 놓은 블로그입니다."

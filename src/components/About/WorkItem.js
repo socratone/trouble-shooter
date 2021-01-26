@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './WorkItem.module.scss';
 
 const WorkItem = ({ 
-  head, even, subTitle, title, term, description, image, link, children
+  head, even, subTitle, title, term, description, image, link, children, clicked
 }) => {
-  const [isViewDetail, setViewDetail] = useState(false);
+  const [isViewDetail, setViewDetail] = useState(clicked ? true : false);
 
   const handleViewDetail = () => {
     if (isViewDetail) setViewDetail(false);
@@ -24,7 +24,11 @@ const WorkItem = ({
   const setPadding = () => {
     if (head) return { paddingTop: '25px' }
     return {};
-  }
+  };
+
+  const setBoxShadow = () => {
+    if (isViewDetail) return '#fdc073 0px 7px 29px 0px';
+  };
 
   return (  
     <article className={styles.itemWrap} style={setBackgroundColor()}>
@@ -39,8 +43,9 @@ const WorkItem = ({
           <div className={styles.description}>{description}</div>
           <button 
             className={styles.firstButton}
+            style={{ boxShadow: setBoxShadow() }}
             onClick={handleViewDetail}>
-              <p>자세히 보기</p>
+              <p>{isViewDetail ? '간단히 보기' : '자세히 보기'}</p>
           </button>
           {link && <a 
             className={styles.secondButton}
