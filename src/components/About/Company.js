@@ -1,7 +1,13 @@
 import React from 'react';
 import styles from './Company.module.scss';
+import styled from 'styled-components';
 
-const Company = ({ image, name, position, term }) => {
+const Text = styled.p`
+  margin-bottom: 10px;
+  color: #c0c0c0;
+`;
+
+const Company = ({ image, name, children }) => {
   return (  
     <article className={styles.company}>
       <img 
@@ -10,8 +16,7 @@ const Company = ({ image, name, position, term }) => {
         className={styles.image}
         width="100"/>
       <h4 className={styles.name}>{name}</h4>
-      <p className={styles.position}>{position}</p>
-      <p className={styles.term}>{term}</p>
+      {children.map((text, i) => <Text key={i}>{text}</Text>)}
     </article>
   );
 }

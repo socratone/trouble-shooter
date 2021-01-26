@@ -1,0 +1,21 @@
+.tools {
+  background: whitesmoke;
+}
+
+.grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.tool {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image {
+  display: block;
+  margin-bottom: 10px;
+}
+

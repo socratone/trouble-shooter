@@ -5,6 +5,7 @@ import Introduce from '../About/Introduce';
 import RecentWork from '../About/RecentWork';
 import Skill from '../About/Skill';
 import OtherExperience from '../About/OtherExperience';
+import AvailableTools from '../About/AvailableTools';
 import Footer from '../About/Footer';
 
 const About = () => {
@@ -16,6 +17,7 @@ const About = () => {
       <RecentWork />
       <Experience />
       <OtherExperience />
+      <AvailableTools />
       <Footer />
     </main>
   );
