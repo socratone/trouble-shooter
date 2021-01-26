@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './WorkItem.module.scss';
 
 const WorkItem = ({ 
-  head, even, subTitle, title, term, description, image, firstLink, secondLink
+  head, even, subTitle, title, term, description, image, link, children
 }) => {
+  const [isViewDetail, setViewDetail] = useState(false);
+
+  const handleViewDetail = () => {
+    if (isViewDetail) setViewDetail(false);
+    else setViewDetail(true);
+  };
+
   const setOrder = () => {
-    if (even) return { order: '2' };
+    if (even) return { order: '1' };
     return {};
   };
 
@@ -30,21 +37,22 @@ const WorkItem = ({
           <p className={styles.title}>{title}</p>
           <p className={styles.term}>{term}</p>
           <div className={styles.description}>{description}</div>
-          {firstLink && <a 
+          <button 
             className={styles.firstButton}
-            href={firstLink}
-            rel="noreferrer"
-            target="_blank">
+            onClick={handleViewDetail}>
               <p>자세히 보기</p>
-          </a>}
-          {secondLink && <a 
+          </button>
+          {link && <a 
             className={styles.secondButton}
-            href={secondLink}
+            href={link}
             rel="noreferrer"
             target="_blank">
               <p>홈페이지</p>
           </a>}
         </div>
+        {isViewDetail && <div className={styles.detail}>
+          {children}
+        </div>}
       </div>
     </article>
   );

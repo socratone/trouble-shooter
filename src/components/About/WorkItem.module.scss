@@ -63,7 +63,7 @@
   line-height: 50px;
 
   @media (max-width: 840px) {
-    font-size: 40px;
+    font-size: 30px;
   }
 }
 
@@ -105,4 +105,13 @@
   color: #373636;
   font-size: 15px;
   cursor: pointer;
+}
+
+.detail {
+  order: 2;
+  grid-column: span 2;
+
+  @media (max-width: 840px) {
+    grid-column: unset;
+  }
 }
