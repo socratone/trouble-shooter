@@ -69,14 +69,14 @@ const Header = () => {
         <p className={styles.contact} style={{ width: emailSize + 'px' }}>
           gim2origin@gmail.com
         </p>
-        <button className={styles.linkButton} href="https://github.com/socratone" target="_blank">
+        <a className={styles.linkButton} href="https://github.com/socratone" target="_blank">
           <p><GithubIcon size="30" color="whitesmoke" /></p>
           <p className={styles.linkText}>Github</p>
-        </button>
-        <button className={styles.linkButton} href="https://thinkforthink.tistory.com/" target="_blank">
+        </a>
+        <a className={styles.linkButton} href="https://thinkforthink.tistory.com/" target="_blank">
           <p><BlogIcon size="30" color="whitesmoke" /></p>
           <p className={styles.linkText}>Blog</p>
-        </button>
+        </a>
       </address>
       <img 
         src="https://trouble-shooter.s3.ap-northeast-2.amazonaws.com/profile/profile.png" 
