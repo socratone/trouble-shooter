@@ -5,42 +5,18 @@ import GithubIcon from '../icon/GithubIcon';
 import BlogIcon from '../icon/BlogIcon';
 import styles from './Header.module.scss';
 
-let phoneNumberWidth = 0;
-let emailWidth = 0;
 const Header = () => {
-  const [phoneNumberSize, setPhoneNumberSize] = useState(0);
-  const [emailSize, setEmailSize] = useState(0);
+  const [phoneNumberWidth, setPhoneNumberWidth] = useState('0');
+  const [emailWidth, setEmailWidth] = useState('0');
 
   const handlePhoneClick = () => {
-    if (phoneNumberWidth === 0) {
-      let timer = setInterval(() => {
-        phoneNumberWidth += 2;
-        setPhoneNumberSize(phoneNumberWidth)
-        if (phoneNumberWidth >= 120) clearInterval(timer);
-      }, 5);
-    } else {
-      let timer = setInterval(() => {
-        phoneNumberWidth -= 2;
-        setPhoneNumberSize(phoneNumberWidth)
-        if (phoneNumberWidth <= 0) clearInterval(timer);
-      }, 5);
-    }
+    if (phoneNumberWidth !== '120px') setPhoneNumberWidth('120px');
+    else setPhoneNumberWidth('0');
   };
 
   const handleEmailClick = () => {
-    if (emailWidth === 0) {
-      let timer = setInterval(() => {
-        emailWidth += 2;
-        setEmailSize(emailWidth)
-        if (emailWidth >= 175) clearInterval(timer);
-      }, 5);
-    } else {
-      let timer = setInterval(() => {
-        emailWidth -= 2;
-        setEmailSize(emailWidth)
-        if (emailWidth <= 0) clearInterval(timer);
-      }, 5);
-    }
+    if (emailWidth !== '175px') setEmailWidth('175px');
+    else setEmailWidth('0');
   };
 
   return (  
@@ -59,15 +35,15 @@ const Header = () => {
           <p><PhoneIcon size="30" color="whitesmoke" /></p>
           <p className={styles.linkText}>Phone</p>
         </button>
-        <p className={styles.contact} style={{ width: phoneNumberSize + 'px' }}>
+        <p className={styles.contact} style={{ width: phoneNumberWidth }}>
           {process.env.REACT_APP_PHONE}
         </p>
         <button className={styles.linkButton} onClick={handleEmailClick}>
           <p><EmailIcon size="30" color="whitesmoke" /></p>
           <p className={styles.linkText}>Email</p>
         </button>
-        <p className={styles.contact} style={{ width: emailSize + 'px' }}>
-          gim2origin@gmail.com
+        <p className={styles.contact} style={{ width: emailWidth }}>
+          {process.env.REACT_APP_EMAIL}
         </p>
         <a className={styles.linkButton} href="https://github.com/socratone" target="_blank">
           <p><GithubIcon size="30" color="whitesmoke" /></p>
