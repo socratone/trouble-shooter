@@ -18,7 +18,7 @@ const AvailableTools = () => {
   return (  
     <section className={styles.tools}>
       <SectionHeader title="Available Tools" bright>
-        사용 가능한 프로그램은 다음과 같습니다.
+        다음 프로그램들을 다룰 수 있습니다.
       </SectionHeader>
       <NormalPageFrame>
         <div className={styles.grid}>

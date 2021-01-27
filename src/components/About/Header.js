@@ -51,7 +51,7 @@ const Header = () => {
         <span>Socratone</span>
       </h1>
       <p className={styles.text}>
-        <span>같은 문제를 반복하지 않기 위해 블로그에</span>
+        <span>같은 문제를 반복하지 않기 위해 모든 것을</span>
         <span>정리하고 기록하는 Front-end 개발자</span>
       </p>
       <address className={styles.linkWrap}>
