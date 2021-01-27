@@ -6,7 +6,6 @@ import styles from './HomeItem.module.scss';
 import getIcon from '../../helper/getIcon';
 
 const HomeItem = ({ item }) => {
-  console.log('item:', item)
   const history = useHistory();
   const convertCategory = category => {
     const [item] = categoryJSON.troubles.filter(item => item.id === category);
