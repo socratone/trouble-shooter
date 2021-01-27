@@ -71,8 +71,8 @@ const RecentWork = () => {
         image="https://trouble-shooter.s3.ap-northeast-2.amazonaws.com/profile/kimjiyoung.png"
         link="http://kimjiyoung.s3-website.ap-northeast-2.amazonaws.com">
           <Title head>주요 기능</Title>
-          <Title sub>Admin 커스터마이징</Title>
-          <List>블로그의 글을 추가할 때 정해진 레이아웃에 제목, 글, 이미지를 수정할 수 있도록 구현</List>
+          <Title sub>Admin 커스터마이징 / CRUD</Title>
+          <List>블로그의 글을 추가할 때 정해진 레이아웃에 제목, 글, 이미지를 수정할 수 있도록 에디터 구현</List>
           <List>홈화면 이미지와 Profile의 이미지, 글자를 수정할 수 있도록 구현</List>
           <Title>Stack</Title>
           <Title sub>Front-end</Title>
