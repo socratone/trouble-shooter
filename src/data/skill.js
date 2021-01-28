@@ -1,154 +1,122 @@
-const frontEndStack = {
-  skillfuls: [
-    {
-      id: 'js',
-      value: 'JavaScript'
-    },
-    {
-      id: 'react',
-      value: 'React'
-    },
-    {
-      id: 'redux',
-      value: 'Redux'
-    },
-    {
-      id: 'react-router',
-      value: 'React Router'
-    },
-    {
-      id: 'sass',
-      value: 'Sass'
-    },
-    {
-      id: 'css-module',
-      value: 'CSS Module'
-    },
-    {
-      id: 'styled-components',
-      value: 'Styled Components'
-    },
-    {
-      id: 'webpack',
-      value: 'Webpack'
-    },
-  ],
-  experienceds: [
-    {
-      id: 'electron',
-      value: 'Electron'
-    },
-    {
-      id: 'jest',
-      value: 'Jest'
-    },
-    {
-      id: 'storybook',
-      value: 'Storybook'
-    },
-    {
-      id: 'ts',
-      value: 'TypeScript'
-    },
-    {
-      id: 'gulp',
-      value: 'Gulp'
-    },
-    {
-      id: 'jquery',
-      value: 'jQuery'
-    },
-    {
-      id: 'php',
-      value: 'PHP'
-    },
-    {
-      id: 'conceptjs',
-      value: 'ConceptJS'
-    },
-    {
-      id: 'webrtc',
-      value: 'WebRTC'
-    },
-    {
-      id: 'react-native',
-      value: 'React Native'
-    },
-  ]
-};
+const frontEndStacks = [
+  {
+    type: 'category',
+    value: 'Language'
+  },
+  {
+    type: 'stack',
+    value: 'JavaScript'
+  },
+  {
+    type: 'stack',
+    value: 'TypeScript'
+  },
+  {
+    type: 'category',
+    value: 'Framework'
+  },
+  {
+    type: 'stack',
+    value: 'React'
+  },
+  {
+    type: 'stack',
+    value: 'Electron'
+  },
+  {
+    type: 'category',
+    value: 'State Management'
+  },
+  {
+    type: 'stack',
+    value: 'Redux'
+  },
+  {
+    type: 'category',
+    value: 'Style'
+  },
+  {
+    type: 'stack',
+    value: 'SASS'
+  },
+  {
+    type: 'stack',
+    value: 'Styled Component'
+  },
+  {
+    type: 'category',
+    value: 'Build'
+  },
+  {
+    type: 'stack',
+    value: 'Webpack'
+  },
+  {
+    type: 'stack',
+    value: 'Babel'
+  },
+  {
+    type: 'category',
+    value: 'Deployment'
+  },
+  {
+    type: 'stack',
+    value: 'S3'
+  },
+  {
+    type: 'stack',
+    value: 'Route 53'
+  },
+];
 
-const backEndStack = {
-  skillfuls: [
-    {
-      id: 'nodejs',
-      value: 'NodeJS'
-    },
-    {
-      id: 'express',
-      value: 'Express'
-    },
-    {
-      id: 'mysql',
-      value: 'MySQL'
-    },
-    {
-      id: 'sqlite',
-      value: 'SQLite'
-    },
-    {
-      id: 'bcrypt',
-      value: 'bcrypt'
-    },
-    {
-      id: 'jwt',
-      value: 'JSON Web Token'
-    },
-  ],
-  experienceds: [
-    {
-      id: 'mongodb',
-      value: 'MongoDB'
-    },
-    {
-      id: 'sequelize',
-      value: 'Sequelize'
-    },
-    {
-      id: 'docker',
-      value: 'Docker'
-    },
-  ]
-};
-
-const deployStack = {
-  skillfuls: [
-    {
-      id: 's3',
-      value: 'S3'
-    },
-    {
-      id: 'ec2',
-      value: 'EC2'
-    },
-    {
-      id: 'route53',
-      value: 'Route 53'
-    }
-  ],
-  experienceds: [
-    {
-      id: 'rds',
-      value: 'RDS'
-    },
-    {
-      id: 'jenkins',
-      value: 'Jenkins'
-    },
-  ]
-};
+const backEndStacks = [
+  {
+    type: 'category',
+    value: 'Server'
+  },
+  {
+    type: 'stack',
+    value: 'Node.js'
+  },
+  {
+    type: 'category',
+    value: 'Database'
+  },
+  {
+    type: 'stack',
+    value: 'MySQL'
+  },
+  {
+    type: 'category',
+    value: '인증 및 보안'
+  },
+  {
+    type: 'stack',
+    value: 'bcrypt'
+  },
+  {
+    type: 'stack',
+    value: 'JWT'
+  },
+  {
+    type: 'category',
+    value: '빌드 및 배포'
+  },
+  {
+    type: 'stack',
+    value: 'EC2'
+  },
+  {
+    type: 'stack',
+    value: 'RDS'
+  },
+  {
+    type: 'stack',
+    value: 'Docker'
+  },
+];
 
 export {
-  frontEndStack,
-  backEndStack,
-  deployStack
+  frontEndStacks,
+  backEndStacks
 }

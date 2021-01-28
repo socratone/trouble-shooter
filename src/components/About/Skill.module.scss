@@ -15,7 +15,7 @@
 .main {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   background: white;
   border-radius: 12px;
   border: gainsboro solid 1px;
@@ -76,19 +76,6 @@
   animation-iteration-count: infinite; 
 }
 
-.rocketIcon {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  animation-direction: alternate;
-  animation-timing-function: ease-in-out;
-  animation-name: float;
-  animation-duration: 1s;
-  animation-iteration-count: infinite; 
-}
-
 .itemTitle {
   font-size: 24px;
   margin-bottom: 30px;
@@ -99,15 +86,6 @@
   margin-top: 25px;
   margin-bottom: 25px;
 }
-
-.viewButton {
-  margin-top: 15px;
-  text-align: center;
-  cursor: pointer;
-  font-size: 16px;
-  color:grey;
-}
-
 @keyframes write {
   from { left: -3px; }
   to { left: 3px; }
@@ -116,9 +94,4 @@
 @keyframes rotate {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
-}
-
-@keyframes float {
-  from { top: -3px; }
-  to { top: 3px; }
 }
