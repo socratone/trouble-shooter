@@ -13,9 +13,9 @@ const About = () => {
     <main>
       <Hedaer />
       <Introduce />
+      <Experience />
       <Skill />
       <RecentWork />
-      <Experience />
       <OtherExperience />
       <AvailableTools />
       <Footer />
