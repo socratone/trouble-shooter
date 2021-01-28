@@ -45,7 +45,7 @@ const WorkItem = ({
             className={styles.firstButton}
             style={{ boxShadow: setBoxShadow() }}
             onClick={handleViewDetail}>
-              <p>{isViewDetail ? '간략히 보기' : '자세히 보기'}</p>
+              <p>{isViewDetail ? '숨기기' : '펼치기'}</p>
           </button>
           {link && <a 
             className={styles.secondButton}
