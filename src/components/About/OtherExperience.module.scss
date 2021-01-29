@@ -49,6 +49,7 @@
 .title {
   margin-bottom: 10px;
   font-size: 18px;
+  text-align: center;
 }
 
 .text {
@@ -59,4 +60,14 @@
 .link {
   color: #096dd1;
   margin-top: 10px;
+}
+
+.album {
+  width: 150px;
+  height: 150px;
+  border-radius: 3px;
+  background: url('http://i.ytimg.com/vi/fLsUuw0KiUc/mqdefault.jpg');
+  background-size: cover;
+  background-position: center center;
+  margin-bottom: 20px;
 }

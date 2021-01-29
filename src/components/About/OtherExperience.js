@@ -32,8 +32,16 @@ const OtherExperience = () => {
           </div>
           <div className={styles.gridItemWrap}>
             <div className={styles.gridItem}>
+              <div className={styles.album} />
               <h4 className={styles.title}>대중음악 작곡</h4>
-              <p className={styles.text}>러블리즈 류수영의 42= 편곡 참여</p>
+              <p className={styles.text}>러블리즈 류수정의 42= 편곡 참여</p>
+              <a
+                className={styles.link} 
+                href="https://youtu.be/fLsUuw0KiUc"
+                rel="noreferrer"
+                target="_blank">
+                  youtu.be/fLsUuw0KiUc
+              </a>
             </div>
           </div>
           <div className={styles.gridItemWrap}>
