@@ -87,7 +87,7 @@ const RecentWork = () => {
       <WorkItem 
         subTitle="Electron App"
         title="Finger Organist"
-        description="리듬에 맞춰 손가락을 터치해 가톨릭 성가 반주를 해주는 앱입니다."
+        description="리듬에 맞춰 손가락을 터치해 가톨릭 성가 반주를 해주는 데스크톱 앱입니다."
         term="2020년 7월 - 8월"
         image="https://trouble-shooter.s3.ap-northeast-2.amazonaws.com/profile/finger-organist.png"
         mac="https://trouble-shooter.s3.ap-northeast-2.amazonaws.com/profile/finger-organist-electron.zip">
