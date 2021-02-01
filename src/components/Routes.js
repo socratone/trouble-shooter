@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -14,23 +14,37 @@ import About from './pages/About';
 import Beginner from './pages/Beginner';
 import Algorithm from './pages/Algorithm';
 import Shoot from './pages/Shoot';
-import HeaderBumper from './common/HeaderBumper';
 import Editor from './pages/Editor';
 import Admin from './pages/Admin';
 import styles from './Routes.module.scss';
 
+const HEADER_HEIGHT = 50;
+
 const Routes = () => {
+  const [height, setHeight] = useState('');
   const dispatch = useDispatch();
+
   useEffect(() => {
     const user = getUserByToken(localStorage.getItem('token'));
     if (user.account === 'admin') dispatch(setAdmin({ isAdmin: true }));
   }, []);
 
+  window.onresize = () => {
+    setHeight(setMainHeight());
+  };
+
+  useEffect(() => {
+    setHeight(setMainHeight());
+  }, []);
+
+  const setMainHeight = () => {
+    return window.innerHeight - HEADER_HEIGHT + 'px';
+  };
+
   return (  
     <Router>
       <Nav />
-      <div className={styles.mainWrap}>
-        <HeaderBumper />
+      <div className={styles.mainWrap} style={{ height }}>
         <Switch>
           <Route path="/algorithm/:id">
             <Shoot />

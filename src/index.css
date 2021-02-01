@@ -14,6 +14,10 @@
   --code-scrollbar-hover-color: #777474;
 }
 
+html {
+  overflow: hidden;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
