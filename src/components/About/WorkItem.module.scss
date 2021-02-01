@@ -103,14 +103,8 @@
 
 .secondButton {
   display: inline-block;
-  color: #373636;
-  font-size: 15px;
-  cursor: pointer;
-}
-
-.downloadButton {
-  display: inline-block;
-  background: gainsboro;
+  border: 2px solid #fdc073;
+  box-sizing: border-box;
   color: #373636;
   font-weight: 700;
   height: 40px;
@@ -127,9 +121,11 @@
 
     .icon {
       position: absolute;
+      // display: flex;
+      // align-items: center;
     }
 
-    .text {
+    .marginText {
       margin-left: 20px;
     }
   }

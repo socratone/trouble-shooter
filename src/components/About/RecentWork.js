@@ -3,8 +3,20 @@ import SectionHeader from './SectionHeader';
 import WorkItem from './WorkItem';
 import Title from '../common/Title';
 import List from '../common/List';
-import Link from '../common/Link';
+import GithubIcon from '../icon/GithubIcon';
 import styles from './RecentWork.module.scss';
+
+const Github = ({ link, children }) => (
+  <div className={styles.github}>
+    <a 
+      href={link}
+      rel="noreferrer"
+      target="_blank">
+        <p className={styles.icon}><GithubIcon size="16" /></p>
+        <p className={styles.text}>{children}</p>
+    </a>
+  </div>
+);
 
 const RecentWork = () => {
   return (  
@@ -34,18 +46,20 @@ const RecentWork = () => {
           <List>가운데의 Resizer를 드래그해서 사용자의 입맛에 따라 두 화면의 크기 비율을 조절할 수 있도록 구현</List>
           <Title sub>반응형</Title>
           <Title>Stack</Title>
-          <Title sub>Front-end</Title>
-          <List>Redux : Redux devTools와 불필요한 props drill을 줄여 유지보수에 용이</List>
-          <List>CSS Module : class의 이름 중복 문제 해결을 위해 적용</List>
-          <List>Styled Components : 코드 양을 줄이기 위해 공통으로 쓰이는 간단한 컴포넌트에 적용</List>
-          <List>React, React Router, SASS, aws-sdk, @reduxjs/toolkit</List>
-          <Title sub>Back-end</Title>
-          <List>NodeJS, Express, MySQL, bcrypt, JWT, PM2</List>
-          <Title sub>Deployment</Title>
-          <List>S3, EC2, Route 53</List>
-          <Title>Github</Title>
-          <Link url="https://github.com/socratone/trouble-shooter-frontend.git">Front-end</Link>
-          <Link url="https://github.com/socratone/trouble-shooter-backend.git">Back-end</Link>
+          <List>Framework : React</List>
+          <List>State Management : Redux</List>
+          <List>Style : SASS, Styled Component</List>
+          <List>Server : NodeJS</List>
+          <List>Database : MySQL</List>
+          <List>인증 / 보안 : bcrypt, JWT</List>
+          <List>배포 : S3, EC2, Route 53</List>
+          <Title>Source Code</Title>
+          <Github link="https://github.com/socratone/trouble-shooter-frontend.git">
+            Front-end
+          </Github>
+          <Github link="https://github.com/socratone/trouble-shooter-backend.git">
+            Back-end
+          </Github>
       </WorkItem>
       <WorkItem 
         even
@@ -53,20 +67,27 @@ const RecentWork = () => {
         title="Youtube Music Player"
         description="플레이리스트를 만들어 유튜브 영상을 넣고 편하게 음악 재생을 할 수 있는 데스크톱 앱입니다."
         term="2020년 11월"
-        image="https://trouble-shooter.s3.ap-northeast-2.amazonaws.com/profile/youtube-music-player.png">
+        image="https://trouble-shooter.s3.ap-northeast-2.amazonaws.com/profile/youtube-music-player.png"
+        mac="https://trouble-shooter.s3.ap-northeast-2.amazonaws.com/profile/youtube-music-player-electron.zip">
           <Title head>특징</Title>
-          <List>JavaScript를 이용하여 객체지향 프로그래밍으로 구현</List>
+          <List>모든 곳에 객체지향 프로그래밍 적용</List>
           <Title>주요 기능</Title>
-          <List>Youtube IFrame Player API를 이용하여 음악 플레이어 구현</List>
-          <List>사용자 플레이리스트 CRUD</List>
+          <List>유튜브 동영상을 이용하여 음악 플레이어 구현</List>
+          <List>사용자 플레이리스트 CRUD 구현</List>
           <Title>Stack</Title>
-          <Title sub>Front-end</Title>
-          <List>Youtube IFrame Player API, Webpack, Babel, Axios</List>
-          <Title sub>Back-end & Electron</Title>
-          <List>Electron, NodeJS, SQLite, Express</List>
-          <Title>Github</Title>
-          <Link url="https://github.com/socratone/youtube-music-player-frontend.git">Front-end</Link>    
-          <Link url="https://github.com/socratone/youtube-music-player-electron.git">Back-end & Electron</Link>  
+          <List>Framework : React, Electron</List>
+          <List>Style : SASS</List>
+          <List>Video : Youtube IFrame Player API</List>
+          <List>Bundler : Webpack</List>
+          <List>Server : NodeJS</List>
+          <List>Database : SQLite</List>
+          <Title>Source Code</Title>
+          <Github link="https://github.com/socratone/youtube-music-player-frontend.git">
+            Front-end
+          </Github>
+          <Github link="https://github.com/socratone/youtube-music-player-electron.git">
+            Electron Builder
+          </Github>
       </WorkItem>
       <WorkItem 
         subTitle="Electron App"
@@ -76,12 +97,19 @@ const RecentWork = () => {
         image="https://trouble-shooter.s3.ap-northeast-2.amazonaws.com/profile/finger-organist.png"
         mac="https://www.google.com/">
           <Title head>주요 기능</Title>
-          <List>@tonejs/midi로 미디 데이터를 가져와서 클릭할 때마다 비트에 해당하는 음원을 재생하도록 구현</List>
+          <List>@tonejs/midi로 미디 데이터를 불러와서 클릭할 때마다 비트에 해당하는 음원을 재생하도록 구현</List>
           <Title>Stack</Title>
-          <List>@tonejs/midi, React, React Router, SASS, Electron, NodeJS, Express</List>
-          <Title>Github</Title>
-          <Link url="https://github.com/socratone/finger-organist.git">Front-end</Link>    
-          <Link url="https://github.com/socratone/finger-organist-desktop.git">Electron</Link>  
+          <List>Framework : React, Electron</List>
+          <List>Style : SASS</List>
+          <List>Server : NodeJS</List>
+          <List>MIDI : @tonejs/midi</List>
+          <Title>Source Code</Title>
+          <Github link="https://github.com/socratone/finger-organist.git">
+            Front-end
+          </Github>
+          <Github link="https://github.com/socratone/finger-organist-desktop.git">
+            Electron Builder
+          </Github>
       </WorkItem>
     </section>
   );

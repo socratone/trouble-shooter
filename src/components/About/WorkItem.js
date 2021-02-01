@@ -53,16 +53,17 @@ const WorkItem = ({
             href={link}
             rel="noreferrer"
             target="_blank">
-              <p>홈페이지</p>
+              <div>
+                <p>홈페이지</p>
+              </div>
           </a>}
           {mac && <a 
-            className={styles.downloadButton}
-            href={link}
-            rel="noreferrer"
-            target="_blank">
+            className={styles.secondButton}
+            href={mac}
+            download>
               <div>
                 <p className={styles.icon}><AppleIcon size="16" /></p>
-                <p className={styles.text}>다운로드</p>
+                <p className={styles.marginText}>다운로드</p>
               </div>
           </a>}
         </div>

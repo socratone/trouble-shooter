@@ -12,3 +12,25 @@
   font-size: 17px;
   margin-bottom: 25px;
 }
+
+.github {
+  display: inline-block;
+  margin-right: 10px;
+  cursor: pointer;
+
+  a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    .icon {
+      position: absolute;
+      display: flex;
+      align-items: center;
+    }
+
+    .text {
+      margin-left: 20px;
+    }
+  }
+}
