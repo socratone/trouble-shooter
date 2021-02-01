@@ -10,7 +10,7 @@ const Header = () => {
   };
   
   const handleSecondButtonClick = () => {
-    history.push('/beginner');
+    history.push('/troubles');
   };
 
   return (  
