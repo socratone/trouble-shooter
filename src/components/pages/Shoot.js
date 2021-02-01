@@ -14,6 +14,7 @@ import List from '../common/List';
 import Link from '../common/Link';
 import ResizeIcon from '../icon/ResizeIcon';
 import EditToolBar from '../Shoot/EditToolBar';
+import NormalPageFrame from '../common/NormalPageFrame';
 import styles from './Shoot.module.scss';
 
 const Shoot = () => {
@@ -83,6 +84,20 @@ const Shoot = () => {
     return false;
   };
 
+  // 한 화면 페이지
+  if (!previewCode.html) {
+    return (
+      <NormalPageFrame>
+        <main>
+          {user.isAdmin && <EditToolBar id={id} />}
+          <Title head>{data && data.title}</Title>
+          {data && data.page.items.map((item, i) => setShootItem(item, i))}
+        </main>
+      </NormalPageFrame> 
+    );
+  }
+
+  // 두 화면 페이지
   return (  
     <main 
       className={styles.shoot} 
