@@ -112,9 +112,23 @@ const Editor = () => {
     <p style={{ padding: '20px', textAlign: 'center' }}>admin 인증이 필요합니다.</p>
   );
 
-  return (  
+  return ( 
     <NormalPageFrame>
       <main className={styles.editor}>
+        <aside className={styles.aside}>
+          <div className={styles.float}>
+            <AddPageItemButton name="Title" onClick={() => addPageItem('title')}/>
+            <AddPageItemButton name="SubTitle" onClick={() => addPageItem('subTitle')}/>
+            <AddPageItemButton name="Text" onClick={() => addPageItem('text')}/>
+            <AddPageItemButton name="List" onClick={() => addPageItem('list')}/>
+            <AddPageItemButton name="Link" onClick={() => addPageItem('link')}/>
+            <AddPageItemButton name="HTML" onClick={() => addPageItem('html')}/>
+            <AddPageItemButton name="CSS" onClick={() => addPageItem('css')}/>
+            <AddPageItemButton name="JavaScript" onClick={() => addPageItem('js')}/>
+            <AddPageItemButton name="Terminal" onClick={() => addPageItem('terminal')}/>
+            <AddPageItemButton name="Image" onClick={() => addPageItem('image')}/>
+          </div>
+        </aside>
         <section className={styles.mainSection}>
           <div className={styles.item}>
             <p className={styles.title}>제목</p>
@@ -189,23 +203,9 @@ const Editor = () => {
                 수정하기
             </button>}
           </div>
-        </section>
-        <aside className={styles.aside}>
-          <div className={styles.float}>
-            <AddPageItemButton name="Title" onClick={() => addPageItem('title')}/>
-            <AddPageItemButton name="SubTitle" onClick={() => addPageItem('subTitle')}/>
-            <AddPageItemButton name="Text" onClick={() => addPageItem('text')}/>
-            <AddPageItemButton name="List" onClick={() => addPageItem('list')}/>
-            <AddPageItemButton name="Link" onClick={() => addPageItem('link')}/>
-            <AddPageItemButton name="HTML" onClick={() => addPageItem('html')}/>
-            <AddPageItemButton name="CSS" onClick={() => addPageItem('css')}/>
-            <AddPageItemButton name="JavaScript" onClick={() => addPageItem('js')}/>
-            <AddPageItemButton name="Terminal" onClick={() => addPageItem('terminal')}/>
-            <AddPageItemButton name="Image" onClick={() => addPageItem('image')}/>
-          </div>
-        </aside>
+        </section>    
       </main>
-    </NormalPageFrame>
+    </NormalPageFrame> 
   );
 }
  

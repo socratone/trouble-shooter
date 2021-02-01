@@ -1,7 +1,21 @@
 .editor {
   display: grid;
-  grid-template-columns: 1fr 100px;
+  grid-template-columns: 100px 1fr;
   gap: 20px;
+}
+
+
+.aside {
+  width: 100px;
+}
+
+.float {
+  top: 0;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
 }
 
 .mainSection {
@@ -66,17 +80,4 @@
   &:active {
     transform: scale(0.95);
   }
-}
-
-.aside {
-  width: 100px;
-}
-
-.float {
-  top: 0;
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
 }
