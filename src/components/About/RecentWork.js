@@ -34,17 +34,10 @@ const RecentWork = () => {
         image="https://trouble-shooter.s3.ap-northeast-2.amazonaws.com/profile/trshooter.png"
         link="http://trshooter.com">
           <Title head>주요 기능</Title>
-          <Title sub>블로그 에디터 / CRUD</Title>
-          <List>일반적인 블로그에서처럼 제목, 글, 리스트, 링크, 코드, 이미지 등을 자유롭게 배치하고 편집할 수 있도록 구현 (admin만 가능)</List>
-          <List>aws-sdk를 이용해서 S3에 이미지를 올리고 수정하고 삭제할 수 있도록 구현</List>
-          <Title sub>코드 미리 보기</Title>
-          <List>HTML, CSS, JS 코드에 따른 미리 보기 화면 구현</List>
-          <List>사용자가 코드를 수정함에 따라 미리 보기 화면이 달라지도록 구현</List>
-          <Title sub>코드 색깔</Title>
+          <List>블로그에 글과 이미지를 넣고 수정할 수 있는 기능 구현 (admin만 가능)</List>
+          <List>HTML, CSS, JS 코드 수정시 미리 보기 화면의 값이 달라지는 코드 에디터 구현</List>
           <List>코드의 가독성을 높이기 위해 예약어, 메서드, 주석 등 코드의 종류에 따라 자동으로 색깔이 바뀌도록 구현</List>
-          <Title sub>좌우 화면 크기 조절</Title>
           <List>가운데의 Resizer를 드래그해서 사용자의 입맛에 따라 두 화면의 크기 비율을 조절할 수 있도록 구현</List>
-          <Title sub>반응형</Title>
           <Title>Stack</Title>
           <List>Framework : React</List>
           <List>State Management : Redux</List>
@@ -95,7 +88,7 @@ const RecentWork = () => {
         description="리듬에 맞춰 손가락을 터치해 가톨릭 성가 반주를 해주는 앱입니다."
         term="2020년 7월 - 8월"
         image="https://trouble-shooter.s3.ap-northeast-2.amazonaws.com/profile/finger-organist.png"
-        mac="https://www.google.com/">
+        mac="https://trouble-shooter.s3.ap-northeast-2.amazonaws.com/profile/finger-organist-electron.zip">
           <Title head>주요 기능</Title>
           <List>@tonejs/midi로 미디 데이터를 불러와서 클릭할 때마다 비트에 해당하는 음원을 재생하도록 구현</List>
           <Title>Stack</Title>
