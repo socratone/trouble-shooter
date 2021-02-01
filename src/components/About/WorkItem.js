@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import AppleIcon from '../icon/AppleIcon';
 import styles from './WorkItem.module.scss';
 
 const WorkItem = ({ 
-  head, even, subTitle, title, term, description, image, link, children, clicked
+  head, even, subTitle, title, term, description, image, link, mac, children, clicked
 }) => {
   const [isViewDetail, setViewDetail] = useState(clicked ? true : false);
 
@@ -53,6 +54,16 @@ const WorkItem = ({
             rel="noreferrer"
             target="_blank">
               <p>홈페이지</p>
+          </a>}
+          {mac && <a 
+            className={styles.downloadButton}
+            href={link}
+            rel="noreferrer"
+            target="_blank">
+              <div>
+                <p className={styles.icon}><AppleIcon size="16" /></p>
+                <p className={styles.text}>다운로드</p>
+              </div>
           </a>}
         </div>
         {isViewDetail && <div className={styles.detail}>

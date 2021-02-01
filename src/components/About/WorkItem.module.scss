@@ -108,6 +108,33 @@
   cursor: pointer;
 }
 
+.downloadButton {
+  display: inline-block;
+  background: gainsboro;
+  color: #373636;
+  font-weight: 700;
+  height: 40px;
+  font-size: 14px;
+  border-radius: 20px;
+  padding: 0 20px;
+  margin-right: 10px;
+  cursor: pointer;
+
+  div {
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    .icon {
+      position: absolute;
+    }
+
+    .text {
+      margin-left: 20px;
+    }
+  }
+}
+
 .detail {
   order: 2;
   grid-column: span 2;

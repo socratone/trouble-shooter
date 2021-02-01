@@ -73,7 +73,8 @@ const RecentWork = () => {
         title="Finger Organist"
         description="리듬에 맞춰 손가락을 터치해 가톨릭 성가 반주를 해주는 앱입니다."
         term="2020년 7월 - 8월"
-        image="https://trouble-shooter.s3.ap-northeast-2.amazonaws.com/profile/finger-organist.png">
+        image="https://trouble-shooter.s3.ap-northeast-2.amazonaws.com/profile/finger-organist.png"
+        mac="https://www.google.com/">
           <Title head>주요 기능</Title>
           <List>@tonejs/midi로 미디 데이터를 가져와서 클릭할 때마다 비트에 해당하는 음원을 재생하도록 구현</List>
           <Title>Stack</Title>
