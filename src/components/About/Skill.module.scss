@@ -33,7 +33,6 @@
   border-right: gainsboro solid 1px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
 
   @media (max-width: 750px) {
@@ -52,46 +51,31 @@
   justify-content: center;
 }
 
-.writeIcon {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  animation-direction: alternate;
-  animation-timing-function: ease-in-out;
-  animation-name: write;
-  animation-duration: 1s;
-  animation-iteration-count: infinite; 
-}
-
-.gearIcon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  animation-timing-function: linear;
-  animation-name: rotate;
-  animation-duration: 10s;
-  animation-iteration-count: infinite; 
-}
-
-.itemTitle {
+.title {
   font-size: 24px;
   margin-bottom: 30px;
+  // font-family: 'Goldman', cursive;
+  color: #3a3a3a;
 }
 
-.itemSubTitle {
+.stackWrap {
+  margin-bottom: 2rem;
+}
+
+.category {
   font-size: 18px;
-  margin-top: 25px;
-  margin-bottom: 25px;
-}
-@keyframes write {
-  from { left: -3px; }
-  to { left: 3px; }
+  font-weight: 400;
+  color: #ff9e27;
+  margin-bottom: 0.5rem;
 }
 
-@keyframes rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.stack {
+  font-size: 18px;
+  font-weight: 300;
+  color: #3a3a3a;
+  margin-bottom: 0.5rem;
+  
+  &:last-child {  
+    margin-bottom: 0;
+  }
 }
