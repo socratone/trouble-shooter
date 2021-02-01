@@ -7,15 +7,17 @@ import GithubIcon from '../icon/GithubIcon';
 import styles from './RecentWork.module.scss';
 
 const Github = ({ link, children }) => (
-  <div className={styles.github}>
-    <a 
+  <span className={styles.githubWrap}>
+    <a
       href={link}
       rel="noreferrer"
       target="_blank">
-        <p className={styles.icon}><GithubIcon size="16" /></p>
-        <p className={styles.text}>{children}</p>
+        <span className={styles.github}>
+          <div className={styles.iconWrap}><GithubIcon size="16" /></div>
+        </span>
+        <span className={styles.text}>{children}</span>
     </a>
-  </div>
+  </span>
 );
 
 const RecentWork = () => {

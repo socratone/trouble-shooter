@@ -13,24 +13,25 @@
   margin-bottom: 25px;
 }
 
-.github {
+.githubWrap {
+  margin-right: 15px;
   display: inline-block;
-  margin-right: 10px;
-  cursor: pointer;
-
+  line-height: 1.5;
+  
   a {
     display: flex;
     align-items: center;
-    height: 100%;
-
-    .icon {
-      position: absolute;
+  
+    .github {
+      margin-right: 5px;
+    }
+  
+    .iconWrap {
       display: flex;
       align-items: center;
     }
-
+  
     .text {
-      margin-left: 20px;
     }
   }
 }
