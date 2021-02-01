@@ -20,7 +20,7 @@ const Code = ({ type, children }) => {
   const [message, setMessage] = useState('');
 
   const showTitle = () => {
-    if (type === 'html') return <p className={styles.title}>Html</p>
+    if (type === 'html') return <p className={styles.title}>HTML</p>
     if (type === 'js') return <p className={styles.title}>JS</p>
     if (type === 'css') return <p className={styles.title}>CSS</p>
   };
