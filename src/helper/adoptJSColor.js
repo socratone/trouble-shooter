@@ -7,11 +7,50 @@ const adoptJSColor = text => {
   let texts = [];
   let tempText = '';
   let hasQuote = false;
+  let hasDoubleQuote = false;
   let isComment = false;
   let hasComment = false;
 
   for (let i = 0; i < text.length; i++) {
     tempText += text[i];
+
+    // 따옴표 확인
+    // close '
+    if (hasQuote) {
+      if (text[i] === '\'') {
+        texts.push(<Green key={i}>{tempText}</Green>);
+        tempText = '';
+        hasQuote = false;
+      } 
+      continue;
+    } 
+
+    // open '
+    if (text[i] === '\'') {
+      texts.push(tempText.substring(0, tempText.length - 1));
+      tempText = '\'';
+      hasQuote = true;
+      continue;
+    }
+
+    // 쌍따옴표 확인
+    // close "
+    if (hasDoubleQuote) {
+      if (text[i] === '"') {
+        texts.push(<Green key={i}>{tempText}</Green>);
+        tempText = '';
+        hasDoubleQuote = false;
+      } 
+      continue;
+    } 
+
+    // open "
+    if (text[i] === '"') {
+      texts.push(tempText.substring(0, tempText.length - 1));
+      tempText = '"';
+      hasDoubleQuote = true;
+      continue;
+    }
 
     // 주석 확인
     // close */
@@ -46,25 +85,6 @@ const adoptJSColor = text => {
     // open /
     if (text[i] === '/' && text[i + 1] === '/') {
       isComment = true;
-      continue;
-    }
-
-    // 따옴표 확인
-    // close '
-    if (hasQuote) {
-      if (text[i] === '\'') {
-        texts.push(<Green key={i}>{tempText}</Green>);
-        tempText = '';
-        hasQuote = false;
-      } 
-      continue;
-    } 
-
-    // open '
-    if (text[i] === '\'') {
-      texts.push(tempText.substring(0, tempText.length - 1));
-      tempText = '\'';
-      hasQuote = true;
       continue;
     }
 
