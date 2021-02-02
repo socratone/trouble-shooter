@@ -4,6 +4,8 @@ const isStructureChar = char => {
     char === ')' || 
     char === '{' || 
     char === '}' || 
+    char === '[' || 
+    char === ']' || 
     char === ';' 
   ) return true;
   return false;
