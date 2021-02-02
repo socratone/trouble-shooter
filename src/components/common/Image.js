@@ -10,6 +10,7 @@ const Wrap = styled.div`
 const Img = styled.img`
   display: block;
   width: 100%;
+  border: 1px solid whitesmoke;
 `;
 
 const s3URL = process.env.REACT_APP_S3_URL;
