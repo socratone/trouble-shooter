@@ -20,6 +20,27 @@ const Github = ({ link, children }) => (
   </span>
 );
 
+const ImageRow = ({ children }) => {
+  const setAlt = image => {
+    const lastIndex = image.lastIndexOf('/');
+    return image.slice(lastIndex + 1);
+  };
+
+  return (
+    <div 
+      className={styles.imageRow}
+      style={{ gridTemplateColumns: `repeat(${children.length}, 1fr)` }}>
+        {children.map((image, i) => 
+          <img 
+            key={i} 
+            src={image} 
+            alt={setAlt(image)}
+            width="100%" 
+            className={styles.image} />)}
+    </div>
+  );
+}
+
 const RecentWork = () => {
   return (  
     <section className={styles.wrap}>
@@ -40,6 +61,12 @@ const RecentWork = () => {
           <List>HTML, CSS, JS 코드 수정시 미리 보기 화면의 값이 달라지는 코드 에디터 구현</List>
           <List>코드의 가독성을 높이기 위해 예약어, 메서드, 주석 등 코드의 종류에 따라 자동으로 색깔이 바뀌도록 구현</List>
           <List>가운데의 Resizer를 드래그해서 사용자의 입맛에 따라 두 화면의 크기 비율을 조절할 수 있도록 구현</List>
+          <ImageRow>
+            {[
+              'https://trouble-shooter.s3.ap-northeast-2.amazonaws.com/profile/trshooter-1.png',
+              'https://trouble-shooter.s3.ap-northeast-2.amazonaws.com/profile/trshooter-2.png'
+            ]}
+          </ImageRow>
           <Title>Stack</Title>
           <List>Framework : React</List>
           <List>State Management : Redux</List>
