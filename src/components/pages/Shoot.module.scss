@@ -44,6 +44,25 @@
   }
 }
 
+.shoot2 {
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // width: 100%;
+  // height: 100%;
+}
+
+.section {
+  padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
+
+  @media (min-width: 800px) {
+    width: 800px;
+  }
+}
+
 // 스크롤바
 
 .leftSection::-webkit-scrollbar, 

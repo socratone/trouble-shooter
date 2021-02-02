@@ -87,13 +87,13 @@ const Shoot = () => {
   // 한 화면 페이지
   if (!previewCode.html) {
     return (
-      <NormalPageFrame>
-        <main>
+      <main className={styles.shoot2}>
+        <section className={styles.section}>
           {user.isAdmin && <EditToolBar id={id} />}
           <Title head>{data && data.title}</Title>
           {data && data.page.items.map((item, i) => setShootItem(item, i))}
-        </main>
-      </NormalPageFrame> 
+        </section>
+      </main>
     );
   }
 
