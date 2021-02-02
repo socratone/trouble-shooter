@@ -37,6 +37,12 @@ const AvailableTools = () => {
           <Tool image="https://trouble-shooter.s3.ap-northeast-2.amazonaws.com/profile/cb.png">
             Cubase
           </Tool>
+          <Tool image="https://trouble-shooter.s3.ap-northeast-2.amazonaws.com/profile/pm.png">
+            Postman
+          </Tool>
+          <Tool image="https://trouble-shooter.s3.ap-northeast-2.amazonaws.com/profile/wb.png">
+            Workbench
+          </Tool>
         </div>
       </NormalPageFrame>
     </section>
