@@ -45,7 +45,8 @@ const RecentWork = () => {
   return (  
     <section className={styles.wrap}>
       <SectionHeader title="Recent Project" bright>
-        최근에 작업한 프로젝트는 다음과 같습니다.
+        최근에 작업한 프로젝트는 다음과 같습니다. <br />
+        펼치기를 클릭해 자세한 내용을 확인하실 수 있습니다.
       </SectionHeader>
       <WorkItem 
         head
@@ -58,7 +59,7 @@ const RecentWork = () => {
         link="http://trshooter.com">
           <Title head>주요 기능</Title>
           <List>블로그에 글과 이미지를 넣고 수정할 수 있는 기능 구현 (admin만 가능)</List>
-          <List>HTML, CSS, JS 코드 수정시 미리 보기 화면의 값이 달라지는 코드 에디터 구현</List>
+          <List>HTML, CSS, JS 코드 수정시 미리 보기 화면이 달라지는 코드 에디터 구현</List>
           <List>코드의 가독성을 높이기 위해 예약어, 메서드, 주석 등 코드의 종류에 따라 자동으로 색깔이 바뀌도록 구현</List>
           <List>가운데의 Resizer를 드래그해서 사용자의 입맛에 따라 두 화면의 크기 비율을 조절할 수 있도록 구현</List>
           <ImageRow>
@@ -92,9 +93,9 @@ const RecentWork = () => {
         image="https://trouble-shooter.s3.ap-northeast-2.amazonaws.com/profile/youtube-music-player.png"
         mac="https://trouble-shooter.s3.ap-northeast-2.amazonaws.com/profile/youtube-music-player-electron.zip">
           <Title head>특징</Title>
-          <List>모든 곳에 객체지향 프로그래밍 적용</List>
+          <List>모든 코드에 객체지향 프로그래밍 적용</List>
           <Title>주요 기능</Title>
-          <List>유튜브 동영상을 이용하여 음악 플레이어 구현</List>
+          <List>Youtube IFrame Player API를 이용하여 음악 플레이어 구현</List>
           <List>사용자 플레이리스트 CRUD 구현</List>
           <Title>Stack</Title>
           <List>Framework : React, Electron</List>
