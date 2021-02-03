@@ -116,7 +116,9 @@ const RecentWork = () => {
       <WorkItem 
         subTitle="Electron App"
         title="Finger Organist"
-        description="리듬에 맞춰 손가락을 터치해 가톨릭 성가 반주를 해주는 데스크톱 앱입니다."
+        description="오르간 연주를 할 수 없어도 클릭만으로 가톨릭 성가를 연주할 수 있는 데스크톱 앱입니다.
+          원하는 성가를 선택하고 멜로디 리듬에 맞춰 버튼을 클릭하면
+          소프라노, 알토, 테너, 베이스 4파트의 소리가 한 번에 연주됩니다."
         term="2020년 7월 - 8월"
         image="https://trouble-shooter.s3.ap-northeast-2.amazonaws.com/profile/finger-organist.png"
         mac="https://trouble-shooter.s3.ap-northeast-2.amazonaws.com/profile/finger-organist-electron.zip">
