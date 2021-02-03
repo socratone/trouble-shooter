@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import AppleIcon from '../icon/AppleIcon';
+import Dropdown from '../common/Dropdown';
 import styles from './WorkItem.module.scss';
 
 const WorkItem = ({ 
@@ -58,15 +59,24 @@ const WorkItem = ({
                   <p>홈페이지</p>
                 </div>
             </a>}
-            {mac && <a 
-              className={styles.secondButton}
-              href={mac}
-              download>
-                <div>
-                  <p className={styles.icon}><AppleIcon size="16" /></p>
-                  <p className={styles.marginText}>다운로드</p>
-                </div>
-            </a>}
+            {mac && <div className={styles.buttonWrap}>
+              <a 
+                className={styles.secondButton}
+                href={mac}
+                download>
+                  <div>
+                    <p className={styles.icon}><AppleIcon size="16" /></p>
+                    <p className={styles.marginText}>다운로드</p>
+                  </div>
+              </a>
+              <div className={styles.buttonHider}>
+                <Dropdown top="60px">
+                  <li>맥에서만 실행할 수 있습니다.</li>
+                  <li>시스템 환경설정의 보안 및 개인 정보 보호에서</li>
+                  <li>앱 실행 제한을 해제할 수 있습니다.</li>
+                </Dropdown>
+              </div>
+            </div>}
           </div>
         </div>
       </article>

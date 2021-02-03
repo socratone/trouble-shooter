@@ -134,6 +134,21 @@
   }
 }
 
+.buttonWrap {
+  position: relative;
+  display: inline-block;
+
+  &:hover {
+    .buttonHider {
+      display: block;
+    }
+  }
+}
+
+.buttonHider {
+  display: none;
+}
+
 .detail {
   padding: 60px 20px 90px 20px;
   width: 100%;
