@@ -128,6 +128,7 @@ const RecentWork = () => {
           <List>Framework : React, Electron</List>
           <List>Style : SASS</List>
           <List>Server : NodeJS</List>
+          <List>Audio : Web Audio API</List>
           <List>MIDI : @tonejs/midi</List>
           <Title>Source Code</Title>
           <Github link="https://github.com/socratone/finger-organist.git">
