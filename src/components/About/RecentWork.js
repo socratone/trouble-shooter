@@ -93,12 +93,13 @@ const RecentWork = () => {
         image="https://trouble-shooter.s3.ap-northeast-2.amazonaws.com/profile/youtube-music-player.png"
         mac="https://trouble-shooter.s3.ap-northeast-2.amazonaws.com/profile/youtube-music-player-electron.zip">
           <Title head>특징</Title>
+          <List>바닐라 자바스크립트</List>
           <List>모든 코드에 객체지향 프로그래밍 적용</List>
           <Title>주요 기능</Title>
           <List>Youtube IFrame Player API를 이용하여 음악 플레이어 구현</List>
           <List>사용자 플레이리스트 CRUD 구현</List>
           <Title>Stack</Title>
-          <List>Framework : React, Electron</List>
+          <List>Framework : Electron</List>
           <List>Style : SASS</List>
           <List>Video : Youtube IFrame Player API</List>
           <List>Bundler : Webpack</List>
