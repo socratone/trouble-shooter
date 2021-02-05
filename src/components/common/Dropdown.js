@@ -8,7 +8,7 @@ const Dropdown = ({ top, left, right, children }) => {
   const dropdown = useRef(null);
   useEffect(() => {
     if (dropdown.current) dropdown.current.style.top = top;
-  }, [dropdown]);
+  }, [dropdown, top]);
 
   const setArrowDirection = () => {
     if (right === undefined) return { left: '16px' };

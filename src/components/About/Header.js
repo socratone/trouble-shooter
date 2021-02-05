@@ -45,13 +45,21 @@ const Header = () => {
         <p className={styles.contact} style={{ width: emailWidth }}>
           {process.env.REACT_APP_EMAIL}
         </p>
-        <a className={styles.linkButton} href="https://github.com/socratone" target="_blank">
-          <p><GithubIcon size="30" color="whitesmoke" /></p>
-          <p className={styles.linkText}>Github</p>
+        <a 
+          className={styles.linkButton} 
+          rel="noreferrer"
+          href="https://github.com/socratone" 
+          target="_blank">
+            <p><GithubIcon size="30" color="whitesmoke" /></p>
+            <p className={styles.linkText}>Github</p>
         </a>
-        <a className={styles.linkButton} href="https://thinkforthink.tistory.com/" target="_blank">
-          <p><BlogIcon size="30" color="whitesmoke" /></p>
-          <p className={styles.linkText}>Blog</p>
+        <a 
+          className={styles.linkButton} 
+          rel="noreferrer"
+          href="https://thinkforthink.tistory.com/" 
+          target="_blank">
+            <p><BlogIcon size="30" color="whitesmoke" /></p>
+            <p className={styles.linkText}>Blog</p>
         </a>
       </address>
       <img 
