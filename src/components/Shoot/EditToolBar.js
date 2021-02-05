@@ -1,13 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { deleteItem } from '../../api/item';
-import YesNoModal from '../modal/YesNoModal';
 import PencilIcon from '../icon/PencilIcon';
 import TrashIcon from '../icon/TrashIcon';
 import styles from './EditToolBar.module.scss';
 
 const EditToolBar = ({ id }) => {
-  const [modal, setModal] = useState('');
   const history = useHistory();
 
   const handleEdit = () => {
@@ -15,25 +12,8 @@ const EditToolBar = ({ id }) => {
   };
 
   const handleErase = () => {
-    setModal('remove');
+    history.push('/delete/' + id);
   };
-
-  const requestRemoveItem = async () => {
-    const result = await deleteItem(id);
-    if (result.error) {
-      setModal('');
-      return alert(result.error.message);
-    }
-    history.push('/');
-  };
-
-  const showRemoveModal = () => (
-    <YesNoModal 
-      text="정말로 삭제하시겠습니까?"
-      yes={() => requestRemoveItem()} 
-      no={() => setModal('')} 
-    />
-  );
 
   return (  
     <>
@@ -45,7 +25,6 @@ const EditToolBar = ({ id }) => {
           <TrashIcon size="18" color="grey" />
         </button>
       </div>
-      {modal === 'remove' && showRemoveModal()}
     </>
   );
 }

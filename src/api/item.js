@@ -105,16 +105,21 @@ const putItem = async (item, id) => {
   }
 }; 
 
-const deleteItem = async id => {
+const deleteItem = async (id, password) => {
   const headers = new Headers();
   const token = localStorage.getItem('token');
   headers.append('x-auth-token', token);
   headers.append('Content-Type', 'application/json');
 
   try {
+    const raw = JSON.stringify({ 
+      password
+    });
+
     const res = await fetch(url + '/api/item/' + id, {
       method: 'DELETE',
-      headers: headers,
+      headers,
+      body: raw,
       redirect: 'follow'
     });
   

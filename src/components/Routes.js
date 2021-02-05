@@ -15,6 +15,7 @@ import Beginner from './pages/Beginner';
 import Algorithm from './pages/Algorithm';
 import Shoot from './pages/Shoot';
 import Editor from './pages/Editor';
+import Delete from './pages/Delete';
 import Admin from './pages/Admin';
 import styles from './Routes.module.scss';
 
@@ -72,6 +73,9 @@ const Routes = () => {
           </Route>
           <Route path="/editor">
             <Editor />
+          </Route>
+          <Route path="/delete/:id">
+            <Delete />
           </Route>
           <Route path="/admin">
             <Admin />
