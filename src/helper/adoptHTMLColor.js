@@ -1,4 +1,3 @@
-import findTagWord from './findTagWord';
 import findKeyWord from './findKeyWord';
 import isMarkupChar from './isMarkupChar';
 import { Green, Emerald, Red, Purple } from '../components/common/fontColor';
@@ -8,6 +7,7 @@ const adoptHTMLColor = text => {
   let tempText = '';
   let hasDoubleQuote = false;
   let isInTag = false;
+  let isFirstWord = false;
 
   for (let i = 0; i < text.length; i++) {
     tempText += text[i];
@@ -31,8 +31,12 @@ const adoptHTMLColor = text => {
       continue;
     }
 
-    if (text[i] === '<') isInTag = true;
-    else if (text[i] === '>') isInTag = false;
+    if (text[i] === '<') {
+      isInTag = true;
+      isFirstWord = false; // 초기화
+    } else if (text[i] === '>') {
+      isInTag = false;
+    }
 
     // <, /, >
     if (isMarkupChar(text[i])) { 
@@ -45,30 +49,28 @@ const adoptHTMLColor = text => {
     
     // tag 기호 안에 있을 때만
     if (isInTag) {
-      const tagWord = findTagWord({ 
-        text: tempText, 
-        nextChar: text[i + 1]
-      });
-
-      if (tagWord.length > 0) {
-        const normalText = tempText.slice(0, -tagWord.length);
-        texts.push(normalText);
-        texts.push(<Red key={i}>{tagWord}</Red>);
-        tempText = '';
-        continue;
-      }
-
-      // 빈칸이 나오거나 =가 나오면 앞쪽 스트링 전부
-      if (text[i + 1] === ' ' || text[i + 1] === '=') {
-        const keyWord = findKeyWord(tempText);
-
-        if (keyWord.length > 0) {
-          const normalText = tempText.slice(0, -keyWord.length);
-          texts.push(normalText);
-          texts.push(<Purple key={i}>{keyWord}</Purple>);
+      // 아직 첫 번째 단어를 처리하지 못했을 때
+      if (!isFirstWord) {
+        // 다음 글자에 빈칸이 나오거나 끝나면 앞쪽 스트링 전부
+        if (text[i + 1] === ' ' || text[i + 1] === '>' || text[i + 1] === '/') {
+          texts.push(<Red key={i}>{tempText}</Red>);
           tempText = '';
+          isFirstWord = true;
+          continue;
         }
-        continue;
+      } else {
+        // 다음 글자에 빈칸이 나오거나 =가 나오면 앞쪽 스트링 전부
+        if (text[i + 1] === ' ' || text[i + 1] === '=') {
+          const keyWord = findKeyWord(tempText);
+
+          if (keyWord.length > 0) {
+            const normalText = tempText.slice(0, -keyWord.length);
+            texts.push(normalText);
+            texts.push(<Purple key={i}>{keyWord}</Purple>);
+            tempText = '';
+          }
+          continue;
+        }
       }
     }
   }
