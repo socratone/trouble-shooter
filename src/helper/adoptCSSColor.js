@@ -1,6 +1,7 @@
 import findKeyWord from './findKeyWord';
 import findQueryWord from './findQueryWord';
-import { Green, Orange, Grey } from '../components/common/fontColor';
+import isStructureChar from './isStructureChar';
+import { Green, Orange, Grey, Emerald } from '../components/common/fontColor';
 
 const adoptCSSColor = text => {
   let texts = [];
@@ -47,6 +48,14 @@ const adoptCSSColor = text => {
         }
         continue;
       }
+    }
+
+    if (isStructureChar(text[i])) {
+      const normalText = tempText.slice(0, -1);
+      texts.push(normalText);
+      texts.push(<Emerald key={i}>{text[i]}</Emerald>)
+      tempText = '';
+      continue;
     }
     
     // {가 나오면 앞쪽 스트링 전부

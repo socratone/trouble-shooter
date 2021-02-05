@@ -7,7 +7,7 @@ const findQueryWord = text => {
     if (i === text.length - 1) {
       queryWord = text[i] + queryWord;      
     } else {
-      if (text[i] === ' ' || text[i] === '' || text[i] === '\n') break;
+      if (text[i] === ' ' || text[i] === '') break;
       queryWord = text[i] + queryWord;
     }
     i--;
