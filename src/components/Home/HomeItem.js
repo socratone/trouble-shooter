@@ -25,9 +25,11 @@ const HomeItem = ({ item }) => {
           alt={item.title}
           className={styles.icon}
           width="25" />
-        <span className={styles.title}>{item.title}</span>
-        <span className={styles.category}>{convertCategory(item.category)}</span>
-        <span className={styles.date}>{convertSQLDate(item.createdAt)}</span>
+        <div>
+          <span className={styles.title}>{item.title}</span>
+          <span className={styles.category}>{convertCategory(item.category)}</span>
+          <span className={styles.date}>{convertSQLDate(item.createdAt)}</span>
+        </div>
       </article>
     </div>
   );
