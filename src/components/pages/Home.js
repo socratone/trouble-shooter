@@ -22,11 +22,11 @@ const Home = () => {
   return (
     <main className={styles.home}>
       <Header />
-      <NormalPageFrame>
-        <section>
+      <section>
+        <NormalPageFrame>
           {homeItems.map(item => <HomeItem key={item.id} item={item} />)}
-        </section>
-      </NormalPageFrame> 
+        </NormalPageFrame> 
+      </section>
       <Footer />
     </main>
   );
