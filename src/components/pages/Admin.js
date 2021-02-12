@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { setAdmin } from '../../store/reducers/user';
@@ -13,10 +13,6 @@ const Admin = () => {
   const user = useSelector(state => state.entities.user);
   const dispatch = useDispatch();
   const history = useHistory();
-
-  useEffect(() => {
-    if (input.current) input.current.focus();
-  }, [input]);
 
   const handleInputChange = ({ target }) => {
     setPassword(target.value);
@@ -53,7 +49,8 @@ const Admin = () => {
           value={password} 
           onChange={handleInputChange} 
           onKeyDown={handleInputKeyDown}
-          className={styles.input}/>
+          className={styles.input}
+          autoFocus/>
         <button onClick={handleSigninButton} className={styles.button}>
           Signin
         </button>
