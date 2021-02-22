@@ -138,25 +138,6 @@ const RecentWork = () => {
             Electron Builder
           </Github>
       </WorkItem>
-      <WorkItem 
-        even
-        subTitle="Web"
-        title="Mango"
-        description="별점 평가와 추천 알고리즘이 적용된 유튜브 음악 영상 웹 서비스입니다."
-        term="2020년 6월 - 7월"
-        image="https://trouble-shooter.s3.ap-northeast-2.amazonaws.com/profile/mango.png">
-          <Title head>특징</Title>
-          <List>코드스테이츠 파이널 협업 프로젝트 (4명)</List>
-          <Title>주요 기능</Title>
-          <List>사용자의 별점 평가 데이터를 바탕으로 추천 알고리즘을 이용하여 좋아하는 곡과 유사한 곡 리스팅</List>
-          <Title>Stack</Title>
-          <List>Framework : React</List>
-          <List>Style : SASS, Material UI</List>
-          <Title>Source Code</Title>
-          <Github link="https://github.com/mango-music/client.git">
-            Front-end
-          </Github>
-      </WorkItem>
     </section>
   );
 }
