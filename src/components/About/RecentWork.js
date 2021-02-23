@@ -54,7 +54,7 @@ const RecentWork = () => {
         subTitle="Blog"
         title="Trouble Shooter"
         description="자바스크립트 코드로 해결할 수 있는 문제들을 쉽게 찾을 수 있도록 정리해 놓은 블로그입니다."
-        term="2020년 12월 - 진행중"
+        term="2020년 12월 - 2021년 1월"
         image="https://trouble-shooter.s3.ap-northeast-2.amazonaws.com/profile/trshooter.png"
         link="http://trshooter.com">
           <Title head>주요 기능</Title>
