@@ -1,6 +1,6 @@
 import React from 'react';
 import Experience from '../About/Experience';
-import Hedaer from '../About/Header';
+import Header from '../About/Header';
 import Introduce from '../About/Introduce';
 import RecentWork from '../About/RecentWork';
 import Skill from '../About/Skill';
@@ -11,7 +11,7 @@ import Footer from '../About/Footer';
 const About = () => {
   return (  
     <main>
-      <Hedaer />
+      <Header />
       <Introduce />
       <Skill />
       <RecentWork />
